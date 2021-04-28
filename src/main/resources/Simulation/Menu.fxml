@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+            prefHeight="40.0" prefWidth="1200.0"
+        layoutX="40" layoutY="20"
+      style="-fx-border-color: green">
+    <Label text="Current Place" />
+    <Button text="Statistics" />
+    <Button text="Parameters" />
+    <SplitMenuButton text="Places">
+        <items>
+            <MenuItem text="Rondo Mogilskie" />
+            <MenuItem text="Most Grunwaldzki" />
+        </items>
+    </SplitMenuButton>
+    <Button text="Stop" />
+    <Button text="Start" />
+    <Button text="2x" />
+</HBox>

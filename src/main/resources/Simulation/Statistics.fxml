@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      prefHeight="600.0" prefWidth="300.0"
+      layoutX="940" layoutY="80"
+      style="-fx-border-color: red">
+    <Label text="Statistics" />
+</VBox>

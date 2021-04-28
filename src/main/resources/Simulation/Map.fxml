@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.canvas.Canvas?>
+<Pane prefWidth="860" prefHeight="600"
+      layoutX="40" layoutY="80"
+      style="-fx-border-color: blue">
+    <Canvas layoutX="10" layoutY="10" height="840" width="580" />
+    <HBox layoutY="550" layoutX="20">
+        <Button  text="Zoom in" />
+        <Button text="Zoom out" />
+    </HBox>
+    <Pane layoutX="700" layoutY="480">
+        <Button text="North" layoutX="40"/>
+        <Button text="East" layoutX="80" layoutY="40"/>
+        <Button text="South" layoutX="40" layoutY="80"/>
+        <Button text="West" layoutY="40"/>
+    </Pane>
+
+    <Label text="Current position: (5643,4534)" layoutY="10" layoutX="680"/>
+</Pane>
