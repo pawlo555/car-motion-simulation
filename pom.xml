@@ -93,7 +93,7 @@
                 </execution>
             </executions>
             <configuration>
-                <mainClass>Simulation.Simulation</mainClass>
+                <mainClass>Simulation.SimulationApplication</mainClass>
             </configuration>
         </plugin>
 
@@ -111,7 +111,7 @@
                         <transformers>
                             <transformer
                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>Simulation.Simulation</mainClass>
+                                <mainClass>Simulation.SimulationApplication</mainClass>
                             </transformer>
                         </transformers>
 

@@ -1,0 +1,22 @@
+HBox {
+    -fx-alignment: center;
+    -fx-spacing: 5;
+    -fx-padding: 4;
+    -fx-background-color: lightgrey;
+    -fx-border-color: green
+}
+
+VBox {
+    -fx-padding: 5;
+    -fx-spacing: 3;
+}
+
+MapVBox {
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-bottom: white;
+}
+
+Pane {
+    -fx-border-color: blue;
+}

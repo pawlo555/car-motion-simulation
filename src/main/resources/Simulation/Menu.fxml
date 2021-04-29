@@ -4,19 +4,15 @@
 <?import javafx.scene.layout.*?>
 
 <HBox xmlns="http://javafx.com/javafx"
-            prefHeight="40.0" prefWidth="1200.0"
-        layoutX="40" layoutY="20"
-      style="-fx-border-color: green">
-    <Label text="Current Place" />
-    <Button text="Statistics" />
-    <Button text="Parameters" />
-    <SplitMenuButton text="Places">
-        <items>
-            <MenuItem text="Rondo Mogilskie" />
-            <MenuItem text="Most Grunwaldzki" />
-        </items>
-    </SplitMenuButton>
-    <Button text="Stop" />
-    <Button text="Start" />
-    <Button text="2x" />
+      prefHeight="40.0" prefWidth="1200.0"
+      layoutX="40" layoutY="20"
+      fx:controller="Simulation.Controllers.MenuController"
+      xmlns:fx="http://javafx.com/fxml">
+    <Label fx:id="placeName" text="Current Place" />
+    <Button text="Statistics" onAction="#loadStatisticsPressed"/>
+    <Button text="Parameters" onAction="#loadParametersPressed"/>
+    <ComboBox fx:id="placesNames" onAction="#itemClicked" promptText="Crossings"/>
+    <Button text="Stop" onAction="#stopPressed"/>
+    <Button text="Start" onAction="#startPressed"/>
+    <Button text="2x" onAction="#doubleSpeedPressed"/>
 </HBox>
