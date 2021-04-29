@@ -29,6 +29,7 @@ public class SimulationApplication extends javafx.application.Application {
         MenuController menuController = menuLoader.getController();
         menuController.setApplication(this);
         menuController.setEngine(new SimulationEngine());
+        menuController.addCrossings();
 
         Group group = new Group();
         group.getChildren().add(mapPane);

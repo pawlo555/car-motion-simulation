@@ -11,12 +11,7 @@
     <Label fx:id="placeName" text="Current Place" />
     <Button text="Statistics" onAction="#loadStatisticsPressed"/>
     <Button text="Parameters" onAction="#loadParametersPressed"/>
-    <SplitMenuButton fx:id="placesNames" text="Places">
-        <items>
-            <MenuItem text="Rondo Mogilskie" />
-            <MenuItem text="Most Grunwaldzki" />
-        </items>
-    </SplitMenuButton>
+    <ComboBox fx:id="placesNames" onAction="#itemClicked" promptText="Crossings"/>
     <Button text="Stop" onAction="#stopPressed"/>
     <Button text="Start" onAction="#startPressed"/>
     <Button text="2x" onAction="#doubleSpeedPressed"/>
