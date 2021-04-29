@@ -1,8 +1,5 @@
 package Simulation.Controllers;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-
 import Simulation.SimulationDrawer;
 
 public class MapButtonsController {
@@ -22,15 +19,15 @@ public class MapButtonsController {
     }
 
     public void eastPressed() {
-        drawer.goNorth();
+        drawer.goEast();
     }
 
     public void southPressed() {
-        drawer.goNorth();
+        drawer.goSouth();
     }
 
     public void westPressed() {
-        drawer.goNorth();
+        drawer.goWest();
     }
 
     public void setSimulationDrawer(SimulationDrawer newDrawer) {
