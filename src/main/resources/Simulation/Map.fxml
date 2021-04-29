@@ -6,17 +6,18 @@
 <?import javafx.scene.canvas.Canvas?>
 <Pane prefWidth="860" prefHeight="600"
       layoutX="40" layoutY="80"
-      style="-fx-border-color: blue">
+      fx:controller="Simulation.Controllers.MapButtonsController"
+      xmlns:fx="http://javafx.com/fxml">
     <Canvas layoutX="10" layoutY="10" height="840" width="580" />
     <HBox layoutY="550" layoutX="20">
-        <Button  text="Zoom in" />
-        <Button text="Zoom out" />
+        <Button text="Zoom in" onAction="#zoomInPressed"/>
+        <Button text="Zoom out" onAction="#zoomOutPressed"/>
     </HBox>
     <Pane layoutX="700" layoutY="480">
-        <Button text="North" layoutX="40"/>
-        <Button text="East" layoutX="80" layoutY="40"/>
-        <Button text="South" layoutX="40" layoutY="80"/>
-        <Button text="West" layoutY="40"/>
+        <Button text="North" layoutX="40" onAction="#northPressed"/>
+        <Button text="East" layoutX="80" layoutY="40" onAction="#eastPressed"/>
+        <Button text="South" layoutX="40" layoutY="80" onAction="#southPressed"/>
+        <Button text="West" layoutY="40" onAction="#westPressed"/>
     </Pane>
 
     <Label text="Current position: (5643,4534)" layoutY="10" layoutX="680"/>

@@ -5,8 +5,7 @@
 
 <HBox xmlns="http://javafx.com/javafx"
             prefHeight="40.0" prefWidth="1200.0"
-        layoutX="40" layoutY="20"
-      style="-fx-border-color: green">
+        layoutX="40" layoutY="20">
     <Label text="Current Place" />
     <Button text="Statistics" />
     <Button text="Parameters" />
