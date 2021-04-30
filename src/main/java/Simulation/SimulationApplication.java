@@ -21,10 +21,11 @@ public class SimulationApplication extends javafx.application.Application {
         MapButtonsController mapButtonsController = mapLoader.getController();
         mapButtonsController.setSimulationDrawer(new SimulationDrawer());
 
-        FXMLLoader statisticsLoader = getLoader("Statistics.fxml");
-        VBox statBox = statisticsLoader.load();
-        FXMLLoader menuLoader = getLoader("Menu.fxml");
+        FXMLLoader parametersLoader = getLoader("Parameters.fxml");
+        VBox statBox = parametersLoader.load();
 
+
+        FXMLLoader menuLoader = getLoader("Menu.fxml");
         HBox MenuBox = menuLoader.load();
         MenuController menuController = menuLoader.getController();
         menuController.setApplication(this);
