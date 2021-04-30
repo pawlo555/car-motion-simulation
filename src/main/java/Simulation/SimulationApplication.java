@@ -14,28 +14,22 @@ import java.io.IOException;
 
 public class SimulationApplication extends javafx.application.Application {
 
+    private Pane mapPane;
+    private HBox menuBox;
+    private VBox statisticsBox;
+    private VBox parametersBox;
+
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader mapLoader = getLoader("Map.fxml");
-        Pane mapPane = mapLoader.load();
-        MapButtonsController mapButtonsController = mapLoader.getController();
-        mapButtonsController.setSimulationDrawer(new SimulationDrawer());
-
-        FXMLLoader parametersLoader = getLoader("Parameters.fxml");
-        VBox statBox = parametersLoader.load();
-
-
-        FXMLLoader menuLoader = getLoader("Menu.fxml");
-        HBox MenuBox = menuLoader.load();
-        MenuController menuController = menuLoader.getController();
-        menuController.setApplication(this);
-        menuController.setEngine(new SimulationEngine());
-        menuController.addCrossings();
+        loadSimulationElements();
 
         Group group = new Group();
         group.getChildren().add(mapPane);
-        group.getChildren().add(statBox);
-        group.getChildren().add(MenuBox);
+        group.getChildren().add(statisticsBox);
+        group.getChildren().add(menuBox);
+        group.getChildren().add(parametersBox);
+        showParameters();
+
         Scene scene = new Scene(group, 1280, 720);
         scene.getStylesheets().add(String.valueOf(getClass().getResource("SimulationStyle.css")));
         stage.setTitle("Simulation");
@@ -53,11 +47,48 @@ public class SimulationApplication extends javafx.application.Application {
         return loader;
     }
 
-    public void loadStatistics() {
-        System.out.println("Loading statistics");
+    public void showStatistics() {
+        System.out.println("Showing statistics");
+        parametersBox.setVisible(false);
+        statisticsBox.setVisible(true);
     }
 
-    public void loadParameters() {
-        System.out.println("Loading parameters");
+    public void showParameters() {
+        System.out.println("Showing parameters");
+        parametersBox.setVisible(true);
+        statisticsBox.setVisible(false);
+    }
+
+    private void loadSimulationElements() throws IOException {
+        loadMap();
+        loadMenu();
+        loadParameters();
+        loadStatistics();
+    }
+
+    private void loadMenu() throws IOException {
+        FXMLLoader menuLoader = getLoader("Menu.fxml");
+        menuBox = menuLoader.load();
+        MenuController menuController = menuLoader.getController();
+        menuController.setApplication(this);
+        menuController.setEngine(new SimulationEngine());
+        menuController.addCrossings();
+    }
+
+    private void loadMap() throws IOException {
+        FXMLLoader mapLoader = getLoader("Map.fxml");
+        mapPane = mapLoader.load();
+        MapButtonsController mapButtonsController = mapLoader.getController();
+        mapButtonsController.setSimulationDrawer(new SimulationDrawer());
+    }
+
+    private void loadParameters() throws IOException {
+        FXMLLoader parametersLoader = getLoader("Parameters.fxml");
+        parametersBox = parametersLoader.load();
+    }
+
+    private void loadStatistics() throws IOException {
+        FXMLLoader parametersLoader = getLoader("Statistics.fxml");
+        statisticsBox = parametersLoader.load();
     }
 }

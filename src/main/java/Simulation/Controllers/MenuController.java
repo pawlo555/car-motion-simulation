@@ -32,14 +32,14 @@ public class MenuController {
 
     public void loadStatisticsPressed() {
         if (!isStatistics) {
-            application.loadStatistics();
+            application.showStatistics();
             isStatistics = true;
         }
     }
 
     public void loadParametersPressed() {
         if (isStatistics) {
-            application.loadParameters();
+            application.showParameters();
             isStatistics = false;
         }
     }
