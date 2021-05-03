@@ -1,4 +1,4 @@
-package Simulation;
+package Objects;
 
 import Vehicles.AbstractVehicle;
 
