@@ -34,4 +34,8 @@ public class MapButtonsController {
     public void setSimulationDrawer(SimulationDrawer newDrawer) {
         drawer = newDrawer;
     }
+
+    public SimulationDrawer getSimulationDrawer() {
+        return drawer;
+    }
 }

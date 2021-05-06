@@ -78,6 +78,8 @@ public class SimulationApplication extends javafx.application.Application {
     private void loadMap() throws IOException {
         FXMLLoader mapLoader = getLoader("Map.fxml");
         mapPane = mapLoader.load();
+        MapButtonsController controller = mapLoader.getController();
+        controller.getSimulationDrawer().initializeMap();
     }
 
     private void loadParameters() throws IOException {

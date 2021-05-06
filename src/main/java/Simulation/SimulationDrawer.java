@@ -14,7 +14,7 @@ public class SimulationDrawer extends Canvas {
 
     private int currentX;
     private int currentY;
-    private int scale = 15;
+    private int scale = 11;
 
     public void zoomIn() {
         System.out.println("Zooming in");
@@ -26,9 +26,10 @@ public class SimulationDrawer extends Canvas {
 
     public void zoomOut() {
         System.out.println("Zooming out");
-        if (scale > 15) {
+        if (scale > 11) {
             scale = scale - 1;
         }
+        paintBackground();
     }
 
     public void goNorth() {
@@ -47,14 +48,17 @@ public class SimulationDrawer extends Canvas {
         System.out.println("Go west");
     }
 
+    public void initializeMap() {
+        this.setWidth(860);
+        this.setHeight(600);
+        paintBackground();
+    }
+
     public void paintBackground() {
-        this.setWidth(1024);
-        this.setHeight(1024);
         GraphicsContext gc = this.getGraphicsContext2D();
-        System.out.println(this.getHeight());
-        gc.setFill(Color.BLUE);
-        for (int i=0; i<3; i++) {
-            ArrayList<Image> images = ImagesLoader.getImages(scale, 0,0,4);
+        gc.clearRect(0,0,getWidth(), getHeight());
+        for (int i=0; i<4; i++) {
+            ArrayList<Image> images = ImagesLoader.getImages(scale, i,0,3);
             paintVerticalLine(images, i);
         }
     }
@@ -62,7 +66,7 @@ public class SimulationDrawer extends Canvas {
     private void paintVerticalLine(ArrayList<Image> images, int verticalNumber) {
         GraphicsContext gc = this.getGraphicsContext2D();
         for (int i=0; i<images.size();i++) {
-            gc.drawImage(images.get(i), 256*i, 256*verticalNumber);
+            gc.drawImage(images.get(i), 256*verticalNumber, 256*i);
         }
     }
 }
