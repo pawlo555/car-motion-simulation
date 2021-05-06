@@ -4,11 +4,12 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import Simulation.SimulationDrawer?>
 <Pane prefWidth="860" prefHeight="600"
       layoutX="40" layoutY="80"
       fx:controller="Simulation.Controllers.MapButtonsController"
       xmlns:fx="http://javafx.com/fxml">
-    <Canvas layoutX="10" layoutY="10" height="840" width="580" />
+    <SimulationDrawer fx:id="drawer" />
     <HBox layoutY="550" layoutX="20">
         <Button text="Zoom in" onAction="#zoomInPressed"/>
         <Button text="Zoom out" onAction="#zoomOutPressed"/>

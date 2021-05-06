@@ -1,10 +1,11 @@
 package Simulation.Controllers;
 
 import Simulation.SimulationDrawer;
+import javafx.fxml.FXML;
 
 public class MapButtonsController {
 
-    private SimulationDrawer drawer;
+    @FXML private SimulationDrawer drawer;
 
     public void zoomInPressed() {
         drawer.zoomIn();
