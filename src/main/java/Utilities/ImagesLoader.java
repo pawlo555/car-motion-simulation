@@ -39,6 +39,6 @@ public class ImagesLoader {
         if (tile >= 11 && tile <= 18) {
             return path+"/Tiles/"+tile;
         }
-        throw new IllegalStateException("Tile should be between 15 and 18");
+        throw new IllegalStateException("Tile should be between 11 and 18");
     }
 }

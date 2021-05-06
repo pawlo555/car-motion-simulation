@@ -3,17 +3,16 @@ package Simulation;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import Utilities.ImagesLoader;
 
 import java.util.ArrayList;
 
 public class SimulationDrawer extends Canvas {
-    static private int xSize;
-    static private int ySize;
+    static private int xSize = 100;
+    static private int ySize = 100;
 
-    private int currentX;
-    private int currentY;
+    private int currentX = 0;
+    private int currentY = 0;
     private int scale = 11;
 
     public void zoomIn() {
@@ -34,18 +33,26 @@ public class SimulationDrawer extends Canvas {
 
     public void goNorth() {
         System.out.println("Go north");
+        currentY = currentY - 1;
+        paintBackground();
     }
 
     public void goEast() {
         System.out.println("Go east");
+        currentX = currentX + 1;
+        paintBackground();
     }
 
     public void goSouth() {
         System.out.println("Go south");
+        currentY = currentY + 1;
+        paintBackground();
     }
 
     public void goWest() {
         System.out.println("Go west");
+        currentX = currentX - 1;
+        paintBackground();
     }
 
     public void initializeMap() {
@@ -58,7 +65,7 @@ public class SimulationDrawer extends Canvas {
         GraphicsContext gc = this.getGraphicsContext2D();
         gc.clearRect(0,0,getWidth(), getHeight());
         for (int i=0; i<4; i++) {
-            ArrayList<Image> images = ImagesLoader.getImages(scale, i,0,3);
+            ArrayList<Image> images = ImagesLoader.getImages(scale, currentX + i,currentY,3);
             paintVerticalLine(images, i);
         }
     }
