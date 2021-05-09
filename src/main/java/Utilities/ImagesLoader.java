@@ -8,29 +8,21 @@ import java.util.ArrayList;
 public class ImagesLoader {
     private static String path = new File("src/main/resources").getAbsolutePath();
 
-    public static ArrayList<Image> getImages(int tile, int folderNumber, int fileNumber, int elements) {
+    public static ArrayList<Image> getImages(int zoom, int vertical, int horizontal, int elements) {
         ArrayList<Image> imageArray = new ArrayList<>();
 
-        File tileDirectory = new File(getTileAsString(tile));
-        System.out.println(tileDirectory.toString());
         try {
-            File verticalDirectory = tileDirectory.listFiles()[folderNumber];
-            String verticalDirectoryPath = verticalDirectory.getPath();
-            String[] verticalFilesNames = verticalDirectory.list();
-
             for (int i = 0; i < elements; i++) {
-                System.out.println(i);
-                String pathToImage = "file:///" + verticalDirectoryPath+"\\"+verticalFilesNames[i + fileNumber];
-                System.out.println(pathToImage);
+                String pathToImage = "file:///" +
+                        TilesManager.getHorizontalTilesFile(zoom, vertical, horizontal+i).getAbsolutePath();
                 Image image = new Image(pathToImage);
-                System.out.println("Image:" + image);
                 imageArray.add(image);
             }
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("List out of range");
-            System.out.println(imageArray);
+            //System.out.println("List out of range");
+            //System.out.println(imageArray);
         }
         return imageArray;
     }

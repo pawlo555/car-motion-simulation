@@ -21,6 +21,8 @@ public class SimulationDrawer extends Canvas {
         if (currentZoom < TilesInfo.LastZoomNumber) {
             currentZoom = currentZoom + 1;
             paintBackground();
+            currentVerticalTile = currentVerticalTile*2;
+            currentHorizontalTile = currentHorizontalTile*2;
         }
     }
 
@@ -29,6 +31,8 @@ public class SimulationDrawer extends Canvas {
         if (currentZoom > TilesInfo.FirstZoomNumber) {
             currentZoom = currentZoom - 1;
             paintBackground();
+            currentVerticalTile = currentVerticalTile/2;
+            currentHorizontalTile = currentHorizontalTile/2;
         }
     }
 
@@ -42,7 +46,7 @@ public class SimulationDrawer extends Canvas {
 
     public void goEast() {
         System.out.println("Go east");
-        if (currentHorizontalTile < TilesInfo.tilesHorizontalNumbers.get(currentZoom) - 1) {
+        if (currentHorizontalTile < TilesInfo.getHorizontalNumber(currentZoom) - 1) {
             currentHorizontalTile = currentHorizontalTile + 1;
             paintBackground();
         }
@@ -50,7 +54,7 @@ public class SimulationDrawer extends Canvas {
 
     public void goSouth() {
         System.out.println("Go south");
-        if (currentVerticalTile < TilesInfo.tilesVerticalNumbers.get(currentZoom) - 1) {
+        if (currentVerticalTile < TilesInfo.getVerticalNumber(currentZoom) - 1) {
             currentVerticalTile = currentVerticalTile + 1;
             paintBackground();
         }
