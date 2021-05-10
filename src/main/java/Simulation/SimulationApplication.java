@@ -1,10 +1,13 @@
 package Simulation;
 
-import Simulation.Controllers.MapButtonsController;
+import Simulation.Controllers.MapController;
 import Simulation.Controllers.MenuController;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -78,8 +81,9 @@ public class SimulationApplication extends javafx.application.Application {
     private void loadMap() throws IOException {
         FXMLLoader mapLoader = getLoader("Map.fxml");
         mapPane = mapLoader.load();
-        MapButtonsController mapButtonsController = mapLoader.getController();
-        mapButtonsController.setSimulationDrawer(new SimulationDrawer());
+        MapController controller = mapLoader.getController();
+        controller.getSimulationDrawer().initializeMap();
+        mapPane.setOnMouseMoved(controller::onMouseMoved);
     }
 
     private void loadParameters() throws IOException {
