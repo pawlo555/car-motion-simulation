@@ -9,8 +9,6 @@ import Utilities.ImagesLoader;
 import java.util.ArrayList;
 
 public class SimulationDrawer extends Canvas {
-    static private int xSize = 100;
-    static private int ySize = 100;
 
     private int currentHorizontalTile = 0;
     private int currentVerticalTile = 0;
@@ -69,15 +67,15 @@ public class SimulationDrawer extends Canvas {
     }
 
     public void initializeMap() {
-        this.setWidth(860);
-        this.setHeight(600);
+        this.setWidth(768);
+        this.setHeight(620);
         paintBackground();
     }
 
     public void paintBackground() {
         GraphicsContext gc = this.getGraphicsContext2D();
         gc.clearRect(0,0,getWidth(), getHeight());
-        for (int i=0; i<4; i++) {
+        for (int i=0; i<3; i++) {
             ArrayList<Image> images = ImagesLoader.getImages(currentZoom, currentHorizontalTile + i, currentVerticalTile,3);
             paintVerticalLine(images, i);
         }
@@ -88,5 +86,17 @@ public class SimulationDrawer extends Canvas {
         for (int i=0; i<images.size();i++) {
             gc.drawImage(images.get(i), 256*verticalNumber, 256*i);
         }
+    }
+
+    public int getCurrentHorizontalTile() {
+        return currentHorizontalTile;
+    }
+
+    public int getCurrentVerticalTile() {
+        return currentVerticalTile;
+    }
+
+    public int getCurrentZoomLevel() {
+        return Math.abs(currentZoom-TilesInfo.LastZoomNumber);
     }
 }
