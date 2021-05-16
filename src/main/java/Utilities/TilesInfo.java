@@ -15,7 +15,7 @@ public class TilesInfo {
     }
 
     public static int getHorizontalNumber(int zoom) {
-        return tilesHorizontalNumbers.get(zoom- FirstZoomNumber);
+        return tilesHorizontalNumbers.get(zoom-FirstZoomNumber);
     }
 
     private static ArrayList<Integer> loadTilesVerticalNumbers() {
