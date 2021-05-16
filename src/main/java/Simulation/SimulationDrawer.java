@@ -103,9 +103,10 @@ public class SimulationDrawer extends Canvas {
         }
     }
 
-    // TODO
     private void paintCar(GraphicsContext gc, AbstractVehicle car) {
-        System.out.println("Painting cars");
+        double radius = 2 / Math.pow(2, getCurrentZoomLevel());
+        Vector2D carPosition = car.getPosition();
+        gc.fillOval(carPosition.getHorizontal()-radius, carPosition.getVertical()-radius, radius, radius);
     }
 
     public int getCurrentHorizontalTile() {
@@ -120,13 +121,15 @@ public class SimulationDrawer extends Canvas {
         return Math.abs(currentZoom-TilesInfo.LastZoomNumber);
     }
 
-    // TODO
     public Vector2D getUpperLeftVector() {
-        return new Vector2D(2,2);
+        double horizontal = currentHorizontalTile*256*Math.pow(2, getCurrentZoomLevel());
+        double vertical = currentVerticalTile*256*Math.pow(2, getCurrentZoomLevel());
+        return new Vector2D(horizontal, vertical);
     }
 
-    // TODO
     public Vector2D getLowerRightVector() {
-        return new Vector2D(2,2);
+        double horizontal = (currentHorizontalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
+        double vertical = (currentVerticalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
+        return new Vector2D(horizontal, vertical);
     }
 }

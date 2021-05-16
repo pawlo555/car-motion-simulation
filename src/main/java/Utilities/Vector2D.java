@@ -24,8 +24,16 @@ public class Vector2D {
         return Objects.hash(horizontal, vertical);
     }
 
-    // TODO
     public boolean between(Vector2D upperLeft, Vector2D lowerRight) {
-        return true;
+        return (upperLeft.vertical <= this.vertical && this.vertical <= lowerRight.vertical)
+                && (upperLeft.horizontal <= this.horizontal && this.horizontal <= lowerRight.horizontal);
+    }
+
+    public double getHorizontal() {
+        return horizontal;
+    }
+
+    public double getVertical() {
+        return vertical;
     }
 }
