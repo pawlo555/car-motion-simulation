@@ -9,17 +9,21 @@ import javafx.scene.chart.XYChart;
 
 import java.util.LinkedList;
 
-public class ExitChartDrawer extends LineChart implements CellObserver, SimulationObserver {
+public class ExitChart extends LineChart<Number, Number> implements CellObserver, SimulationObserver {
 
-    private LinkedList<Integer> carsFlow = new LinkedList<>();
+    private final LinkedList<Integer> carsFlow = new LinkedList<>();
+    private final Series<Number, Number> series = new Series<>();
+    private int currentEpoch = 100;
+
     private static final int majorTick = 10;
     private static int maxFlow = 100;
 
-    static final NumberAxis xAxis = new NumberAxis(0,100, majorTick);
-    static final NumberAxis yAxis = new NumberAxis(0, maxFlow, (int) Math.log(maxFlow));
+    private static final NumberAxis xAxis = new NumberAxis("Epoch",0,100, majorTick);
+    private static final NumberAxis yAxis = new NumberAxis("Car flow",0, maxFlow, (int) Math.log(maxFlow));
 
-    public ExitChartDrawer() {
+    public ExitChart() {
         super(xAxis, yAxis);
+        this.getData().add(series);
         carsFlow.addLast(0);
     }
 
@@ -42,9 +46,15 @@ public class ExitChartDrawer extends LineChart implements CellObserver, Simulati
         }
     }
 
-    // TODO update this
     private void updateXAxis() {
-        this.getData().add(new XYChart.Data(carsFlow.size()-1,carsFlow.getLast()));
+        currentEpoch = currentEpoch + 1;
+
+        if (currentEpoch > 100) {
+            NumberAxis xAxis = (NumberAxis) this.getXAxis();
+            xAxis.setLowerBound(currentEpoch-100);
+            xAxis.setUpperBound(currentEpoch);
+        }
+        this.dataItemAdded(series, 0, new XYChart.Data<>(carsFlow.size(), carsFlow.getLast()));
         carsFlow.addLast(0);
 
     }
