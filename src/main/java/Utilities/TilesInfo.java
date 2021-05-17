@@ -23,7 +23,6 @@ public class TilesInfo {
         for (int i = FirstZoomNumber; i <= LastZoomNumber; i++) {
             heights.add(TilesManager.getVerticalTilesNumber(i));
         }
-        System.out.println(heights);
         return heights;
 
     }
