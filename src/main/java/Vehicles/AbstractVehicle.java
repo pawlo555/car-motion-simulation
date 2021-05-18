@@ -1,5 +1,7 @@
 package Vehicles;
 
+import Utilities.Vector2D;
+
 public abstract class AbstractVehicle {
     private final int length;
     private final int width = 1;
@@ -29,5 +31,10 @@ public abstract class AbstractVehicle {
 
     public int getSpeed(){return speed;}
     public int getLength(){return length;}
+
+    // TODO make this function get proper values
+    public Vector2D getPosition() {
+        return new Vector2D(5,5);
+    }
 
 }

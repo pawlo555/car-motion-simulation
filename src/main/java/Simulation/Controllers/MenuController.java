@@ -2,8 +2,12 @@ package Simulation.Controllers;
 
 import Simulation.SimulationApplication;
 import Simulation.SimulationEngine;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.util.Arrays;
@@ -13,21 +17,25 @@ public class MenuController {
 
     @FXML private Label placeName;
     @FXML private ComboBox<String> placesNames;
-    private boolean isStatistics = true;
+    @FXML private Label currentEpochLabel;
+    private boolean isStatistics = false;
+    private Timeline timeline;
 
     private SimulationEngine engine;
     private SimulationApplication application;
 
     public void stopPressed() {
-        engine.stop();
+        timeline.pause();
     }
 
     public void startPressed() {
-        engine.start();
+        changeSpeed(1000);
+        timeline.play();
     }
 
     public void doubleSpeedPressed() {
-        engine.doubleSpeed();
+        changeSpeed(500);
+        timeline.play();
     }
 
     public void loadStatisticsPressed() {
@@ -46,6 +54,7 @@ public class MenuController {
 
     public void setEngine(SimulationEngine newEngine) {
         engine = newEngine;
+        setTimeline();
     }
 
     public void setApplication(SimulationApplication newApplication) {
@@ -64,7 +73,7 @@ public class MenuController {
 
     @FXML
     public void addCrossings() {
-        File directory = new File("C:\\Studia\\ModelowanieSystemowDyskretnych\\Car-Motion-Simulation\\src\\main\\resources\\Crossings");
+        File directory = new File("resources/Crossings");
         System.out.println(directory);
         if (directory.list() != null) {
             System.out.println(Arrays.toString(directory.list()));
@@ -79,4 +88,34 @@ public class MenuController {
         return name;
     }
 
+    private void changeSpeed(int milliSeconds) {
+        timeline.stop();
+        timeline.getKeyFrames().setAll(getAppropriateKeyFrame(milliSeconds));
+    }
+
+    public void setTimeline() {
+        this.timeline = new Timeline(getAppropriateKeyFrame(1000));
+        timeline.setCycleCount(Animation.INDEFINITE);
+    }
+
+    private KeyFrame getAppropriateKeyFrame(int milliSeconds) {
+        if (engine == null) {
+            throw new RuntimeException("Lack of engines!");
+        }
+        else {
+            return new KeyFrame(
+                    Duration.millis(milliSeconds),
+                    ae ->  {
+                        engine.nextEpoch();
+                        updateEpochLabel();
+                    }
+                    );
+        }
+    }
+
+    private void updateEpochLabel() {
+        int epoch = Integer.parseInt(currentEpochLabel.getText());
+        epoch = epoch + 1;
+        currentEpochLabel.setText(String.valueOf(epoch));
+    }
 }
