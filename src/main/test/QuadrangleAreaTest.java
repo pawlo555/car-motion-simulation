@@ -1,5 +1,5 @@
-import Utilities.QuadrangleArea;
-import Utilities.Vector2d;
+import Utilities.Geometry.QuadrangleArea;
+import Utilities.Geometry.Vector2d;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

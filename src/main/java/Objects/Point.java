@@ -1,7 +1,7 @@
 package Objects;
 
 import Utilities.Direction;
-import Utilities.Vector2d;
+import Utilities.Geometry.Vector2d;
 import Vehicles.AbstractVehicle;
 
 import java.util.EnumMap;

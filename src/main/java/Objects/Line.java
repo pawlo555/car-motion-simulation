@@ -1,6 +1,6 @@
 package Objects;
 
-import Utilities.QuadrangleArea;
+import Utilities.Geometry.QuadrangleArea;
 
 public class Line {
     private QuadrangleArea lane;
