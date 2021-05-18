@@ -2,6 +2,7 @@ package Objects;
 
 import Utilities.Direction;
 import Utilities.Vector2D;
+
 import Vehicles.AbstractVehicle;
 
 import java.util.EnumMap;

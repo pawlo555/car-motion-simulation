@@ -1,5 +1,6 @@
 import Utilities.GeometryUtils;
 import Utilities.Vector2D;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
