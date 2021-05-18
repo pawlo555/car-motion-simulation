@@ -5,6 +5,8 @@ import Utilities.QuadrangleArea;
 import Utilities.Vector2d;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class StraightRoadTest {
@@ -58,6 +60,24 @@ public class StraightRoadTest {
                 System.out.println(cell);
             }
             System.out.println();
+        }
+    }
+
+    @Test
+    public void EntriesTest(){
+        QuadrangleArea randomArea = new QuadrangleArea(new Vector2d(120,0), new Vector2d(135, 30), new Vector2d(0,150), new Vector2d(15,190));
+        StraightRoad testRandomRoad = new StraightRoad(2, randomArea);
+        for (Point point : testRandomRoad.getEntries()){
+            System.out.println(point+" is entry.");
+        }
+    }
+
+    @Test
+    public void ExitsTest(){
+        QuadrangleArea randomArea = new QuadrangleArea(new Vector2d(120,0), new Vector2d(135, 30), new Vector2d(0,150), new Vector2d(15,190));
+        StraightRoad testRandomRoad = new StraightRoad(2, randomArea);
+        for (Point point : testRandomRoad.getExits()){
+            System.out.println(point+" is exit.");
         }
     }
 }
