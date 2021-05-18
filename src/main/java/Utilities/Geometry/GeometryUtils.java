@@ -1,4 +1,4 @@
-package Utilities;
+package Utilities.Geometry;
 
 public class GeometryUtils {
     public static Vector2d perpendicularProjection(Vector2d v1, Vector2d v2, Vector2d v3){

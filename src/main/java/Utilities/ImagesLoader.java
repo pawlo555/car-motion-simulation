@@ -21,8 +21,6 @@ public class ImagesLoader {
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
-            //System.out.println("List out of range");
-            //System.out.println(imageArray);
         }
         return imageArray;
     }

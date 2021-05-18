@@ -7,6 +7,7 @@ import Utilities.PointType;
 import Utilities.VehicleObserver;
 
 import java.util.ArrayList;
+import Utilities.Vector2D;
 
 public abstract class AbstractVehicle {
     private final int length;
@@ -129,4 +130,10 @@ public abstract class AbstractVehicle {
                 ", speed=" + speed +
                 '}';
     }
+
+    // TODO make this function get proper values
+    public Vector2D getPosition() {
+        return new Vector2D(5,5);
+    }
+
 }

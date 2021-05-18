@@ -1,8 +1,8 @@
 import Objects.Line;
 import Objects.Point;
 import Objects.StraightRoad;
-import Utilities.QuadrangleArea;
-import Utilities.Vector2d;
+import Utilities.Geometry.QuadrangleArea;
+import Utilities.Geometry.Vector2d;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -15,4 +15,5 @@
     <Button text="Stop" onAction="#stopPressed"/>
     <Button text="Start" onAction="#startPressed"/>
     <Button text="2x" onAction="#doubleSpeedPressed"/>
+    <Label text="0" fx:id="currentEpochLabel" />
 </HBox>

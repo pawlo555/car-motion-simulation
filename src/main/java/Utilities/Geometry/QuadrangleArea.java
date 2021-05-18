@@ -1,4 +1,4 @@
-package Utilities;
+package Utilities.Geometry;
 
 import java.util.Objects;
 

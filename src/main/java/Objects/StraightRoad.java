@@ -2,9 +2,9 @@ package Objects;
 
 import Constants.RoadConstants;
 import Utilities.Direction;
-import Utilities.GeometryUtils;
-import Utilities.QuadrangleArea;
-import Utilities.Vector2d;
+import Utilities.Geometry.GeometryUtils;
+import Utilities.Geometry.QuadrangleArea;
+import Utilities.Geometry.Vector2d;
 
 import java.util.ArrayList;
 import java.util.Arrays;

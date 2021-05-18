@@ -3,7 +3,7 @@ package Objects;
 import Constants.RoadConstants;
 import Utilities.Direction;
 import Utilities.PointType;
-import Utilities.Vector2d;
+import Utilities.Geometry.Vector2d;
 import Vehicles.AbstractVehicle;
 
 import java.util.EnumMap;

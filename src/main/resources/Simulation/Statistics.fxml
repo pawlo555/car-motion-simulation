@@ -3,9 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import Simulation.ExitChart?>
 <VBox xmlns="http://javafx.com/javafx"
       prefHeight="600.0" prefWidth="300.0"
       layoutX="940" layoutY="80"
       style="-fx-border-color: red">
     <Label text="Statistics" />
+    <ExitChart />
 </VBox>

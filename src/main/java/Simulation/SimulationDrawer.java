@@ -1,18 +1,23 @@
 package Simulation;
 
 import Utilities.TilesInfo;
+import Utilities.Vector2D;
+import Vehicles.AbstractVehicle;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import Utilities.ImagesLoader;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SimulationDrawer extends Canvas {
 
     private int currentHorizontalTile = 0;
     private int currentVerticalTile = 0;
     private int currentZoom = TilesInfo.FirstZoomNumber;
+
+    private SimulationEngine engine;
 
     public void zoomIn() {
         System.out.println("Zooming in");
@@ -81,11 +86,27 @@ public class SimulationDrawer extends Canvas {
         }
     }
 
+    public void paintCars() {
+        Vector2D upperLeft = getUpperLeftVector();
+        Vector2D lowerRight = getLowerRightVector();
+        List<AbstractVehicle> carList = engine.getCarsInSquare(upperLeft, lowerRight);
+        GraphicsContext gc = this.getGraphicsContext2D();
+        for (AbstractVehicle car: carList) {
+            paintCar(gc, car);
+        }
+    }
+
     private void paintVerticalLine(ArrayList<Image> images, int verticalNumber) {
         GraphicsContext gc = this.getGraphicsContext2D();
         for (int i=0; i<images.size();i++) {
             gc.drawImage(images.get(i), 256*verticalNumber, 256*i);
         }
+    }
+
+    private void paintCar(GraphicsContext gc, AbstractVehicle car) {
+        double radius = 2 / Math.pow(2, getCurrentZoomLevel());
+        Vector2D carPosition = car.getPosition();
+        gc.fillOval(carPosition.getHorizontal()-radius, carPosition.getVertical()-radius, radius, radius);
     }
 
     public int getCurrentHorizontalTile() {
@@ -98,5 +119,17 @@ public class SimulationDrawer extends Canvas {
 
     public int getCurrentZoomLevel() {
         return Math.abs(currentZoom-TilesInfo.LastZoomNumber);
+    }
+
+    public Vector2D getUpperLeftVector() {
+        double horizontal = currentHorizontalTile*256*Math.pow(2, getCurrentZoomLevel());
+        double vertical = currentVerticalTile*256*Math.pow(2, getCurrentZoomLevel());
+        return new Vector2D(horizontal, vertical);
+    }
+
+    public Vector2D getLowerRightVector() {
+        double horizontal = (currentHorizontalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
+        double vertical = (currentVerticalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
+        return new Vector2D(horizontal, vertical);
     }
 }

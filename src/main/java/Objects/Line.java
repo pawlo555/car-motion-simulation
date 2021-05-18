@@ -1,7 +1,8 @@
 package Objects;
 
+
 import Utilities.PointType;
-import Utilities.QuadrangleArea;
+import Utilities.Geometry.QuadrangleArea;
 
 import java.util.ArrayList;
 
