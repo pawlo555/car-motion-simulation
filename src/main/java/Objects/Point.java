@@ -1,7 +1,7 @@
 package Objects;
 
 import Utilities.Direction;
-import Utilities.Vector2d;
+import Utilities.Vector2D;
 import Vehicles.AbstractVehicle;
 
 import java.util.EnumMap;
@@ -9,9 +9,9 @@ import java.util.EnumMap;
 public class Point {
     private EnumMap<Direction, Point> neighbors = new EnumMap<>(Direction.class);
     private AbstractVehicle vehicle;
-    private final Vector2d position;
+    private final Vector2D position;
 
-    public Point(Vector2d position){
+    public Point(Vector2D position){
         this.position = position;
     }
 
@@ -38,7 +38,7 @@ public class Point {
         return neighbors.get(direction);
     }
 
-    public Vector2d getPosition(){
+    public Vector2D getPosition(){
         return this.position;
     }
 

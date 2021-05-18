@@ -4,7 +4,7 @@ import Constants.RoadConstants;
 import Utilities.Direction;
 import Utilities.GeometryUtils;
 import Utilities.QuadrangleArea;
-import Utilities.Vector2d;
+import Utilities.Vector2D;
 
 import java.util.Arrays;
 import java.util.EnumMap;
@@ -44,7 +44,7 @@ public class StraightRoad {
 
         //upper triangle - remaining part of the road after rectDecomposition
         QuadrangleArea upper = new QuadrangleArea(rectRoad.leftTop, rectRoad.rightTop, roadArea.leftTop, roadArea.rightTop);
-        Vector2d[] upperSplitPoints = GeometryUtils.splitIntoParts(upper.leftTop, upper.rightTop, nLanes);
+        Vector2D[] upperSplitPoints = GeometryUtils.splitIntoParts(upper.leftTop, upper.rightTop, nLanes);
         double upperArea;
         if (GeometryUtils.distanceFromLine(upper.leftBottom, upper.rightBottom, upper.leftTop) >
                 GeometryUtils.distanceFromLine(upper.leftBottom, upper.rightBottom, upper.rightTop))
@@ -54,7 +54,7 @@ public class StraightRoad {
 
         //lower triangle
         QuadrangleArea lower = new QuadrangleArea(roadArea.leftBottom, roadArea.rightBottom, rectRoad.leftBottom, rectRoad.rightBottom);
-        Vector2d[] lowerSplitPoints = GeometryUtils.splitIntoParts(lower.leftBottom, lower.rightBottom, nLanes);
+        Vector2D[] lowerSplitPoints = GeometryUtils.splitIntoParts(lower.leftBottom, lower.rightBottom, nLanes);
 
         QuadrangleArea[] lanes = rectRoad.splitIntoLanes(nLanes);
         QuadrangleArea[][] cells = new QuadrangleArea[nLanes][];

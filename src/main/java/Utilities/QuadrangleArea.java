@@ -3,12 +3,12 @@ package Utilities;
 import java.util.Objects;
 
 public class QuadrangleArea {
-    public Vector2d leftBottom;
-    public Vector2d rightBottom;
-    public Vector2d leftTop;
-    public Vector2d rightTop;
+    public Vector2D leftBottom;
+    public Vector2D rightBottom;
+    public Vector2D leftTop;
+    public Vector2D rightTop;
 
-    public QuadrangleArea(Vector2d leftBottom, Vector2d rightBottom, Vector2d leftTop, Vector2d rightTop){
+    public QuadrangleArea(Vector2D leftBottom, Vector2D rightBottom, Vector2D leftTop, Vector2D rightTop){
         this.leftBottom = leftBottom;
         this.rightBottom = rightBottom;
         this.leftTop = leftTop;
@@ -23,10 +23,10 @@ public class QuadrangleArea {
         double rightDiag = rightTop.distance(leftBottom);
         double leftDiag = leftTop.distance(rightBottom);
 
-        Vector2d rectLeftBottom;
-        Vector2d rectRightBottom;
-        Vector2d rectLeftTop;
-        Vector2d rectRightTop;
+        Vector2D rectLeftBottom;
+        Vector2D rectRightBottom;
+        Vector2D rectLeftTop;
+        Vector2D rectRightTop;
 
         int vertex = 0; //0 - LB, 1 - RB, 2 - LT, 3 - RT
         //find rectangle
@@ -96,8 +96,8 @@ public class QuadrangleArea {
     }
 
     public QuadrangleArea[] splitIntoLanes(int nLanes){
-        Vector2d upperPoints[] = GeometryUtils.splitIntoParts(leftTop, rightTop, nLanes);
-        Vector2d lowerPoints[] = GeometryUtils.splitIntoParts(leftBottom, rightBottom, nLanes);
+        Vector2D upperPoints[] = GeometryUtils.splitIntoParts(leftTop, rightTop, nLanes);
+        Vector2D lowerPoints[] = GeometryUtils.splitIntoParts(leftBottom, rightBottom, nLanes);
         QuadrangleArea[] areas = new QuadrangleArea[nLanes];
         for (int i = 0; i < nLanes; i++){
             areas[i] = new QuadrangleArea(lowerPoints[i], lowerPoints[i+1], upperPoints[i], upperPoints[i+1]);
@@ -112,8 +112,8 @@ public class QuadrangleArea {
         double rightLen = leftTop.distance(leftBottom);
         double leftPartLen = leftLen*cellLength/length;
         double rightPartLen = rightLen*cellLength/length;
-        Vector2d leftPoints[] = GeometryUtils.splitIntoPartsLen(leftBottom, leftTop, leftPartLen);
-        Vector2d rightPoints[] = GeometryUtils.splitIntoPartsLen(rightBottom, rightTop, rightPartLen);
+        Vector2D leftPoints[] = GeometryUtils.splitIntoPartsLen(leftBottom, leftTop, leftPartLen);
+        Vector2D rightPoints[] = GeometryUtils.splitIntoPartsLen(rightBottom, rightTop, rightPartLen);
         //we have to create nParts areas that fulfill criterias of cellLength, and the last one that is smaller
         QuadrangleArea[] areas = new QuadrangleArea[nParts+1];
         for (int i = 0; i < nParts+1; i++){
@@ -122,7 +122,7 @@ public class QuadrangleArea {
         return areas;
     }
 
-    public Vector2d getMiddle(){
+    public Vector2D getMiddle(){
         return GeometryUtils.findLinesCrossing(leftBottom, rightTop, rightBottom, leftTop);
     }
 

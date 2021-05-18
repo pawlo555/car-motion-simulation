@@ -1,14 +1,14 @@
 import Utilities.QuadrangleArea;
-import Utilities.Vector2d;
+import Utilities.Vector2D;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class QuadrangleAreaTest {
-    QuadrangleArea testArea = new QuadrangleArea(new Vector2d(0,0), new Vector2d(3,0),
-                                                 new Vector2d(0,5), new Vector2d(3,5));
-    QuadrangleArea testArea1 = new QuadrangleArea(new Vector2d(0,2), new Vector2d(3,0),
-                                                  new Vector2d(0,5), new Vector2d(3,5));
+    QuadrangleArea testArea = new QuadrangleArea(new Vector2D(0,0), new Vector2D(3,0),
+                                                 new Vector2D(0,5), new Vector2D(3,5));
+    QuadrangleArea testArea1 = new QuadrangleArea(new Vector2D(0,2), new Vector2D(3,0),
+                                                  new Vector2D(0,5), new Vector2D(3,5));
 
     @Test
     public void testRectDecomposition(){
