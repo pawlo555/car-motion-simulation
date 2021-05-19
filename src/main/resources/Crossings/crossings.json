@@ -1,0 +1,80 @@
+{
+  "Crossings": [
+    {
+      "name": "Rondo Grzegorzeckie",
+      "positionOnMap": {
+        "zoom14": {
+          "horizontal": 1,
+          "vertical": 1
+        },
+        "zoom15": {
+          "horizontal": 2,
+          "vertical": 2
+        },
+        "zoom16": {
+          "horizontal": 4,
+          "vertical": 4
+        },
+        "zoom17": {
+          "horizontal": 8,
+          "vertical": 8
+        },
+        "zoom18": {
+          "horizontal": 16,
+          "vertical": 16
+        }
+      },
+      "Entrances": [
+        {
+          "name": "Aleja Pokoju",
+          "flow": 90,
+          "maxSpeed": 50,
+          "busProbability": 0.01,
+          "coordinates": {
+            "x": 40,
+            "y": 40
+          }
+        },
+        {
+          "name": "Grzegórzecka",
+          "flow": 90,
+          "maxSpeed": 50,
+          "busProbability": 0.01,
+          "coordinates": {
+            "x": 40,
+            "y": 40
+          }
+        }
+      ],
+      "Exits": [
+        {
+          "name": "Aleja Pokoju",
+          "coordinates": {
+            "x": 40,
+            "y": 40
+          }
+        },
+        {
+          "name": "Grzegórzecka",
+          "coordinates": {
+            "x": 40,
+            "y": 40
+          }
+        }
+      ]
+    },
+    {
+      "name": "Most Grunwaldzki"
+    }
+  ],
+  "Roads": [
+    {
+      "x": 1,
+      "y": 0
+    },
+    {
+      "x": 1,
+      "y": 0
+    }
+  ]
+}
