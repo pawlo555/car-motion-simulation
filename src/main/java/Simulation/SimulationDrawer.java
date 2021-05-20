@@ -106,7 +106,7 @@ public class SimulationDrawer extends Canvas {
     private void paintCar(GraphicsContext gc, AbstractVehicle car) {
         double radius = 2 / Math.pow(2, getCurrentZoomLevel());
         Vector2D carPosition = car.getPosition();
-        gc.fillOval(carPosition.getHorizontal()-radius, carPosition.getVertical()-radius, radius, radius);
+        gc.fillOval(carPosition.getX()-radius, carPosition.getY()-radius, radius, radius);
     }
 
     public int getCurrentHorizontalTile() {
