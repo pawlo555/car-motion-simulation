@@ -1,6 +1,9 @@
 package Objects;
 
+import Utilities.PointType;
 import Utilities.QuadrangleArea;
+
+import java.util.ArrayList;
 
 public class Line {
     private QuadrangleArea lane;
@@ -19,12 +22,30 @@ public class Line {
         cells = new Point[points.length];
         for (int i = 0; i < points.length; i++){
             cells[i] = new Point(points[i].getMiddle());
+            if (i == 0)
+                cells[i].setType(PointType.SIMULATION_ENTRY);
+            else if (i == points.length-1)
+                cells[i].setType(PointType.SIMULATION_EXIT);
         }
 
     }
 
     public Point[] getCells(){
         return cells;
+    }
+
+    public Point getEntry(){
+        if (cells[0].getType() == PointType.SIMULATION_ENTRY)
+            return cells[0];
+        else
+            return null;
+    }
+
+    public Point getExit(){
+        if (cells[cells.length-1].getType() == PointType.SIMULATION_EXIT)
+            return cells[cells.length-1];
+        else
+            return null;
     }
 
     public QuadrangleArea getArea(){

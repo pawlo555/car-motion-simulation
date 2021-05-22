@@ -1,7 +1,9 @@
 package Vehicles;
 
+import Objects.Point;
+
 public class Car extends AbstractVehicle{
-    public Car() {
-        super(2, 5);
+    public Car(Point point) {
+        super(1, point);
     }
 }

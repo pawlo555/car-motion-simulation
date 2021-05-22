@@ -8,6 +8,7 @@ import Utilities.QuadrangleArea;
 import Utilities.Vector2D;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 
@@ -146,6 +147,26 @@ public class StraightRoad {
 
     public Line[] getLanes(){
         return road;
+    }
+
+    public ArrayList<Point> getEntries(){
+        ArrayList<Point> entries = new ArrayList<>();
+        for (Line lane : road){
+            Point entry = lane.getEntry();
+            if (entry != null)
+                entries.add(entry);
+        }
+        return entries;
+    }
+
+    public ArrayList<Point> getExits(){
+        ArrayList<Point> exits = new ArrayList<>();
+        for (Line lane : road){
+            Point exit = lane.getExit();
+            if (exit != null)
+                exits.add(exit);
+        }
+        return exits;
     }
 
 }
