@@ -7,7 +7,6 @@ import Utilities.GeometryUtils;
 import Utilities.QuadrangleArea;
 import Utilities.Vector2D;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
