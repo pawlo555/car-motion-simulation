@@ -66,7 +66,7 @@ public class StraightRoadTest {
 
     @Test
     public void EntriesTest(){
-        QuadrangleArea randomArea = new QuadrangleArea(new Vector2d(120,0), new Vector2d(135, 30), new Vector2d(0,150), new Vector2d(15,190));
+        QuadrangleArea randomArea = new QuadrangleArea(new Vector2D(120,0), new Vector2D(135, 30), new Vector2D(0,150), new Vector2D(15,190));
         StraightRoad testRandomRoad = new StraightRoad(2, randomArea);
         for (Point point : testRandomRoad.getEntries()){
             System.out.println(point+" is entry.");
@@ -75,7 +75,7 @@ public class StraightRoadTest {
 
     @Test
     public void ExitsTest(){
-        QuadrangleArea randomArea = new QuadrangleArea(new Vector2d(120,0), new Vector2d(135, 30), new Vector2d(0,150), new Vector2d(15,190));
+        QuadrangleArea randomArea = new QuadrangleArea(new Vector2D(120,0), new Vector2D(135, 30), new Vector2D(0,150), new Vector2D(15,190));
         StraightRoad testRandomRoad = new StraightRoad(2, randomArea);
         for (Point point : testRandomRoad.getExits()){
             System.out.println(point+" is exit.");

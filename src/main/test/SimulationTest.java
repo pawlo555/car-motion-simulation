@@ -2,7 +2,7 @@ import Objects.Line;
 import Objects.Point;
 import Objects.StraightRoad;
 import Utilities.QuadrangleArea;
-import Utilities.Vector2d;
+import Utilities.Vector2D;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ public class SimulationTest {
 
     @Before
     public void init(){
-        QuadrangleArea area = new QuadrangleArea(new Vector2d(120,0), new Vector2d(135, 30), new Vector2d(0,150), new Vector2d(15,190));
+        QuadrangleArea area = new QuadrangleArea(new Vector2D(120,0), new Vector2D(135, 30), new Vector2D(0,150), new Vector2D(15,190));
         StraightRoad road = new StraightRoad(2, area);
         simulation = new TestSimulation(road);
         for (Line lane : road.getLanes()){
