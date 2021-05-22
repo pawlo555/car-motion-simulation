@@ -3,6 +3,7 @@ import Objects.StraightRoad;
 import Utilities.MoveHelper;
 import Utilities.VehicleObserver;
 import Vehicles.AbstractVehicle;
+import Vehicles.Bus;
 import Vehicles.Car;
 
 import java.util.ArrayList;
@@ -54,13 +55,26 @@ public class TestSimulation implements VehicleObserver {
         Point entry = entries.get(index);
         AbstractVehicle vehicle = new Car(entry);
         vehicles.add(vehicle);
+        System.out.println(vehicle+" has been added");
+        vehicle.addObserver(this);
+
+    }
+
+    public void spawnBus(){
+        ArrayList<Point> entries = road.getEntries();
+        int size = entries.size();
+        int index = (int)(Math.random()*(size));
+        Point entry = entries.get(index);
+        AbstractVehicle vehicle = new Bus(entry);
+        vehicles.add(vehicle);
+        System.out.println(vehicle+" has been added");
         vehicle.addObserver(this);
 
     }
 
     @Override
     public void carMoved(AbstractVehicle vehicle) {
-        System.out.println("Vehicle "+vehicle+" moved");
+
     }
 
     @Override

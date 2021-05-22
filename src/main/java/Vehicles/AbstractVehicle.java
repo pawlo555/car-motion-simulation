@@ -10,13 +10,13 @@ import Utilities.VehicleObserver;
 import java.util.ArrayList;
 
 public abstract class AbstractVehicle {
-    private final int length;
-    private final int width = 1;
-    private Point headPoint; //first point that vehicle occupies
-    private ArrayList<Point> tailPoints = new ArrayList<>(); //if vehicle has length > 1
-    private ArrayList<VehicleObserver> observers = new ArrayList<>();
-    private int speed = 0;
-    private boolean moved = false;
+    protected final int length;
+    protected final int width = 1;
+    protected Point headPoint; //first point that vehicle occupies
+    protected ArrayList<Point> tailPoints = new ArrayList<>(); //if vehicle has length > 1
+    protected ArrayList<VehicleObserver> observers = new ArrayList<>();
+    protected int speed = 0;
+    protected boolean moved = false;
 
     public AbstractVehicle(int length, Point headPoint){
         this.length = length;
@@ -122,11 +122,6 @@ public abstract class AbstractVehicle {
     public int getLength(){return length;}
     public Point getHeadPoint(){return headPoint;}
 
-    // TODO make this function get proper values
-    public Vector2D getPosition() {
-        return new Vector2D(5,5);
-    }
-
     @Override
     public String toString() {
         return "AbstractVehicle{" +
@@ -135,4 +130,10 @@ public abstract class AbstractVehicle {
                 ", speed=" + speed +
                 '}';
     }
+
+    // TODO make this function get proper values
+    public Vector2D getPosition() {
+        return new Vector2D(headPoint.getPosition().x,headPoint.getPosition().y);
+    }
+
 }

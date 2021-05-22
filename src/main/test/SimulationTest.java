@@ -3,6 +3,7 @@ import Objects.Point;
 import Objects.StraightRoad;
 import Utilities.QuadrangleArea;
 import Utilities.Vector2D;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,6 +37,28 @@ public class SimulationTest {
         for (int i = 0 ; i < 30; i++){
             if (i == 5)
                 simulation.spawnCar();
+            simulation.iterate();
+            simulation.print();
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void twoCarsTest(){
+        for (int i = 0 ; i < 30; i++){
+            if (i == 5 || i == 7)
+                simulation.spawnCar();
+            simulation.iterate();
+            simulation.print();
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void oneBusTest(){
+        for (int i = 0 ; i < 30; i++){
+            if (i == 5)
+                simulation.spawnBus();
             simulation.iterate();
             simulation.print();
             System.out.println();
