@@ -40,4 +40,16 @@ public class CrossingParser {
     public String getName() {
         return name;
     }
+
+    public int getId(String name) {
+        return 1;
+    }
+
+    public int getHorizontalPosition(String zoom) {
+        return 0;
+    }
+
+    public int getVerticalPosition(String zoom) {
+        return 0;
+    }
 }
