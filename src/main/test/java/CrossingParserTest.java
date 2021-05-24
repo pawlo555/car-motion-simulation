@@ -1,8 +1,9 @@
 import Utilities.CrossingParser;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import java.util.Set;
+
+import static org.junit.Assert.*;
 
 
 public class CrossingParserTest {
@@ -111,6 +112,24 @@ public class CrossingParserTest {
             assertEquals(8, parser.getVerticalPosition("17"));
             assertEquals(9, parser.getHorizontalPosition("18"));
             assertEquals(10, parser.getVerticalPosition("18"));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            exception = true;
+        }
+        assertFalse(exception);
+    }
+
+    @Test
+    public void getEntrancesNamesTest() {
+        boolean exception = false;
+        try {
+            CrossingParser parser = new CrossingParser("src/main/test/resources/testCrossing.json");
+            Set<String> namesSet = parser.getEntrancesNames();
+            assertTrue(namesSet.contains("Sienkiewicza"));
+            assertTrue(namesSet.contains("3-ego Maja"));
+            assertEquals(2, namesSet.size());
+
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
