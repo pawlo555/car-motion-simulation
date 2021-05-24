@@ -4,6 +4,7 @@ import Utilities.PointType;
 import Utilities.QuadrangleArea;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Line {
     private QuadrangleArea lane;
@@ -52,7 +53,14 @@ public class Line {
         return lane;
     }
 
-//    public Line(int x,int y,ArrayList<Integer> ways,int road){
+    @Override
+    public String toString() {
+        return "Line{" +
+                "cells=" + Arrays.toString(cells) +
+                '}';
+    }
+
+    //    public Line(int x,int y,ArrayList<Integer> ways,int road){
 //        this.x = x;
 //        this.y = y;
 //        this.ways = ways;

@@ -51,4 +51,9 @@ public class QuadrangleAreaTest {
                 System.out.println(cells[i][j]);
         }
     }
+
+    @Test
+    public void getMiddleTest(){
+        assertEquals(new Vector2D(1.5, 2.5), testArea.getMiddle());
+    }
 }

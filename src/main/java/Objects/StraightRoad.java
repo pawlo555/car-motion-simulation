@@ -21,13 +21,13 @@ public class StraightRoad {
     private EnumMap<Direction, IRoadComponent> roadNeighbors = new EnumMap<>(Direction.class);
     private QuadrangleArea roadArea;
 
-    //fix length in advance
-    public StraightRoad(int length, int nLanes, QuadrangleArea roadArea){
-        this.nLanes = nLanes;
-        this.length = length;
-        this.roadArea = roadArea;
-        road = new Line[nLanes];
-    }
+//    //fix length in advance
+//    public StraightRoad(int length, int nLanes, QuadrangleArea roadArea){
+//        this.nLanes = nLanes;
+//        this.length = length;
+//        this.roadArea = roadArea;
+//        road = new Line[nLanes];
+//    }
 
     //let road count her length - preferred method
     public StraightRoad(int nLanes, QuadrangleArea roadArea){
@@ -168,4 +168,10 @@ public class StraightRoad {
         return exits;
     }
 
+    @Override
+    public String toString() {
+        return "StraightRoad{" +
+                "road=" + Arrays.toString(road) +
+                '}';
+    }
 }
