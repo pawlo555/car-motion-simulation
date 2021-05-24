@@ -66,12 +66,12 @@ public class CrossingParserTest {
     }
 
     @Test
-    public void maxIdTest() {
+    public void entranceIdTest() {
         boolean exception = false;
         try {
             CrossingParser parser = new CrossingParser("src/main/test/resources/testCrossing.json");
-            assertEquals(1, parser.getId("3-ego Maja"));
-            assertEquals(2, parser.getId("Sienkiewicza"));
+            assertEquals(1, parser.getEntranceId("3-ego Maja"));
+            assertEquals(2, parser.getEntranceId("Sienkiewicza"));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -81,20 +81,36 @@ public class CrossingParserTest {
     }
 
     @Test
+    public void exitIdTest() {
+        boolean exception = false;
+        try {
+            CrossingParser parser = new CrossingParser("src/main/test/resources/testCrossing.json");
+            assertEquals(3, parser.getExitId("3-ego Maja"));
+            assertEquals(4, parser.getExitId("Sienkiewicza"));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            exception = true;
+        }
+        assertFalse(exception);
+    }
+
+
+    @Test
     public void positionOnMapTest() {
         boolean exception = false;
         try {
             CrossingParser parser = new CrossingParser("src/main/test/resources/testCrossing.json");
             assertEquals(1, parser.getHorizontalPosition("14"));
-            assertEquals(2, parser.getHorizontalPosition("14"));
+            assertEquals(2, parser.getVerticalPosition("14"));
             assertEquals(3, parser.getHorizontalPosition("15"));
-            assertEquals(4, parser.getHorizontalPosition("15"));
+            assertEquals(4, parser.getVerticalPosition("15"));
             assertEquals(5, parser.getHorizontalPosition("16"));
-            assertEquals(6, parser.getHorizontalPosition("16"));
+            assertEquals(6, parser.getVerticalPosition("16"));
             assertEquals(7, parser.getHorizontalPosition("17"));
-            assertEquals(8, parser.getHorizontalPosition("17"));
+            assertEquals(8, parser.getVerticalPosition("17"));
             assertEquals(9, parser.getHorizontalPosition("18"));
-            assertEquals(10, parser.getHorizontalPosition("18"));
+            assertEquals(10, parser.getVerticalPosition("18"));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

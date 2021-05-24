@@ -3,49 +3,45 @@
   "positionOnMap": {
     "zoom14": {
       "horizontal": 1,
-      "vertical": 1
-    },
-    "zoom15": {
-      "horizontal": 2,
       "vertical": 2
     },
-    "zoom16": {
-      "horizontal": 4,
+    "zoom15": {
+      "horizontal": 3,
       "vertical": 4
     },
+    "zoom16": {
+      "horizontal": 5,
+      "vertical": 6
+    },
     "zoom17": {
-      "horizontal": 8,
+      "horizontal": 7,
       "vertical": 8
     },
     "zoom18": {
-      "horizontal": 16,
-      "vertical": 16
+      "horizontal": 9,
+      "vertical": 10
     }
   },
-  "Entrances": [
-    {
-      "name": "3-rgo Maja",
+  "Entrances": {
+    "3-ego Maja":{
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     },
-    {
-      "name": "Sienkiewicza",
+    "Sienkiewicza": {
       "flow": 150,
       "maxSpeed": 60,
       "busProbability": 0.1,
       "id": 2
-    }
-  ],
-  "Exits": [
-    {
-      "name": "Sienkiewicza",
-      "id": 3
+}
+},
+  "Exits": {
+    "3-ego Maja": {
+     "id": 3
     },
-    {
-      "name": "3-ego Maja",
+    "Sienkiewicza": {
       "id": 4
     }
-  ]
+  }
 }

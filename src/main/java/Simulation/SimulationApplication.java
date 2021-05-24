@@ -87,7 +87,7 @@ public class SimulationApplication extends javafx.application.Application {
     }
 
     private void loadParameters() throws IOException {
-        FXMLLoader parametersLoader = getLoader("Parameters.fxml");
+        FXMLLoader parametersLoader = getLoader("ParametersBox.fxml");
         parametersBox = parametersLoader.load();
     }
 
