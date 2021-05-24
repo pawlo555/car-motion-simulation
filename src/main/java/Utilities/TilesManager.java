@@ -45,7 +45,6 @@ public class TilesManager {
     }
 
     public static int getHorizontalTilesNumber(int zoom) {
-        System.out.println(getHorizontalFileArray(zoom, 0).length);
         return getHorizontalFileArray(zoom, 0).length;
     }
 }

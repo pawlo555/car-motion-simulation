@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Simulation.Controllers.EntryParametersController"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox>
+        <Label text="Cars per minute:" />
+        <HBox>
+            <Slider fx:id="carsPerMinute"/>
+            <TextField fx:id="carsText" text="50" maxWidth="50"/>
+        </HBox>
+    </VBox>
+    <VBox>
+        <Label text="Bus probability:" />
+        <HBox>
+            <Slider fx:id="busProbability" max="1" majorTickUnit="20" showTickLabels="true"/>
+            <TextField fx:id="probabilityText" text="0.5" maxWidth="50"/>
+        </HBox>
+    </VBox>
+    <VBox>
+        <Label text="Cars max speed:" />
+        <HBox>
+            <Slider fx:id="maxSpeed"/>
+            <TextField fx:id="speedText" text="50" maxWidth="50"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

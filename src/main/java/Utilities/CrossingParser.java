@@ -7,6 +7,9 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class CrossingParser {
     private final JSONObject entrances;
@@ -70,5 +73,9 @@ public class CrossingParser {
         JSONObject zoomValues = (JSONObject) positionOnMap.get("zoom"+zoom);
         long value = (long) zoomValues.get("vertical");
         return (int) value;
+    }
+
+    public Set<String> getEntrancesNames() {
+        return (Set<String>) entrances.keySet();
     }
 }

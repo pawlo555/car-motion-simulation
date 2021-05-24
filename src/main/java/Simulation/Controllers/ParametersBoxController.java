@@ -1,6 +1,6 @@
 package Simulation.Controllers;
 
-public class ParametersController {
+public class ParametersBoxController {
 
     public void selectEntrance() {
 

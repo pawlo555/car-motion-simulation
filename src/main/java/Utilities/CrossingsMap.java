@@ -14,6 +14,7 @@ public class CrossingsMap {
         File[] listFiles = directory.listFiles();
         assert listFiles != null;
         for (File file: listFiles) {
+            System.out.println(file.getAbsolutePath());
             CrossingParser parser = new CrossingParser(file.getAbsolutePath());
             String crossingName = parser.getName();
             map.put(crossingName, file);

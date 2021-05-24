@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
@@ -62,14 +63,14 @@ public class SimulationApplication extends javafx.application.Application {
         statisticsBox.setVisible(false);
     }
 
-    private void loadSimulationElements() throws IOException {
+    private void loadSimulationElements() throws IOException, ParseException {
         loadMap();
         loadMenu();
         loadParameters();
         loadStatistics();
     }
 
-    private void loadMenu() throws IOException {
+    private void loadMenu() throws IOException, ParseException {
         FXMLLoader menuLoader = getLoader("Menu.fxml");
         menuBox = menuLoader.load();
         MenuController menuController = menuLoader.getController();

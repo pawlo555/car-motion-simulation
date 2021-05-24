@@ -22,41 +22,35 @@
       "vertical": 16
     }
   },
-  "Entrances": [
-    {
-    "name": "Mogilska",
-    "flow": 90,
-    "maxSpeed": 50,
-    "busProbability": 0.01,
-    "id": 1
-    },
-    {
-      "name": "Beliny-Prażmowskiego",
+  "Entrances": {
+    "Beliny-Prażmowskiego": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     },
-    {
-      "name": "Lubicz",
+    "Lubicz": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Mogilska": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     }
-  ],
-  "Exits": [
-    {
-      "name": "Mogilska",
+  },
+  "Exits": {
+    "Beliny-Prażmowskiego": {
       "id": 1
     },
-    {
-      "name": "Beliny-Prażmowskiego",
+    "Lubicz": {
       "id": 1
     },
-    {
-      "name": "Lubicz",
+    "Mogilska": {
       "id": 1
     }
-  ]
+  }
 }
