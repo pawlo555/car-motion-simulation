@@ -1,0 +1,13 @@
+{
+  "name": "Most Dębnicki P",
+  "id": 1,
+  "parts": [
+    {
+      "part_id": 1,
+      "leftBottom": [7352.80, 4104.00],
+      "rightBottom": [7348.80, 4109.60],
+      "leftTop": [6749.60, 3806.40],
+      "rightTop": [6745.60, 3812.00]
+    }
+  ]
+}

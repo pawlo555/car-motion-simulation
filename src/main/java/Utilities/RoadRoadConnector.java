@@ -27,13 +27,5 @@ public class RoadRoadConnector {
             entry.setType(PointType.NORMAL);
         }
 
-        System.out.println("After connection");
-        for (Point exit : exits){
-            System.out.println(exit);
-        }
-        for (Point entry : exits){
-            System.out.println(entry);
-        }
-
     }
 }

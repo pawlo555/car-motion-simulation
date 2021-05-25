@@ -33,6 +33,8 @@ public class MoveHelper {
         Point neighbor = point;
         for (int i = 1; i <= range; i++){
             neighbor = neighbor.getNeighbor(Direction.FRONT);
+            if (neighbor.getType() == PointType.SIMULATION_EXIT)
+                break;
             if (neighbor == null)
                 throw new NullPointerException("Point doesn't have neighbor in front direction");
             if (neighbor.hasVehicle())
