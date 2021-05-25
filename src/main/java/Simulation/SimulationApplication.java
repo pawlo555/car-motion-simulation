@@ -2,6 +2,7 @@ package Simulation;
 
 import Simulation.Controllers.MapController;
 import Simulation.Controllers.MenuController;
+import Simulation.Controllers.ParametersController;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -64,32 +65,38 @@ public class SimulationApplication extends javafx.application.Application {
     }
 
     private void loadSimulationElements() throws IOException, ParseException {
-        loadMap();
-        loadMenu();
-        loadParameters();
+        MapController mapController = loadMap();
+        MenuController menuController = loadMenu();
+        ParametersController parametersController = loadParameters();
         loadStatistics();
+
+        menuController.setParametersController(parametersController);
     }
 
-    private void loadMenu() throws IOException, ParseException {
+    private MenuController loadMenu() throws IOException, ParseException {
         FXMLLoader menuLoader = getLoader("Menu.fxml");
         menuBox = menuLoader.load();
         MenuController menuController = menuLoader.getController();
         menuController.setApplication(this);
         menuController.setEngine(new SimulationEngine());
         menuController.addCrossings();
+        return menuController;
     }
 
-    private void loadMap() throws IOException {
+    private MapController loadMap() throws IOException {
         FXMLLoader mapLoader = getLoader("Map.fxml");
         mapPane = mapLoader.load();
         MapController controller = mapLoader.getController();
         controller.getSimulationDrawer().initializeMap();
-        mapPane.setOnMouseMoved(controller::onMouseMoved);
+
+        return controller;
     }
 
-    private void loadParameters() throws IOException {
-        FXMLLoader parametersLoader = getLoader("ParametersBox.fxml");
+    private ParametersController loadParameters() throws IOException {
+        FXMLLoader parametersLoader = getLoader("Parameters.fxml");
         parametersBox = parametersLoader.load();
+
+        return parametersLoader.getController();
     }
 
     private void loadStatistics() throws IOException {

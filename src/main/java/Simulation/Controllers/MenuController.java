@@ -26,6 +26,7 @@ public class MenuController {
 
     private SimulationEngine engine;
     private SimulationApplication application;
+    private ParametersController parametersController;
 
     public void stopPressed() {
         timeline.pause();
@@ -68,9 +69,10 @@ public class MenuController {
         placeName.setText(newPlace);
     }
 
-    public void itemClicked() {
+    public void itemClicked() throws IOException, ParseException {
         System.out.println("Click");
         String clickedName = placesNames.getSelectionModel().getSelectedItem();
+        parametersController.addEntrances(clickedName);
         setPlaceName(clickedName);
     }
 
@@ -110,5 +112,9 @@ public class MenuController {
         int epoch = Integer.parseInt(currentEpochLabel.getText());
         epoch = epoch + 1;
         currentEpochLabel.setText(String.valueOf(epoch));
+    }
+
+    public void setParametersController(ParametersController controller) {
+        parametersController = controller;
     }
 }

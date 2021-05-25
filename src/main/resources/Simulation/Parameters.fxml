@@ -3,10 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Simulation.Controllers.EntryParametersController"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="Simulation.Controllers.ParametersController"
+            prefHeight="600.0" prefWidth="300.0"
+            layoutX="940" layoutY="80">
+    <Label text="Parameters" />
+    <ComboBox fx:id="entrances" onAction="#selectEntrance" promptText="Crossings"/>
     <VBox>
         <Label text="Cars per minute:" />
         <HBox>
@@ -28,4 +31,4 @@
             <TextField fx:id="speedText" text="50" maxWidth="50"/>
         </HBox>
     </VBox>
-</AnchorPane>
+</VBox>
