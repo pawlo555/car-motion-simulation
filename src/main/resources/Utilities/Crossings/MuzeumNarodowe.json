@@ -1,5 +1,5 @@
 {
-  "name": "Rondo Mogilskie",
+  "name": "Muzeum Narodowe",
   "positionOnMap": {
     "zoom14": {
       "horizontal": 1,
@@ -22,41 +22,26 @@
       "vertical": 16
     }
   },
-  "Entrances": [
-    {
-    "name": "Mogilska",
-    "flow": 90,
-    "maxSpeed": 50,
-    "busProbability": 0.01,
-    "id": 1
-    },
-    {
-      "name": "Beliny-Prażmowskiego",
+  "Entrances": {
+    "Focha": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     },
-    {
-      "name": "Lubicz",
+    "Piłsudskiego": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     }
-  ],
-  "Exits": [
-    {
-      "name": "Mogilska",
+  },
+  "Exits": {
+    "Focha": {
       "id": 1
     },
-    {
-      "name": "Beliny-Prażmowskiego",
-      "id": 1
-    },
-    {
-      "name": "Lubicz",
+    "Piłsudskiego": {
       "id": 1
     }
-  ]
+  }
 }

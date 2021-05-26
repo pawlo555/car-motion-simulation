@@ -2,14 +2,17 @@ package Simulation.Controllers;
 
 import Simulation.SimulationApplication;
 import Simulation.SimulationEngine;
+import Utilities.CrossingsMap;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Duration;
+import org.json.simple.parser.ParseException;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -23,6 +26,7 @@ public class MenuController {
 
     private SimulationEngine engine;
     private SimulationApplication application;
+    private ParametersController parametersController;
 
     public void stopPressed() {
         timeline.pause();
@@ -65,27 +69,18 @@ public class MenuController {
         placeName.setText(newPlace);
     }
 
-    public void itemClicked() {
+    public void itemClicked() throws IOException, ParseException {
         System.out.println("Click");
         String clickedName = placesNames.getSelectionModel().getSelectedItem();
+        parametersController.addEntrances(clickedName);
         setPlaceName(clickedName);
     }
 
-    @FXML
-    public void addCrossings() {
-        File directory = new File("resources/Crossings");
-        System.out.println(directory);
-        if (directory.list() != null) {
-            System.out.println(Arrays.toString(directory.list()));
-            String[] list = Arrays.stream(Objects.requireNonNull(directory.list())).map(this::changeName).toArray(String[]::new);
-            placesNames.getItems().addAll(list);
-        }
-    }
-
-    public String changeName(String name) {
-        name=name.substring(0,name.length()-4);
-        name=name.replaceAll("(?<!_)(?=[A-Z])", " ");
-        return name;
+    public void addCrossings() throws IOException, ParseException {
+        CrossingsMap map = new CrossingsMap("src/main/resources/Utilities/Crossings");
+        System.out.println("Crossings:");
+        System.out.println(map.getCrossingNames());
+        placesNames.getItems().addAll(map.getCrossingNames());
     }
 
     private void changeSpeed(int milliSeconds) {
@@ -117,5 +112,9 @@ public class MenuController {
         int epoch = Integer.parseInt(currentEpochLabel.getText());
         epoch = epoch + 1;
         currentEpochLabel.setText(String.valueOf(epoch));
+    }
+
+    public void setParametersController(ParametersController controller) {
+        parametersController = controller;
     }
 }

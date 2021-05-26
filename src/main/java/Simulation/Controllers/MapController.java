@@ -51,7 +51,6 @@ public class MapController {
 
     private void setPositionLabel(double x, double y) {
         double zoomLevelFactor = Math.pow(2.0, drawer.getCurrentZoomLevel());
-        System.out.println(zoomLevelFactor);
         double globalX = drawer.getCurrentHorizontalTile()*256*zoomLevelFactor+x*zoomLevelFactor;
         double globalY = drawer.getCurrentVerticalTile()*256*zoomLevelFactor+y*zoomLevelFactor;
 

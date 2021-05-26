@@ -20,3 +20,7 @@ MapVBox {
 Pane {
     -fx-border-color: blue;
 }
+
+Slider {
+    -fx-border-color: grey;
+}

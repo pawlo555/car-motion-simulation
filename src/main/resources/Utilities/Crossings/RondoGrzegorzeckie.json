@@ -1,5 +1,5 @@
 {
-  "name": "Rondo Grzegorzeckie",
+  "name": "Rondo Grzegórzeckie",
   "positionOnMap": {
     "zoom14": {
       "horizontal": 1,
@@ -22,30 +22,26 @@
       "vertical": 16
     }
   },
-  "Entrances": [
-    {
-      "name": "Aleja Pokoju",
+  "Entrances": {
+    "Aleja Pokoju": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     },
-    {
-      "name": "Grzegórzecka",
+    "Grzegórzecka": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     }
-  ],
-  "Exits": [
-    {
-      "name": "Aleja Pokoju",
+  },
+  "Exits": {
+    "Aleja Pokoju": {
       "id": 1
     },
-    {
-      "name": "Grzegórzecka",
+    "Grzegórzecka": {
       "id": 1
     }
-  ]
+  }
 }

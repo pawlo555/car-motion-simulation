@@ -22,30 +22,35 @@
       "vertical": 16
     }
   },
-  "Entrances": [
-    {
-      "name": "Focha",
+  "Entrances": {
+    "Beliny-Prażmowskiego": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     },
-    {
-      "name": "Piłsudskiego",
+    "Lubicz": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Mogilska": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     }
-  ],
-  "Exits": [
-    {
-      "name": "Focha",
+  },
+  "Exits": {
+    "Beliny-Prażmowskiego": {
       "id": 1
     },
-    {
-      "name": "Piłsudskiego",
+    "Lubicz": {
+      "id": 1
+    },
+    "Mogilska": {
       "id": 1
     }
-  ]
+  }
 }
