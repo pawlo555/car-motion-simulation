@@ -6,8 +6,8 @@
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="Simulation.Controllers.ParametersController"
-            prefHeight="600.0" prefWidth="300.0"
-            layoutX="940" layoutY="80">
+            prefHeight="600.0" prefWidth="400.0"
+            layoutX="840" layoutY="80">
     <Label text="Parameters" />
     <ComboBox fx:id="entrances" onAction="#selectEntrance" promptText="Crossings"/>
     <VBox>
@@ -20,7 +20,7 @@
     <VBox>
         <Label text="Bus probability:" />
         <HBox>
-            <Slider fx:id="busProbability" max="1" majorTickUnit="20" showTickLabels="true"/>
+            <Slider fx:id="busProbability" max="1" majorTickUnit="0.1" minorTickCount="2" showTickMarks="true"/>
             <TextField fx:id="probabilityText" text="0.5" maxWidth="50"/>
         </HBox>
     </VBox>
@@ -31,4 +31,5 @@
             <TextField fx:id="speedText" text="50" maxWidth="50"/>
         </HBox>
     </VBox>
+    <Button text="Save" onAction="#saveAllParameters"/>
 </VBox>

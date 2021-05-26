@@ -129,7 +129,6 @@ public class CrossingParserTest {
             assertTrue(namesSet.contains("Sienkiewicza"));
             assertTrue(namesSet.contains("3-ego Maja"));
             assertEquals(2, namesSet.size());
-
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

@@ -1,6 +1,9 @@
 package Simulation.Controllers;
 
 import Utilities.CrossingParser;
+import Utilities.EntrancesParametersManager;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
@@ -9,7 +12,6 @@ import javafx.scene.control.TextField;
 import Utilities.CrossingsMap;
 import org.json.simple.parser.ParseException;
 
-import java.io.File;
 import java.io.IOException;
 
 public class ParametersController {
@@ -23,6 +25,22 @@ public class ParametersController {
     @FXML private TextField speedText;
 
     @FXML private ComboBox<String> entrances;
+
+    private EntrancesParametersManager parametersManager;
+
+    @FXML
+    public void initialize() {
+        try {
+            parametersManager = new EntrancesParametersManager();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("EntrancesParametersManager cannot be initialize.");
+        }
+        System.out.println("Params initiation");
+        busProbability.valueProperty().addListener((observableValue, number, t1) -> parametersManager.changeBusProbability(entrances.getSelectionModel().getSelectedItem(), (Double) t1));
+    }
+
 
     private CrossingParser parser;
 
@@ -52,6 +70,10 @@ public class ParametersController {
     }
 
     public void getEntrances() {
+
+    }
+
+    public void saveAllParameters() {
 
     }
 }
