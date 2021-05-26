@@ -27,4 +27,15 @@ public class EntrancesParametersManager {
         entrances.get(entranceName).changeMaxSpeed(newMaxSpeed);
     }
 
+    public int getFlow(String entranceName) {
+        return entrances.get(entranceName).getFlow();
+    }
+
+    public double getBusProbability(String entranceName) {
+        return entrances.get(entranceName).getBusProbability();
+    }
+
+    public int getMaxSpeed(String entranceName) {
+        return entrances.get(entranceName).getMaxSpeed();
+    }
 }

@@ -29,11 +29,22 @@ public class EntranceParameters {
     }
 
     public void changeBusProbability(double newBusProbability) {
-        System.out.println("Changing bus probability\n");
         busProbability = newBusProbability;
     }
     public void changeMaxSpeed(int newMaxSpeed) {
         maxSpeed = newMaxSpeed;
+    }
+
+    public double getBusProbability() {
+        return busProbability;
+    }
+
+    public int getFlow() {
+        return flow;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
     }
 
     public ArrayList<AbstractVehicle> nextEpoch(int maxSize) {

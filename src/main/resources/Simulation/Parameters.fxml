@@ -13,22 +13,22 @@
     <VBox>
         <Label text="Cars per minute:" />
         <HBox>
-            <Slider fx:id="carsPerMinute"/>
-            <TextField fx:id="carsText" text="50" maxWidth="50"/>
+            <Slider fx:id="carsPerMinute" max="1000" majorTickUnit="100" minorTickCount="2" showTickMarks="true" disable="true"/>
+            <TextField fx:id="carsText" text="50" maxWidth="50" onAction="#flowSet"/>
         </HBox>
     </VBox>
     <VBox>
         <Label text="Bus probability:" />
         <HBox>
-            <Slider fx:id="busProbability" max="1" majorTickUnit="0.1" minorTickCount="2" showTickMarks="true"/>
-            <TextField fx:id="probabilityText" text="0.5" maxWidth="50"/>
+            <Slider fx:id="busProbability" max="1" majorTickUnit="0.1" minorTickCount="2" showTickMarks="true" disable="true"/>
+            <TextField fx:id="probabilityText" text="0.5" maxWidth="50" onAction="#busProbabilitySet"/>
         </HBox>
     </VBox>
     <VBox>
         <Label text="Cars max speed:" />
         <HBox>
-            <Slider fx:id="maxSpeed"/>
-            <TextField fx:id="speedText" text="50" maxWidth="50"/>
+            <Slider fx:id="maxSpeed" majorTickUnit="10" minorTickCount="2" showTickMarks="true" disable="true"/>
+            <TextField fx:id="speedText" text="50" maxWidth="50" onAction="#maxSpeedSet"/>
         </HBox>
     </VBox>
     <Button text="Save" onAction="#saveAllParameters"/>
