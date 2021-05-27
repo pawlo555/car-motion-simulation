@@ -3,9 +3,12 @@ package Simulation;
 import Simulation.Controllers.MapController;
 import Simulation.Controllers.MenuController;
 import Simulation.Controllers.ParametersController;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -21,6 +24,8 @@ public class SimulationApplication extends javafx.application.Application {
     private VBox statisticsBox;
     private VBox parametersBox;
 
+    private MapController controller;
+
     @Override
     public void start(Stage stage) throws Exception {
         loadSimulationElements();
@@ -35,6 +40,7 @@ public class SimulationApplication extends javafx.application.Application {
         Scene scene = new Scene(group, 1280, 720);
         scene.getStylesheets().add(String.valueOf(getClass().getResource("SimulationStyle.css")));
         stage.setTitle("Simulation");
+        addKeyboardEvents(scene);
         stage.setScene(scene);
         stage.show();
     }
@@ -84,7 +90,7 @@ public class SimulationApplication extends javafx.application.Application {
     private MapController loadMap() throws IOException {
         FXMLLoader mapLoader = getLoader("Map.fxml");
         mapPane = mapLoader.load();
-        MapController controller = mapLoader.getController();
+        controller = mapLoader.getController();
         controller.getSimulationDrawer().initializeMap();
 
         return controller;
@@ -100,5 +106,25 @@ public class SimulationApplication extends javafx.application.Application {
     private void loadStatistics() throws IOException {
         FXMLLoader parametersLoader = getLoader("Statistics.fxml");
         statisticsBox = parametersLoader.load();
+    }
+
+    public void addKeyboardEvents(Scene scene) {
+        scene.addEventFilter(KeyEvent.KEY_PRESSED, ke -> {
+            if (ke.getEventType() == KeyEvent.KEY_PRESSED) {
+                if (ke.getCode() == KeyCode.LEFT) {
+                    controller.westPressed();
+                }
+                else if (ke.getCode() == KeyCode.RIGHT) {
+                    controller.eastPressed();
+                }
+                else if (ke.getCode() == KeyCode.UP) {
+                    controller.northPressed();
+                }
+                else if (ke.getCode() == KeyCode.DOWN) {
+                    controller.southPressed();
+                }
+            }
+            ke.consume();
+        });
     }
 }

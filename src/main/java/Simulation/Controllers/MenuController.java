@@ -8,6 +8,8 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 import org.json.simple.parser.ParseException;
 
@@ -124,4 +126,6 @@ public class MenuController {
     public void setMapController(MapController controller) {
         mapController = controller;
     }
+
+
 }
