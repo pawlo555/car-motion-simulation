@@ -27,6 +27,7 @@ public class MenuController {
     private SimulationEngine engine;
     private SimulationApplication application;
     private ParametersController parametersController;
+    private MapController mapController;
 
     public void stopPressed() {
         timeline.pause();
@@ -73,6 +74,8 @@ public class MenuController {
         System.out.println("Click");
         String clickedName = placesNames.getSelectionModel().getSelectedItem();
         parametersController.addEntrances(clickedName);
+        CrossingsMap map = new CrossingsMap("src/main/resources/Utilities/Crossings");
+        mapController.crossingSet(map.getCrossingFile(clickedName));
         setPlaceName(clickedName);
     }
 
@@ -116,5 +119,9 @@ public class MenuController {
 
     public void setParametersController(ParametersController controller) {
         parametersController = controller;
+    }
+
+    public void setMapController(MapController controller) {
+        mapController = controller;
     }
 }

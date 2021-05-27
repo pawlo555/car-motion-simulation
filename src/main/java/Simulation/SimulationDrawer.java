@@ -1,5 +1,6 @@
 package Simulation;
 
+import Utilities.CrossingParser;
 import Utilities.TilesInfo;
 import Utilities.Vector2D;
 import Vehicles.AbstractVehicle;
@@ -131,5 +132,12 @@ public class SimulationDrawer extends Canvas {
         double horizontal = (currentHorizontalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
         double vertical = (currentVerticalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
         return new Vector2D(horizontal, vertical);
+    }
+
+    public void setCurrentTiles(CrossingParser parser) {
+
+        currentHorizontalTile = parser.getHorizontalPosition(Integer.toString(currentZoom));
+        currentVerticalTile = parser.getVerticalPosition(Integer.toString(currentZoom));
+        paintBackground();
     }
 }

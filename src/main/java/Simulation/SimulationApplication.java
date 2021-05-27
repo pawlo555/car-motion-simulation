@@ -68,6 +68,7 @@ public class SimulationApplication extends javafx.application.Application {
         loadStatistics();
 
         menuController.setParametersController(parametersController);
+        menuController.setMapController(mapController);
     }
 
     private MenuController loadMenu() throws IOException, ParseException {
