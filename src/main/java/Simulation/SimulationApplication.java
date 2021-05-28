@@ -92,7 +92,7 @@ public class SimulationApplication extends javafx.application.Application {
         mapPane = mapLoader.load();
         controller = mapLoader.getController();
         controller.getSimulationDrawer().initializeMap();
-
+        mapPane.setOnMouseMoved(mouseEvent -> controller.onMouseMoved(mouseEvent));
         return controller;
     }
 
