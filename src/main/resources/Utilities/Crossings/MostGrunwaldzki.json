@@ -2,24 +2,24 @@
   "name": "Most Grunwaldzki",
   "positionOnMap": {
     "zoom14": {
-      "horizontal": 1,
+      "horizontal": 0,
       "vertical": 1
     },
     "zoom15": {
-      "horizontal": 2,
-      "vertical": 2
+      "horizontal": 1,
+      "vertical": 3
     },
     "zoom16": {
-      "horizontal": 4,
-      "vertical": 4
+      "horizontal": 3,
+      "vertical": 7
     },
     "zoom17": {
       "horizontal": 8,
-      "vertical": 8
+      "vertical": 15
     },
     "zoom18": {
-      "horizontal": 16,
-      "vertical": 16
+      "horizontal": 17,
+      "vertical": 32
     }
   },
   "Entrances": {

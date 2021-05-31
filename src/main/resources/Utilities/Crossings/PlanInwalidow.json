@@ -2,24 +2,24 @@
   "name": "Plan inwalidów",
   "positionOnMap": {
     "zoom14": {
+      "horizontal": 0,
+      "vertical": 0
+    },
+    "zoom15": {
       "horizontal": 1,
       "vertical": 1
     },
-    "zoom15": {
-      "horizontal": 2,
+    "zoom16": {
+      "horizontal": 3,
       "vertical": 2
     },
-    "zoom16": {
-      "horizontal": 4,
+    "zoom17": {
+      "horizontal": 6,
       "vertical": 4
     },
-    "zoom17": {
-      "horizontal": 8,
-      "vertical": 8
-    },
     "zoom18": {
-      "horizontal": 16,
-      "vertical": 16
+      "horizontal": 12,
+      "vertical": 9
     }
   },
   "Entrances": {

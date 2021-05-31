@@ -3,23 +3,23 @@
   "positionOnMap": {
     "zoom14": {
       "horizontal": 1,
-      "vertical": 1
+      "vertical": 0
     },
     "zoom15": {
       "horizontal": 2,
-      "vertical": 2
+      "vertical": 0
     },
     "zoom16": {
-      "horizontal": 4,
-      "vertical": 4
+      "horizontal": 6,
+      "vertical": 0
     },
     "zoom17": {
-      "horizontal": 8,
-      "vertical": 8
+      "horizontal": 13,
+      "vertical": 0
     },
     "zoom18": {
-      "horizontal": 16,
-      "vertical": 16
+      "horizontal": 27,
+      "vertical": 2
     }
   },
   "Entrances": {

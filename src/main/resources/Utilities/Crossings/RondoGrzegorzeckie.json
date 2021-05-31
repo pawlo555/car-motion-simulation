@@ -1,26 +1,26 @@
 {
   "name": "Rondo Grzegórzeckie",
   "positionOnMap": {
-    "zoom14": {
-      "horizontal": 1,
-      "vertical": 1
-    },
-    "zoom15": {
-      "horizontal": 2,
-      "vertical": 2
-    },
-    "zoom16": {
-      "horizontal": 4,
-      "vertical": 4
-    },
-    "zoom17": {
-      "horizontal": 8,
-      "vertical": 8
-    },
-    "zoom18": {
-      "horizontal": 16,
-      "vertical": 16
-    }
+      "zoom14": {
+        "horizontal": 1,
+        "vertical": 1
+      },
+      "zoom15": {
+        "horizontal": 2,
+        "vertical": 2
+      },
+      "zoom16": {
+        "horizontal": 5,
+        "vertical": 5
+      },
+      "zoom17": {
+        "horizontal": 17,
+        "vertical": 11
+      },
+      "zoom18": {
+        "horizontal": 36,
+        "vertical": 22
+      }
   },
   "Entrances": {
     "Aleja Pokoju": {
