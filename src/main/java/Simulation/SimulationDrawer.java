@@ -24,9 +24,9 @@ public class SimulationDrawer extends Canvas {
         System.out.println("Zooming in");
         if (currentZoom < TilesInfo.LastZoomNumber) {
             currentZoom = currentZoom + 1;
-            paintBackground();
             currentVerticalTile = currentVerticalTile*2;
             currentHorizontalTile = currentHorizontalTile*2;
+            paintBackground();
         }
     }
 
@@ -34,9 +34,9 @@ public class SimulationDrawer extends Canvas {
         System.out.println("Zooming out");
         if (currentZoom > TilesInfo.FirstZoomNumber) {
             currentZoom = currentZoom - 1;
-            paintBackground();
             currentVerticalTile = currentVerticalTile/2;
             currentHorizontalTile = currentHorizontalTile/2;
+            paintBackground();
         }
     }
 
