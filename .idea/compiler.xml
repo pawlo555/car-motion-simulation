@@ -16,11 +16,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Car-Motion_Simulation" />
         <module name="Car-Motion-Simulation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Car-Motion-Simulation" target="11" />
+      <module name="Car-Motion_Simulation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

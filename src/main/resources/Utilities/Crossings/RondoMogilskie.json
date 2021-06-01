@@ -1,0 +1,56 @@
+{
+  "name": "Rondo Mogilskie",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 1,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 3,
+      "vertical": 1
+    },
+    "zoom16": {
+      "horizontal": 8,
+      "vertical": 3
+    },
+    "zoom17": {
+      "horizontal": 17,
+      "vertical": 6
+    },
+    "zoom18": {
+      "horizontal": 37,
+      "vertical": 13
+    }
+  },
+  "Entrances": {
+    "Beliny-Prażmowskiego": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Lubicz": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Mogilska": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "Beliny-Prażmowskiego": {
+      "id": 1
+    },
+    "Lubicz": {
+      "id": 1
+    },
+    "Mogilska": {
+      "id": 1
+    }
+  }
+}

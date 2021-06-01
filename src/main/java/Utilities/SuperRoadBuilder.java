@@ -2,7 +2,6 @@ package Utilities;
 
 import Objects.StraightRoad;
 import Objects.SuperRoad;
-import org.json.JSONObject;
 
 public class SuperRoadBuilder {
     private SuperRoad superRoad = new SuperRoad();

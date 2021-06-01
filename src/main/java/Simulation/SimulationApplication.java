@@ -2,16 +2,18 @@ package Simulation;
 
 import Simulation.Controllers.MapController;
 import Simulation.Controllers.MenuController;
-import javafx.event.Event;
+import Simulation.Controllers.ParametersController;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
@@ -21,6 +23,8 @@ public class SimulationApplication extends javafx.application.Application {
     private HBox menuBox;
     private VBox statisticsBox;
     private VBox parametersBox;
+
+    private MapController controller;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -36,6 +40,7 @@ public class SimulationApplication extends javafx.application.Application {
         Scene scene = new Scene(group, 1280, 720);
         scene.getStylesheets().add(String.valueOf(getClass().getResource("SimulationStyle.css")));
         stage.setTitle("Simulation");
+        addKeyboardEvents(scene);
         stage.setScene(scene);
         stage.show();
     }
@@ -62,37 +67,64 @@ public class SimulationApplication extends javafx.application.Application {
         statisticsBox.setVisible(false);
     }
 
-    private void loadSimulationElements() throws IOException {
-        loadMap();
-        loadMenu();
-        loadParameters();
+    private void loadSimulationElements() throws IOException, ParseException {
+        MapController mapController = loadMap();
+        MenuController menuController = loadMenu();
+        ParametersController parametersController = loadParameters();
         loadStatistics();
+
+        menuController.setParametersController(parametersController);
+        menuController.setMapController(mapController);
     }
 
-    private void loadMenu() throws IOException {
+    private MenuController loadMenu() throws IOException, ParseException {
         FXMLLoader menuLoader = getLoader("Menu.fxml");
         menuBox = menuLoader.load();
         MenuController menuController = menuLoader.getController();
         menuController.setApplication(this);
         menuController.setEngine(new SimulationEngine());
         menuController.addCrossings();
+        return menuController;
     }
 
-    private void loadMap() throws IOException {
+    private MapController loadMap() throws IOException {
         FXMLLoader mapLoader = getLoader("Map.fxml");
         mapPane = mapLoader.load();
-        MapController controller = mapLoader.getController();
+        controller = mapLoader.getController();
         controller.getSimulationDrawer().initializeMap();
-        mapPane.setOnMouseMoved(controller::onMouseMoved);
+        mapPane.setOnMouseMoved(mouseEvent -> controller.onMouseMoved(mouseEvent));
+        return controller;
     }
 
-    private void loadParameters() throws IOException {
+    private ParametersController loadParameters() throws IOException {
         FXMLLoader parametersLoader = getLoader("Parameters.fxml");
         parametersBox = parametersLoader.load();
+
+        return parametersLoader.getController();
     }
 
     private void loadStatistics() throws IOException {
         FXMLLoader parametersLoader = getLoader("Statistics.fxml");
         statisticsBox = parametersLoader.load();
+    }
+
+    public void addKeyboardEvents(Scene scene) {
+        scene.addEventFilter(KeyEvent.KEY_PRESSED, ke -> {
+            if (ke.getEventType() == KeyEvent.KEY_PRESSED) {
+                if (ke.getCode() == KeyCode.LEFT) {
+                    controller.westPressed();
+                }
+                else if (ke.getCode() == KeyCode.RIGHT) {
+                    controller.eastPressed();
+                }
+                else if (ke.getCode() == KeyCode.UP) {
+                    controller.northPressed();
+                }
+                else if (ke.getCode() == KeyCode.DOWN) {
+                    controller.southPressed();
+                }
+            }
+            ke.consume();
+        });
     }
 }

@@ -1,0 +1,38 @@
+{
+  "name": "Cmentarz Rakowicki",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 1,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 2,
+      "vertical": 0
+    },
+    "zoom16": {
+      "horizontal": 6,
+      "vertical": 0
+    },
+    "zoom17": {
+      "horizontal": 13,
+      "vertical": 0
+    },
+    "zoom18": {
+      "horizontal": 27,
+      "vertical": 2
+    }
+  },
+  "Entrances": {
+    "29 listopada": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "29 listopada": {
+      "id": 1
+    }
+  }
+}

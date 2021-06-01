@@ -1,0 +1,47 @@
+{
+  "name": "Czarnowiejska",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 0,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 0,
+      "vertical": 1
+    },
+    "zoom16": {
+      "horizontal": 2,
+      "vertical": 2
+    },
+    "zoom17": {
+      "horizontal": 5,
+      "vertical": 6
+    },
+    "zoom18": {
+      "horizontal": 11,
+      "vertical": 13
+    }
+  },
+  "Entrances": {
+    "Czarnowiejska AGH": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Czarnowiejska Rynek": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "Czarnowiejska AGH": {
+      "id": 1
+    },
+    "Czarnowiejska Rynek": {
+      "id": 1
+    }
+  }
+}

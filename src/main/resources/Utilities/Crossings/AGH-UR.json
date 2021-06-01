@@ -1,0 +1,38 @@
+{
+  "name": "AGH/UR",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 0,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 0,
+      "vertical": 1
+    },
+    "zoom16": {
+      "horizontal": 2,
+      "vertical": 3
+    },
+    "zoom17": {
+      "horizontal": 5,
+      "vertical": 7
+    },
+    "zoom18": {
+      "horizontal": 11,
+      "vertical": 15
+    }
+  },
+  "Entrances": {
+    "Reymonta": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "Reymonta": {
+      "id": 1
+    }
+  }
+}

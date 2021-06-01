@@ -1,10 +1,13 @@
 package Simulation.Controllers;
 
 import Simulation.SimulationDrawer;
+import Utilities.CrossingParser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 
 
@@ -51,12 +54,16 @@ public class MapController {
 
     private void setPositionLabel(double x, double y) {
         double zoomLevelFactor = Math.pow(2.0, drawer.getCurrentZoomLevel());
-        System.out.println(zoomLevelFactor);
         double globalX = drawer.getCurrentHorizontalTile()*256*zoomLevelFactor+x*zoomLevelFactor;
         double globalY = drawer.getCurrentVerticalTile()*256*zoomLevelFactor+y*zoomLevelFactor;
 
         String xPosition = String.format("%.2f", globalX);
         String yPosition = String.format("%.2f", globalY);
         position.setText("Current position: (" + yPosition + ":" + xPosition + ")");
+    }
+
+    public void crossingSet(String crossingFilename) throws IOException, ParseException {
+        CrossingParser parser = new CrossingParser(crossingFilename);
+        drawer.setCurrentTiles(parser);
     }
 }

@@ -1,0 +1,47 @@
+{
+  "name": "Muzeum Narodowe",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 0,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 0,
+      "vertical": 2
+    },
+    "zoom16": {
+      "horizontal": 2,
+      "vertical": 4
+    },
+    "zoom17": {
+      "horizontal": 5,
+      "vertical": 9
+    },
+    "zoom18": {
+      "horizontal": 11,
+      "vertical": 20
+    }
+  },
+  "Entrances": {
+    "Focha": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Piłsudskiego": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "Focha": {
+      "id": 1
+    },
+    "Piłsudskiego": {
+      "id": 1
+    }
+  }
+}

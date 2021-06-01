@@ -1,0 +1,47 @@
+{
+  "name": "Plan inwalidów",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 0,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 1,
+      "vertical": 1
+    },
+    "zoom16": {
+      "horizontal": 3,
+      "vertical": 2
+    },
+    "zoom17": {
+      "horizontal": 6,
+      "vertical": 4
+    },
+    "zoom18": {
+      "horizontal": 12,
+      "vertical": 9
+    }
+  },
+  "Entrances": {
+    "plac Inwalidów": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Karmelicka": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "plac Inwalidów": {
+      "id": 1
+    },
+    "Karmelicka": {
+      "id": 1
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package Simulation;
 
+import Utilities.CrossingParser;
 import Utilities.TilesInfo;
 import Utilities.Vector2D;
 import Vehicles.AbstractVehicle;
@@ -23,9 +24,9 @@ public class SimulationDrawer extends Canvas {
         System.out.println("Zooming in");
         if (currentZoom < TilesInfo.LastZoomNumber) {
             currentZoom = currentZoom + 1;
-            paintBackground();
             currentVerticalTile = currentVerticalTile*2;
             currentHorizontalTile = currentHorizontalTile*2;
+            paintBackground();
         }
     }
 
@@ -33,9 +34,9 @@ public class SimulationDrawer extends Canvas {
         System.out.println("Zooming out");
         if (currentZoom > TilesInfo.FirstZoomNumber) {
             currentZoom = currentZoom - 1;
-            paintBackground();
             currentVerticalTile = currentVerticalTile/2;
             currentHorizontalTile = currentHorizontalTile/2;
+            paintBackground();
         }
     }
 
@@ -131,5 +132,12 @@ public class SimulationDrawer extends Canvas {
         double horizontal = (currentHorizontalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
         double vertical = (currentVerticalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
         return new Vector2D(horizontal, vertical);
+    }
+
+    public void setCurrentTiles(CrossingParser parser) {
+
+        currentHorizontalTile = parser.getHorizontalPosition(Integer.toString(currentZoom));
+        currentVerticalTile = parser.getVerticalPosition(Integer.toString(currentZoom));
+        paintBackground();
     }
 }

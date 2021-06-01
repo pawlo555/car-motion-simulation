@@ -1,0 +1,38 @@
+{
+  "name": "Politechnika",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 1,
+      "vertical": 0
+    },
+    "zoom15": {
+      "horizontal": 2,
+      "vertical": 0
+    },
+    "zoom16": {
+      "horizontal": 5,
+      "vertical": 0
+    },
+    "zoom17": {
+      "horizontal": 12,
+      "vertical": 1
+    },
+    "zoom18": {
+      "horizontal": 25,
+      "vertical": 4
+    }
+  },
+  "Entrances": {
+    "Pawia": {
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    }
+  },
+  "Exits": {
+    "Pawia": {
+      "id": 1
+    }
+  }
+}

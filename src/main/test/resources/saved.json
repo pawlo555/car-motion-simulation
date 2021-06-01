@@ -1,0 +1,47 @@
+{
+  "name": "Rondo2",
+  "positionOnMap": {
+    "zoom14": {
+      "horizontal": 1,
+      "vertical": 2
+    },
+    "zoom15": {
+      "horizontal": 3,
+      "vertical": 4
+    },
+    "zoom16": {
+      "horizontal": 5,
+      "vertical": 6
+    },
+    "zoom17": {
+      "horizontal": 7,
+      "vertical": 8
+    },
+    "zoom18": {
+      "horizontal": 9,
+      "vertical": 10
+    }
+  },
+  "Entrances": {
+    "3-ego Maja":{
+      "flow": 90,
+      "maxSpeed": 50,
+      "busProbability": 0.01,
+      "id": 1
+    },
+    "Sienkiewicza": {
+      "flow": 150,
+      "maxSpeed": 60,
+      "busProbability": 0.1,
+      "id": 2
+    }
+  },
+  "Exits": {
+    "3-ego Maja": {
+      "id": 3
+    },
+    "Sienkiewicza": {
+      "id": 4
+    }
+  }
+}

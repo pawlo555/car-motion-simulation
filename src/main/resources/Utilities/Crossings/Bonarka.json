@@ -1,51 +1,47 @@
 {
-  "name": "Rondo Mogilskie",
+  "name": "Bonarka",
   "positionOnMap": {
     "zoom14": {
       "horizontal": 1,
-      "vertical": 1
+      "vertical": 2
     },
     "zoom15": {
       "horizontal": 2,
-      "vertical": 2
+      "vertical": 5
     },
     "zoom16": {
-      "horizontal": 4,
-      "vertical": 4
+      "horizontal": 6,
+      "vertical": 11
     },
     "zoom17": {
-      "horizontal": 8,
-      "vertical": 8
+      "horizontal": 13,
+      "vertical": 23
     },
     "zoom18": {
-      "horizontal": 16,
-      "vertical": 16
+      "horizontal": 27,
+      "vertical": 48
     }
   },
-  "Entrances": [
-    {
-      "name": "Focha",
+  "Entrances": {
+    "Kamieńskiego": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     },
-    {
-      "name": "Piłsudskiego",
+    "Tischnera": {
       "flow": 90,
       "maxSpeed": 50,
       "busProbability": 0.01,
       "id": 1
     }
-  ],
-  "Exits": [
-    {
-      "name": "Focha",
+  },
+  "Exits": {
+    "Kamieńskiego": {
       "id": 1
     },
-    {
-      "name": "Piłsudskiego",
+    "Tischnera": {
       "id": 1
     }
-  ]
+  }
 }
