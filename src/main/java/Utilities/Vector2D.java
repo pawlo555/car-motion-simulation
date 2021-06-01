@@ -52,7 +52,7 @@ public class Vector2D {
 
     @Override
     public String toString() {
-        return "("+ RoundUtils.round(x, 2)+"," + RoundUtils.round(y, 2) + ")";
+        return "("+ RoundUtils.round(x, 2)+"," + RoundUtils.round(y, 2) + "),";
     }
 
 }

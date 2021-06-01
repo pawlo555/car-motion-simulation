@@ -8,7 +8,7 @@ import java.util.Collections;
 
 public class RoadRoadConnector {
 
-    public static void connectFront(StraightRoad road1, StraightRoad road2, Direction startDirection){
+    public static void connectFront(RoadObject road1, RoadObject road2, Direction startDirection){
         //connect road2 to the front end od the road1
         //start direction gives information from which lane start adding
         ArrayList<Point> exits = road1.getExits();

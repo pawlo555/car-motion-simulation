@@ -1,17 +1,13 @@
 package Objects;
 
 import Constants.RoadConstants;
-import Utilities.Direction;
-
-import Utilities.GeometryUtils;
-import Utilities.QuadrangleArea;
-import Utilities.Vector2D;
+import Utilities.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 
-public class StraightRoad {
+public class StraightRoad implements RoadObject {
     //class for road that is rectangle nLanes x length
     private int nLanes;
     private double length;

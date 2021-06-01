@@ -1,6 +1,6 @@
 {
   "name": "Aleja Zygmunta Krasinskiego P",
-  "id": 1,
+  "id": 2,
   "nLanes": 2,
   "parts": [
     {
@@ -21,57 +21,8 @@
       "partId": 3,
       "leftBottom": [5980.80, 3560.80],
       "rightBottom": [5977.60, 3574.40],
-      "leftTop": [5064.80, 3196.00],
-      "rightTop": [5061.60, 3209.60]
-    },
-    {
-      "partId": 4,
-      "leftBottom": [5064.80, 3196.00],
-      "rightBottom": [5061.60, 3209.60],
-      "leftTop": [4696.80, 3078.40],
-      "rightTop": [4692.80, 3092.80]
-    },
-    {
-      "partId": 5,
-      "leftBottom": [4696.80, 3078.40],
-      "rightBottom": [4692.80, 3092.80],
-      "leftTop": [4666.40, 3072.80],
-      "rightTop": [4664.00, 3085.60]
-    },
-    {
-      "partId": 6,
-      "leftBottom": [4666.40, 3072.80],
-      "rightBottom": [4664.00, 3085.60],
-      "leftTop": [4648.00, 3068.00],
-      "rightTop": [4647.20, 3083.20]
-    },
-    {
-      "partId": 7,
-      "leftBottom": [4648.00, 3068.00],
-      "rightBottom": [4647.20, 3083.20],
-      "leftTop": [4576.80, 3062.40],
-      "rightTop": [4573.60, 3076.00]
-    },
-    {
-      "partId": 8,
-      "leftBottom": [4576.80, 3062.40],
-      "rightBottom": [4573.60, 3076.00],
-      "leftTop": [4504.80, 3064.80],
-      "rightTop": [4504.80, 3078.40]
-    },
-    {
-      "partId": 9,
-      "leftBottom": [4504.80, 3064.80],
-      "rightBottom": [4504.80, 3078.40],
-      "leftTop": [4407.20, 3080.00],
-      "rightTop": [4406.40, 3094.40]
-    },
-    {
-      "partId": 10,
-      "leftBottom": [4407.20, 3080.00],
-      "rightBottom": [4406.40, 3094.40],
-      "leftTop": [3641.60, 3266.40],
-      "rightTop": [3644.00, 3280.00]
+      "leftTop": [5507.20, 3363.20],
+      "rightTop": [5504.80, 3376.80]
     }
   ]
 }

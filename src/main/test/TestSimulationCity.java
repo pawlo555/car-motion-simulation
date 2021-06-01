@@ -1,5 +1,7 @@
+import Objects.City;
 import Objects.Point;
 import Objects.StraightRoad;
+import Objects.SuperRoad;
 import Utilities.MoveHelper;
 import Utilities.VehicleObserver;
 import Vehicles.AbstractVehicle;
@@ -8,12 +10,12 @@ import Vehicles.Car;
 
 import java.util.ArrayList;
 
-public class TestSimulation implements VehicleObserver {
-    private StraightRoad road;
+public class TestSimulationCity implements VehicleObserver{
+    private City city;
     private ArrayList<AbstractVehicle> vehicles = new ArrayList<>();
 
-    public TestSimulation(StraightRoad road){
-        this.road = road;
+    public TestSimulationCity(City city){
+        this.city = city;
     }
 
     public void iterate(){
@@ -42,14 +44,14 @@ public class TestSimulation implements VehicleObserver {
 
     public void print(){
         for (AbstractVehicle vehicle : vehicles){
-            System.out.println(vehicle);
+            System.out.print(vehicle.getHeadPoint().getPosition());
         }
         if (vehicles.isEmpty())
             System.out.println("No cars in simulation");
     }
 
     public void spawnCar(){
-        ArrayList<Point> entries = road.getEntries();
+        ArrayList<Point> entries = city.getEntries();
         int size = entries.size();
         int index = (int)(Math.random()*(size));
         Point entry = entries.get(index);
@@ -62,7 +64,7 @@ public class TestSimulation implements VehicleObserver {
     }
 
     public void spawnBus(){
-        ArrayList<Point> entries = road.getEntries();
+        ArrayList<Point> entries = city.getEntries();
         int size = entries.size();
         int index = (int)(Math.random()*(size));
         Point entry = entries.get(index);
@@ -87,4 +89,6 @@ public class TestSimulation implements VehicleObserver {
     public void carExit(AbstractVehicle vehicle) {
         vehicles.remove(vehicle);
     }
+
 }
+

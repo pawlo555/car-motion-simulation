@@ -1,0 +1,21 @@
+{
+  "name": "Aleja Adama Mickiewicza P2",
+  "id": 4,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3611.20, 3273.60],
+      "rightBottom": [3626.40, 3284.00],
+      "leftTop": [3218.40, 3384.80],
+      "rightTop": [3221.60, 3399.20]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [3218.40, 3384.80],
+      "rightBottom": [3221.60, 3399.20],
+      "leftTop": [2701.60, 3602.40],
+      "rightTop": [2713.60, 3612.00]
+    }
+  ]
+}

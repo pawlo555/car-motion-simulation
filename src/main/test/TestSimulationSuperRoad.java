@@ -54,11 +54,12 @@ public class TestSimulationSuperRoad implements VehicleObserver{
         int size = entries.size();
         int index = (int)(Math.random()*(size));
         Point entry = entries.get(index);
-        AbstractVehicle vehicle = new Car(entry);
-        vehicles.add(vehicle);
-        System.out.println(vehicle+" has been added");
-        vehicle.addObserver(this);
-
+        if (!entry.hasVehicle()) {
+            AbstractVehicle vehicle = new Car(entry);
+            vehicles.add(vehicle);
+            System.out.println(vehicle + " has been added");
+            vehicle.addObserver(this);
+        }
     }
 
     public void spawnBus(){

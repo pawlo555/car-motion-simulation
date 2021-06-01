@@ -1,13 +1,14 @@
 package Objects;
 
 import Utilities.Direction;
+import Utilities.RoadObject;
 import Utilities.RoadRoadConnector;
 import Utilities.Vector2D;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class SuperRoad {
+public class SuperRoad implements RoadObject {
     private LinkedList<StraightRoad> roadParts = new LinkedList<>();
     private String name;
     private int id;
@@ -51,4 +52,7 @@ public class SuperRoad {
             }
         }
     }
+
+    public int getId(){return id;}
+    public String getName(){return name;}
 }
