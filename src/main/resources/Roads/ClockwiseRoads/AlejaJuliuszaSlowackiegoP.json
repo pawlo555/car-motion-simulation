@@ -1,0 +1,133 @@
+{
+  "name": "Aleja Juliusza Słowackiego P",
+  "id": 5,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [2678.40, 3612.80],
+      "rightBottom": [2695.20, 3620.80],
+      "leftTop": [2403.20, 3731.20],
+      "rightTop": [2408.80, 3745.60]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [2403.20, 3731.20],
+      "rightBottom": [2408.80, 3745.60],
+      "leftTop": [2312.80, 3789.60],
+      "rightTop": [2323.20, 3800.80]
+    },
+    {
+      "partId": 3,
+      "leftBottom": [2312.80, 3789.60],
+      "rightBottom": [2323.20, 3800.80],
+      "leftTop": [2282.40, 3818.40],
+      "rightTop": [2299.20, 3823.20]
+    },
+    {
+      "partId": 4,
+      "leftBottom": [2282.40, 3818.40],
+      "rightBottom": [2299.20, 3823.20],
+      "leftTop": [1604.00, 4648.80],
+      "rightTop": [1612.80, 4681.60]
+    },
+    {
+      "partId": 5,
+      "leftBottom": [1604.00, 4648.80],
+      "rightBottom": [1612.80, 4681.60],
+      "leftTop": [1522.40, 4779.20],
+      "rightTop": [1536.00, 4786.40]
+    },
+    {
+      "partId": 6,
+      "leftBottom": [1522.40, 4779.20],
+      "rightBottom": [1536.00, 4786.40],
+      "leftTop": [1415.20, 5051.20],
+      "rightTop": [1428.80, 5059.20]
+    },
+    {
+      "partId": 7,
+      "leftBottom": [1415.20, 5051.20],
+      "rightBottom": [1428.80, 5059.20],
+      "leftTop": [1406.40, 5092.80],
+      "rightTop": [1419.20, 5106.40]
+    },
+    {
+      "partId": 8,
+      "leftBottom": [1406.40, 5092.80],
+      "rightBottom": [1419.20, 5106.40],
+      "leftTop": [1385.60, 5292.80],
+      "rightTop": [1401.60, 5293.60]
+    },
+    {
+      "partId": 9,
+      "leftBottom": [1385.60, 5292.80],
+      "rightBottom": [1401.60, 5293.60],
+      "leftTop": [1340.80, 5516.80],
+      "rightTop": [1355.20, 5519.20]
+    },
+    {
+      "partId": 10,
+      "leftBottom": [1340.80, 5516.80],
+      "rightBottom": [1355.20, 5519.20],
+      "leftTop": [1331.20, 5640.00],
+      "rightTop": [1345.60, 5636.00]
+    },
+    {
+      "partId": 11,
+      "leftBottom": [1331.20, 5640.00],
+      "rightBottom": [1345.60, 5636.00],
+      "leftTop": [1336.00, 5740.80],
+      "rightTop": [1351.20, 5745.60]
+    },
+    {
+      "partId": 12,
+      "leftBottom": [1336.00, 5740.80],
+      "rightBottom": [1351.20, 5745.60],
+      "leftTop": [1427.20, 6160.80],
+      "rightTop": [1442.40, 6161.60]
+    },
+    {
+      "partId": 13,
+      "leftBottom": [1427.20, 6160.80],
+      "rightBottom": [1442.40, 6161.60],
+      "leftTop": [1503.20, 6477.60],
+      "rightTop": [1518.40, 6476.80]
+    },
+    {
+      "partId": 14,
+      "leftBottom": [1503.20, 6477.60],
+      "rightBottom": [1518.40, 6476.80],
+      "leftTop": [1510.40, 6546.40],
+      "rightTop": [1524.00, 6548.00]
+    },
+    {
+      "partId": 15,
+      "leftBottom": [1510.40, 6546.40],
+      "rightBottom": [1524.00, 6548.00],
+      "leftTop": [1510.40, 6695.20],
+      "rightTop": [1525.60, 6694.40]
+    },
+    {
+      "partId": 16,
+      "leftBottom": [1510.40, 6695.20],
+      "rightBottom": [1525.60, 6694.40],
+      "leftTop": [1501.60, 6760.00],
+      "rightTop": [1515.20, 6764.80]
+    },
+    {
+      "partId": 17,
+      "leftBottom": [1501.60, 6760.00],
+      "rightBottom": [1515.20, 6764.80],
+      "leftTop": [1486.40, 6820.00],
+      "rightTop": [1500.80, 6822.40]
+    },
+    {
+      "partId": 18,
+      "leftBottom": [1486.40, 6820.00],
+      "rightBottom": [1500.80, 6822.40],
+      "leftTop": [1464.00, 6885.60],
+      "rightTop": [1477.60, 6890.40]
+    }
+  ]
+}

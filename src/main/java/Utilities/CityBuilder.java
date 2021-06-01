@@ -3,7 +3,7 @@ package Utilities;
 import Objects.City;
 import Objects.StraightRoad;
 import Objects.SuperRoad;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 
