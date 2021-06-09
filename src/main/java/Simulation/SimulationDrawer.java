@@ -1,18 +1,15 @@
 package Simulation;
 
-import Utilities.CrossingParser;
-import Utilities.TilesInfo;
-import Utilities.Vector2D;
+import Utilities.*;
 import Vehicles.AbstractVehicle;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import Utilities.ImagesLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimulationDrawer extends Canvas {
+public class SimulationDrawer extends Canvas implements SimulationObserver {
 
     private int currentHorizontalTile = 0;
     private int currentVerticalTile = 0;
@@ -105,7 +102,9 @@ public class SimulationDrawer extends Canvas {
     }
 
     private void paintCar(GraphicsContext gc, AbstractVehicle car) {
-        double radius = 2 / Math.pow(2, getCurrentZoomLevel());
+        System.out.println("Drawer I should print car on position "+car.getPosition().toString());
+//        double radius = 2 / Math.pow(2, getCurrentZoomLevel());
+        double radius = 200;
         Vector2D carPosition = car.getPosition();
         gc.fillOval(carPosition.getX()-radius, carPosition.getY()-radius, radius, radius);
     }
@@ -139,5 +138,15 @@ public class SimulationDrawer extends Canvas {
         currentHorizontalTile = parser.getHorizontalPosition(Integer.toString(currentZoom));
         currentVerticalTile = parser.getVerticalPosition(Integer.toString(currentZoom));
         paintBackground();
+    }
+
+    public void setEngine(SimulationEngine engine){
+        this.engine = engine;
+    }
+
+    @Override
+    public void nextEpoch() {
+        System.out.println("In drawer: next epoch!");
+        paintCars();
     }
 }

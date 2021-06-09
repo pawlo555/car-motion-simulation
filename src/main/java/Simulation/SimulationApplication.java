@@ -23,6 +23,7 @@ public class SimulationApplication extends javafx.application.Application {
     private HBox menuBox;
     private VBox statisticsBox;
     private VBox parametersBox;
+    private SimulationEngine engine = new SimulationEngine();
 
     private MapController controller;
 
@@ -82,7 +83,7 @@ public class SimulationApplication extends javafx.application.Application {
         menuBox = menuLoader.load();
         MenuController menuController = menuLoader.getController();
         menuController.setApplication(this);
-        menuController.setEngine(new SimulationEngine());
+        menuController.setEngine(engine);
         menuController.addCrossings();
         return menuController;
     }
@@ -92,6 +93,8 @@ public class SimulationApplication extends javafx.application.Application {
         mapPane = mapLoader.load();
         controller = mapLoader.getController();
         controller.getSimulationDrawer().initializeMap();
+        controller.getSimulationDrawer().setEngine(engine);
+        engine.addObserver(controller.getSimulationDrawer());
         mapPane.setOnMouseMoved(mouseEvent -> controller.onMouseMoved(mouseEvent));
         return controller;
     }
