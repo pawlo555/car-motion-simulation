@@ -30,6 +30,7 @@ public class MenuController {
     private SimulationApplication application;
     private ParametersController parametersController;
     private MapController mapController;
+    private StatisticsController statisticsController;
 
     public void stopPressed() {
         timeline.pause();
@@ -128,4 +129,7 @@ public class MenuController {
     }
 
 
+    public void setStatisticsController(StatisticsController statisticsController) {
+        this.statisticsController = statisticsController;
+    }
 }

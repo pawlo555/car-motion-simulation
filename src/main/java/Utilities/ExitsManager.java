@@ -11,9 +11,10 @@ public class ExitsManager implements SimulationObserver {
      * Create an exit object, TreeMap is generated from Exits found in CrossingMap
      * @throws IOException - thrown where not file in CrossingMap is found
      * @throws ParseException - thrown where parsed file has incorrect structure
+     * @param directoryPath - path to directory containing info about exits
      */
-    public ExitsManager() throws IOException, ParseException {
-        CrossingsMap crossingsMap = new CrossingsMap("src/main/resources/Utilities/Crossings");
+    public ExitsManager(String directoryPath) throws IOException, ParseException {
+        CrossingsMap crossingsMap = new CrossingsMap(directoryPath);
         for(String crossingName: crossingsMap.getCrossingNames()) {
             String fileName = crossingsMap.getCrossingFile(crossingName);
             CrossingParser parser = new CrossingParser(fileName);

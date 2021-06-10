@@ -4,10 +4,14 @@
 <?import javafx.scene.layout.*?>
 
 <?import Simulation.ExitChart?>
+
 <VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
       prefHeight="600.0" prefWidth="300.0"
       layoutX="940" layoutY="80"
-      style="-fx-border-color: red">
+      style="-fx-border-color: red"
+      fx:controller="Simulation.Controllers.StatisticsController">
     <Label text="Statistics" />
+    <ComboBox fx:id="exits" onAction="#selectExits" promptText="Crossings"/>
     <ExitChart />
 </VBox>

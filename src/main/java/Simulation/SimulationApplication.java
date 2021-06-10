@@ -3,7 +3,8 @@ package Simulation;
 import Simulation.Controllers.MapController;
 import Simulation.Controllers.MenuController;
 import Simulation.Controllers.ParametersController;
-import javafx.event.EventHandler;
+import Simulation.Controllers.StatisticsController;
+import Utilities.ExitsManager;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -23,7 +24,7 @@ public class SimulationApplication extends javafx.application.Application {
     private HBox menuBox;
     private VBox statisticsBox;
     private VBox parametersBox;
-    private SimulationEngine engine = new SimulationEngine();
+    private final SimulationEngine engine = new SimulationEngine();
 
     private MapController controller;
 
@@ -72,10 +73,11 @@ public class SimulationApplication extends javafx.application.Application {
         MapController mapController = loadMap();
         MenuController menuController = loadMenu();
         ParametersController parametersController = loadParameters();
-        loadStatistics();
+        StatisticsController statisticsController = loadStatistics();
 
         menuController.setParametersController(parametersController);
         menuController.setMapController(mapController);
+        menuController.setStatisticsController(statisticsController);
     }
 
     private MenuController loadMenu() throws IOException, ParseException {
@@ -106,9 +108,12 @@ public class SimulationApplication extends javafx.application.Application {
         return parametersLoader.getController();
     }
 
-    private void loadStatistics() throws IOException {
-        FXMLLoader parametersLoader = getLoader("Statistics.fxml");
-        statisticsBox = parametersLoader.load();
+    private StatisticsController loadStatistics() throws IOException, ParseException {
+        FXMLLoader statisticsLoader = getLoader("Statistics.fxml");
+        statisticsBox = statisticsLoader.load();
+        StatisticsController controller = statisticsLoader.getController();
+        controller.setExitsManager(new ExitsManager("src/main/resources/Utilities/Crossings"));
+        return controller;
     }
 
     public void addKeyboardEvents(Scene scene) {
