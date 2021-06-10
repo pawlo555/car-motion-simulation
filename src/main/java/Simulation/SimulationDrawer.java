@@ -23,7 +23,7 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
             currentZoom = currentZoom + 1;
             currentVerticalTile = currentVerticalTile*2;
             currentHorizontalTile = currentHorizontalTile*2;
-            paintBackground();
+            repaint();
         }
     }
 
@@ -33,39 +33,43 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
             currentZoom = currentZoom - 1;
             currentVerticalTile = currentVerticalTile/2;
             currentHorizontalTile = currentHorizontalTile/2;
-            paintBackground();
+            repaint();
         }
+        System.out.println(getUpperLeftVector());
     }
 
     public void goNorth() {
         System.out.println("Go north");
         if (currentVerticalTile > 0) {
             currentVerticalTile = currentVerticalTile - 1;
-            paintBackground();
+            repaint();
         }
+        System.out.println(getUpperLeftVector());
     }
 
     public void goEast() {
         System.out.println("Go east");
         if (currentHorizontalTile < TilesInfo.getHorizontalNumber(currentZoom) - 1) {
             currentHorizontalTile = currentHorizontalTile + 1;
-            paintBackground();
+            repaint();
         }
+        System.out.println(getUpperLeftVector());
     }
 
     public void goSouth() {
         System.out.println("Go south");
         if (currentVerticalTile < TilesInfo.getVerticalNumber(currentZoom) - 1) {
             currentVerticalTile = currentVerticalTile + 1;
-            paintBackground();
+            repaint();
         }
+        System.out.println(getUpperLeftVector());
     }
 
     public void goWest() {
         System.out.println("Go west");
         if (currentHorizontalTile > 0) {
             currentHorizontalTile = currentHorizontalTile - 1;
-            paintBackground();
+            repaint();
         }
     }
 
@@ -75,7 +79,12 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
         paintBackground();
     }
 
-    public void paintBackground() {
+    public void repaint() {
+        paintBackground();
+        paintCars();
+    }
+
+    private void paintBackground() {
         GraphicsContext gc = this.getGraphicsContext2D();
         gc.clearRect(0,0,getWidth(), getHeight());
         for (int i=0; i<3; i++) {
@@ -84,10 +93,11 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
         }
     }
 
-    public void paintCars() {
+    private void paintCars() {
         Vector2D upperLeft = getUpperLeftVector();
         Vector2D lowerRight = getLowerRightVector();
         List<AbstractVehicle> carList = engine.getCarsInSquare(upperLeft, lowerRight);
+        System.out.println("Cars list:" + carList.size());
         GraphicsContext gc = this.getGraphicsContext2D();
         for (AbstractVehicle car: carList) {
             paintCar(gc, car);
@@ -103,10 +113,11 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
 
     private void paintCar(GraphicsContext gc, AbstractVehicle car) {
         System.out.println("Drawer I should print car on position "+car.getPosition().toString());
-//        double radius = 2 / Math.pow(2, getCurrentZoomLevel());
-        double radius = 200;
+        double radius = 10;
         Vector2D carPosition = car.getPosition();
-        gc.fillOval(carPosition.getX()-radius, carPosition.getY()-radius, radius, radius);
+        Vector2D paintPosition = transformToMap(carPosition);
+        System.out.println(paintPosition);
+        gc.fillOval(paintPosition.y-radius/2, paintPosition.x-radius/2, radius, radius);
     }
 
     public int getCurrentHorizontalTile() {
@@ -124,13 +135,13 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
     public Vector2D getUpperLeftVector() {
         double horizontal = currentHorizontalTile*256*Math.pow(2, getCurrentZoomLevel());
         double vertical = currentVerticalTile*256*Math.pow(2, getCurrentZoomLevel());
-        return new Vector2D(horizontal, vertical);
+        return new Vector2D(vertical, horizontal);
     }
 
     public Vector2D getLowerRightVector() {
         double horizontal = (currentHorizontalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
         double vertical = (currentVerticalTile+3)*256*Math.pow(2, getCurrentZoomLevel());
-        return new Vector2D(horizontal, vertical);
+        return new Vector2D(vertical, horizontal);
     }
 
     public void setCurrentTiles(CrossingParser parser) {
@@ -147,6 +158,12 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
     @Override
     public void nextEpoch() {
         System.out.println("In drawer: next epoch!");
-        paintCars();
+        repaint();
+    }
+
+    private Vector2D transformToMap(Vector2D coordinates) {
+        Vector2D afterRescalingToCorner = coordinates.subtract(getUpperLeftVector());
+        double scale = Math.pow(2, getCurrentZoomLevel());
+        return afterRescalingToCorner.multiply_scalar(1/scale);
     }
 }

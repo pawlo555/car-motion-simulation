@@ -46,6 +46,8 @@ public class Vector2D {
         return new Vector2D(x+vector.x, y+ vector.y);
     }
 
+    public Vector2D subtract(Vector2D vector) {return new Vector2D(x-vector.x, y-vector.y);}
+
     public Vector2D multiply_scalar(double s){
         return new Vector2D(x*s, y*s);
     }
