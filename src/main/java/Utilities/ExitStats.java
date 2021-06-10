@@ -3,7 +3,7 @@ package Utilities;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ExitsStats {
+public class ExitStats {
     private final LinkedList<Integer> carsFlow = new LinkedList<>();
 
     /**

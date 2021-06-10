@@ -1,17 +1,16 @@
-import Utilities.ExitsStats;
+import Utilities.ExitStats;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.LinkedList;
 import java.util.List;
 
 
-public class ExitsStatsTest {
+public class ExitStatsTest {
 
     @Test
     public void carsOnExitTest() {
-        ExitsStats stats = new ExitsStats();
+        ExitStats stats = new ExitStats();
         stats.nextEpoch();
         Assert.assertEquals(stats.getLastEpochFlow(), 0);
         stats.carOnExit();
@@ -25,7 +24,7 @@ public class ExitsStatsTest {
 
     @Test
     public void getNEpochTest() {
-        ExitsStats stats = new ExitsStats();
+        ExitStats stats = new ExitStats();
         stats.nextEpoch();
         stats.nextEpoch();
         List<Integer> flowList = stats.getLastNEpoch(4);

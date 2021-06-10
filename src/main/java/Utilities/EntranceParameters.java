@@ -76,7 +76,6 @@ public class EntranceParameters {
                 entrancesMap.put(entrance, new EntranceParameters(parser, entrance));
             }
         }
-
         return entrancesMap;
     }
 

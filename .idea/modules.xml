@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Car-Motion-Simulation.iml" filepath="$PROJECT_DIR$/Car-Motion-Simulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Car-Motion_Simulation.iml" filepath="$PROJECT_DIR$/Car-Motion_Simulation.iml" />
     </modules>
   </component>

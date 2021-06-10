@@ -78,4 +78,8 @@ public class CrossingParser {
     public Set<String> getEntrancesNames() {
         return (Set<String>) entrances.keySet();
     }
+
+    public Set<String> getExitsNames() {
+        return (Set<String>) exits.keySet();
+    }
 }
