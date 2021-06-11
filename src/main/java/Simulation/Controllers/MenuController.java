@@ -79,6 +79,7 @@ public class MenuController {
         parametersController.addEntrances(clickedName);
         CrossingsMap map = new CrossingsMap("src/main/resources/Utilities/Crossings");
         mapController.crossingSet(map.getCrossingFile(clickedName));
+        statisticsController.setExits(map.getCrossingFile(clickedName));
         setPlaceName(clickedName);
     }
 
@@ -128,8 +129,7 @@ public class MenuController {
         mapController = controller;
     }
 
-
-    public void setStatisticsController(StatisticsController statisticsController) {
-        this.statisticsController = statisticsController;
+    public void setStatisticsController(StatisticsController controller) {
+        this.statisticsController = controller;
     }
 }
