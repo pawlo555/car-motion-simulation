@@ -6,8 +6,8 @@
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="Simulation.Controllers.ParametersController"
-            prefHeight="600.0" prefWidth="400.0"
-            layoutX="840" layoutY="80">
+            prefHeight="600.0" prefWidth="360.0"
+            layoutX="860" layoutY="80">
     <Label text="Parameters" />
     <ComboBox fx:id="entrances" onAction="#selectEntrance" promptText="Crossings"/>
     <VBox>

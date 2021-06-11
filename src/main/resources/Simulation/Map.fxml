@@ -20,5 +20,5 @@
         <Button text="West" layoutY="40" onAction="#westPressed"/>
     </Pane>
 
-    <Label fx:id="position" text="Current position: (-,-)" layoutY="10" layoutX="580"/>
+    <Label fx:id="position" text="Current position: (-,-)" layoutY="10" layoutX="560"/>
 </Pane>

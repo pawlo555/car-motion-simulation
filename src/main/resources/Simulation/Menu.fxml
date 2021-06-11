@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.*?>
 
 <HBox xmlns="http://javafx.com/javafx"
-      prefHeight="40.0" prefWidth="1200.0"
-      layoutX="40" layoutY="20"
+      prefHeight="50.0" prefWidth="700.0"
+      layoutX="290" layoutY="20"
       fx:controller="Simulation.Controllers.MenuController"
       xmlns:fx="http://javafx.com/fxml">
     <Label fx:id="placeName" text="Current Place" />
