@@ -1,16 +1,18 @@
 package Simulation;
 
 import Utilities.ExitsManager;
+import Utilities.SimulationObserver;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ExitChart extends LineChart<Number, Number> {
+public class ExitChart extends LineChart<Number, Number> implements SimulationObserver {
     private Series<Number, Number> series = new Series<>();
     ExitsManager manager;
-    String currentExit;
+    String currentExit = null;
     private int currentEpoch = 0;
 
     private static final int majorTick = 10;
@@ -39,16 +41,30 @@ public class ExitChart extends LineChart<Number, Number> {
     }
 
     public void setFlowData() {
-        System.out.println("Setting data");
-        List<Integer> dataList = manager.getLastNEpoch(epochOnChart, currentExit);
-        series = new Series<>();
-        int i = Math.max(currentEpoch-epochOnChart, 0);
-        for(Integer flow: dataList) {
-            if (i < currentEpoch) {
-                break;
+        if (currentExit != null) {
+            System.out.println("Setting data");
+            this.getData().remove(series);
+            //List<Integer> dataList = manager.getLastNEpoch(epochOnChart, currentExit);
+            List<Integer> dataList = new ArrayList<>();
+
+            series.getData().add(new XYChart.Data<>(10, 10));
+            System.out.println(dataList);
+            //series = new Series<>();
+            int i = Math.max(currentEpoch - epochOnChart, 0);
+            for (Integer flow : dataList) {
+                if (i < currentEpoch) {
+                    break;
+                }
+                series.getData().add(new XYChart.Data<>(i, flow));
+                i++;
             }
-            series.getData().add(new XYChart.Data<>(i,flow));
-            i++;
+            //this.getData().add(series);
         }
+    }
+
+    @Override
+    public void nextEpoch() {
+        currentEpoch = currentEpoch+1;
+        setFlowData();
     }
 }

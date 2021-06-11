@@ -113,6 +113,7 @@ public class SimulationApplication extends javafx.application.Application {
         statisticsBox = statisticsLoader.load();
         StatisticsController controller = statisticsLoader.getController();
         controller.setExitsManager(new ExitsManager("src/main/resources/Utilities/Crossings"));
+        engine.addObserver(controller.getChart());
         return controller;
     }
 

@@ -13,5 +13,5 @@
       fx:controller="Simulation.Controllers.StatisticsController">
     <Label text="Statistics" />
     <ComboBox fx:id="exits" onAction="#selectExits" promptText="Crossings"/>
-    <ExitChart />
+    <ExitChart fx:id="chart"/>
 </VBox>
