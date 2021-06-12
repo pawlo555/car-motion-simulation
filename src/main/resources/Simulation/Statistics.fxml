@@ -7,11 +7,10 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      prefHeight="600.0" prefWidth="300.0"
-      layoutX="940" layoutY="80"
-      style="-fx-border-color: red"
+      prefHeight="600.0" prefWidth="400.0"
+      layoutX="840" layoutY="80"
       fx:controller="Simulation.Controllers.StatisticsController">
     <Label text="Statistics" />
     <ComboBox fx:id="exits" onAction="#selectExits" promptText="Crossings"/>
-    <ExitChart />
+    <ExitChart fx:id="chart"/>
 </VBox>

@@ -20,7 +20,6 @@ import java.util.Objects;
 
 public class MenuController {
 
-    @FXML private Label placeName;
     @FXML private ComboBox<String> placesNames;
     @FXML private Label currentEpochLabel;
     private boolean isStatistics = false;
@@ -69,23 +68,16 @@ public class MenuController {
         application = newApplication;
     }
 
-    private void setPlaceName(String newPlace) {
-        placeName.setText(newPlace);
-    }
-
     public void itemClicked() throws IOException, ParseException {
-        System.out.println("Click");
         String clickedName = placesNames.getSelectionModel().getSelectedItem();
         parametersController.addEntrances(clickedName);
         CrossingsMap map = new CrossingsMap("src/main/resources/Utilities/Crossings");
         mapController.crossingSet(map.getCrossingFile(clickedName));
-        setPlaceName(clickedName);
+        statisticsController.setExits(map.getCrossingFile(clickedName));
     }
 
     public void addCrossings() throws IOException, ParseException {
         CrossingsMap map = new CrossingsMap("src/main/resources/Utilities/Crossings");
-        System.out.println("Crossings:");
-        System.out.println(map.getCrossingNames());
         placesNames.getItems().addAll(map.getCrossingNames());
     }
 
@@ -128,8 +120,7 @@ public class MenuController {
         mapController = controller;
     }
 
-
-    public void setStatisticsController(StatisticsController statisticsController) {
-        this.statisticsController = statisticsController;
+    public void setStatisticsController(StatisticsController controller) {
+        this.statisticsController = controller;
     }
 }

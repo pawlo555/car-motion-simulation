@@ -2,6 +2,7 @@ package Utilities;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.TreeMap;
 
 public class ExitsManager implements SimulationObserver {
@@ -38,5 +39,15 @@ public class ExitsManager implements SimulationObserver {
     public void carOnExit(String exitName) {
         ExitStats exitStats = exitsStats.get(exitName);
         exitStats.carOnExit();
+    }
+
+    /**
+     * Returns data from N last epoch from selected exit
+     * @param N Number of epoch to get data from
+     * @param exitName Name of the exit to take data from
+     * @return list of last N epoch flow.
+     */
+    public List<Integer> getLastNEpoch(int N, String exitName) {
+        return exitsStats.get(exitName).getLastNEpoch(N);
     }
 }
