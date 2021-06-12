@@ -1,0 +1,14 @@
+{
+  "name": "Czarnowiejska Rynek Entrance",
+  "id": 1,
+  "nLanes": 1,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3656.00, 3355.20],
+      "rightBottom": [3648.00, 3360.80],
+      "leftTop": [3634.40, 3281.60],
+      "rightTop": [3626.40, 3284.00]
+    }
+  ]
+}

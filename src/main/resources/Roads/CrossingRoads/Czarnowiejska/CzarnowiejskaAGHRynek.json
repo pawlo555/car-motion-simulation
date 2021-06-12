@@ -1,0 +1,28 @@
+{
+  "name": "Czarnowiejska Rynek AGH",
+  "id": 1,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3613.60, 3196.80],
+      "rightBottom": [3627.20, 3193.60],
+      "leftTop": [3619.20, 3208.80],
+      "rightTop": [3632.00, 3204.80]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [3619.20, 3208.80],
+      "rightBottom": [3632.00, 3204.80],
+      "leftTop": [3628.80, 3258.40],
+      "rightTop": [3642.40, 3258.40]
+    },
+    {
+      "partId": 3,
+      "leftBottom": [3628.80, 3258.40],
+      "rightBottom": [3642.40, 3258.40],
+      "leftTop": [3628.80, 3270.40],
+      "rightTop": [3641.60, 3266.40]
+    }
+  ]
+}

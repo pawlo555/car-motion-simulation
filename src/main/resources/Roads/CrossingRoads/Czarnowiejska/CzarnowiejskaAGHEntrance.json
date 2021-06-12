@@ -1,0 +1,14 @@
+{
+  "name": "Czarnowiejska AGH Entrance",
+  "id": 1,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3561.60, 3079.20],
+      "rightBottom": [3572.80, 3074.40],
+      "leftTop": [3608.80, 3184.00],
+      "rightTop": [3621.60, 3180.00]
+    }
+  ]
+}

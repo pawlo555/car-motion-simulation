@@ -1,0 +1,14 @@
+{
+  "name": "Czarnowiejska AGH Exit",
+  "id": 1,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3592.00, 3186.40],
+      "rightBottom": [3578.40, 3189.60],
+      "leftTop": [3548.00, 3082.40],
+      "rightTop": [3535.20, 3086.40]
+    }
+  ]
+}

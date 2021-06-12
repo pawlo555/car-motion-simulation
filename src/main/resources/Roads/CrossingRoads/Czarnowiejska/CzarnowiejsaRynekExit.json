@@ -1,0 +1,14 @@
+{
+  "name": "Czarnowiejska Rynek Exit",
+  "id": 1,
+  "nLanes": 1,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3634.40, 3281.60],
+      "rightBottom": [3644.00, 3280.80],
+      "leftTop": [3656.00, 3355.20],
+      "rightTop": [3663.20, 3349.60]
+    }
+  ]
+}
