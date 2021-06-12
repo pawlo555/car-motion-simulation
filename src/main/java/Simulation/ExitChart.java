@@ -6,11 +6,11 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class ExitChart extends LineChart<Number, Number> implements SimulationObserver {
-    private Series<Number, Number> series = new Series<>();
+    private final Series<Number, Number> series = new Series<>();
     ExitsManager manager;
     String currentExit = null;
     private int currentEpoch = 0;
@@ -25,9 +25,6 @@ public class ExitChart extends LineChart<Number, Number> implements SimulationOb
     public ExitChart() {
         super(xAxis, yAxis);
         this.getData().add(series);
-        series.getData().add(new XYChart.Data<>(12, 25));
-        series.getData().add(new XYChart.Data<>(23, 99));
-        series.getData().add(new XYChart.Data<>(53, 54));
     }
 
     public void changeExit(String newExitName) {
@@ -42,10 +39,7 @@ public class ExitChart extends LineChart<Number, Number> implements SimulationOb
 
     public void setFlowData() {
         if (currentExit != null) {
-            System.out.println("Setting data");
             List<Integer> dataList = manager.getLastNEpoch(epochOnChart, currentExit);
-            System.out.println(dataList);
-            System.out.println(dataList);
             series.getData().clear();
             int i = Math.max(currentEpoch - epochOnChart, 0);
             for (Integer flow : dataList) {
@@ -55,9 +49,17 @@ public class ExitChart extends LineChart<Number, Number> implements SimulationOb
                 series.getData().add(new XYChart.Data<>(i, flow));
                 i++;
             }
-            currentEpoch = currentEpoch+1; // to test without engine
             manager.nextEpoch(); // also for tests
+            updateXAxisRange();
         }
+    }
+
+    public void updateXAxisRange() {
+        if (currentEpoch > epochOnChart) {
+            xAxis.setLowerBound(currentEpoch-epochOnChart);
+            xAxis.setUpperBound(currentEpoch);
+        }
+
     }
 
     @Override
