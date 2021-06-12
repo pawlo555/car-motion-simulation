@@ -43,22 +43,20 @@ public class ExitChart extends LineChart<Number, Number> implements SimulationOb
     public void setFlowData() {
         if (currentExit != null) {
             System.out.println("Setting data");
-            this.getData().remove(series);
-            //List<Integer> dataList = manager.getLastNEpoch(epochOnChart, currentExit);
-            List<Integer> dataList = new ArrayList<>();
-
-            series.getData().add(new XYChart.Data<>(10, 10));
+            List<Integer> dataList = manager.getLastNEpoch(epochOnChart, currentExit);
             System.out.println(dataList);
-            //series = new Series<>();
+            System.out.println(dataList);
+            series.getData().clear();
             int i = Math.max(currentEpoch - epochOnChart, 0);
             for (Integer flow : dataList) {
-                if (i < currentEpoch) {
+                if (i > currentEpoch) {
                     break;
                 }
                 series.getData().add(new XYChart.Data<>(i, flow));
                 i++;
             }
-            //this.getData().add(series);
+            currentEpoch = currentEpoch+1; // to test without engine
+            manager.nextEpoch(); // also for tests
         }
     }
 
