@@ -8,7 +8,6 @@
       layoutX="290" layoutY="20"
       fx:controller="Simulation.Controllers.MenuController"
       xmlns:fx="http://javafx.com/fxml">
-    <Label fx:id="placeName" text="Current Place" />
     <Button text="Statistics" onAction="#loadStatisticsPressed"/>
     <Button text="Parameters" onAction="#loadParametersPressed"/>
     <ComboBox fx:id="placesNames" onAction="#itemClicked" promptText="Crossings"/>
