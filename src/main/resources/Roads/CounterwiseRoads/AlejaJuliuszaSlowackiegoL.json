@@ -1,0 +1,168 @@
+{
+  "name": "Aleja Juliusza Słowackiego L",
+  "id": 1,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [1458.40, 6880.80],
+      "rightBottom": [1444.80, 6878.40],
+      "leftTop": [1466.40, 6854.40],
+      "rightTop": [1452.80, 6850.40]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [1466.40, 6854.40],
+      "rightBottom": [1452.80, 6850.40],
+      "leftTop": [1485.60, 6775.20],
+      "rightTop": [1472.00, 6771.20]
+    },
+    {
+      "partId": 3,
+      "leftBottom": [1485.60, 6775.20],
+      "rightBottom": [1472.00, 6771.20],
+      "leftTop": [1499.20, 6653.60],
+      "rightTop": [1486.40, 6652.80]
+    },
+    {
+      "partId": 4,
+      "leftBottom": [1499.20, 6653.60],
+      "rightBottom": [1486.40, 6652.80],
+      "leftTop": [1496.00, 6576.00],
+      "rightTop": [1482.40, 6578.40]
+    },
+    {
+      "partId": 5,
+      "leftBottom": [1496.00, 6576.00],
+      "rightBottom": [1482.40, 6578.40],
+      "leftTop": [1281.60, 5578.40],
+      "rightTop": [1268.80, 5586.40]
+    },
+    {
+      "partId": 6,
+      "leftBottom": [1281.60, 5578.40],
+      "rightBottom": [1268.80, 5586.40],
+      "leftTop": [1278.40, 5543.20],
+      "rightTop": [1264.80, 5544.80]
+    },
+    {
+      "partId": 7,
+      "leftBottom": [1278.40, 5543.20],
+      "rightBottom": [1264.80, 5544.80],
+      "leftTop": [1281.60, 5500.00],
+      "rightTop": [1266.40, 5502.40]
+    },
+    {
+      "partId": 8,
+      "leftBottom": [1281.60, 5500.00],
+      "rightBottom": [1266.40, 5502.40],
+      "leftTop": [1302.40, 5346.40],
+      "rightTop": [1288.00, 5343.20]
+    },
+    {
+      "partId": 9,
+      "leftBottom": [1302.40, 5346.40],
+      "rightBottom": [1288.00, 5343.20],
+      "leftTop": [1310.40, 5311.20],
+      "rightTop": [1295.20, 5309.60]
+    },
+    {
+      "partId": 10,
+      "leftBottom": [1310.40, 5311.20],
+      "rightBottom": [1295.20, 5309.60],
+      "leftTop": [1346.40, 5052.80],
+      "rightTop": [1334.40, 5047.20]
+    },
+    {
+      "partId": 11,
+      "leftBottom": [1346.40, 5052.80],
+      "rightBottom": [1334.40, 5047.20],
+      "leftTop": [1356.00, 5015.20],
+      "rightTop": [1345.60, 5002.40]
+    },
+    {
+      "partId": 12,
+      "leftBottom": [1356.00, 5015.20],
+      "rightBottom": [1345.60, 5002.40],
+      "leftTop": [1461.60, 4748.80],
+      "rightTop": [1448.80, 4743.20]
+    },
+    {
+      "partId": 13,
+      "leftBottom": [1461.60, 4748.80],
+      "rightBottom": [1448.80, 4743.20],
+      "leftTop": [1548.80, 4604.00],
+      "rightTop": [1536.00, 4597.60]
+    },
+    {
+      "partId": 14,
+      "leftBottom": [1548.80, 4604.00],
+      "rightBottom": [1536.00, 4597.60],
+      "leftTop": [1634.40, 4488.80],
+      "rightTop": [1624.80, 4478.40]
+    },
+    {
+      "partId": 15,
+      "leftBottom": [1634.40, 4488.80],
+      "rightBottom": [1624.80, 4478.40],
+      "leftTop": [1874.40, 4199.20],
+      "rightTop": [1864.00, 4190.40]
+    },
+    {
+      "partId": 16,
+      "leftBottom": [1874.40, 4199.20],
+      "rightBottom": [1864.00, 4190.40],
+      "leftTop": [1937.60, 4113.60],
+      "rightTop": [1928.00, 4102.40]
+    },
+    {
+      "partId": 17,
+      "leftBottom": [1937.60, 4113.60],
+      "rightBottom": [1928.00, 4102.40],
+      "leftTop": [1963.20, 4075.20],
+      "rightTop": [1951.20, 4067.20]
+    },
+    {
+      "partId": 18,
+      "leftBottom": [1963.20, 4075.20],
+      "rightBottom": [1951.20, 4067.20],
+      "leftTop": [2078.40, 3943.20],
+      "rightTop": [2070.40, 3932.80]
+    },
+    {
+      "partId": 19,
+      "leftBottom": [2078.40, 3943.20],
+      "rightBottom": [2070.40, 3932.80],
+      "leftTop": [2164.00, 3861.60],
+      "rightTop": [2153.60, 3851.20]
+    },
+    {
+      "partId": 20,
+      "leftBottom": [2164.00, 3861.60],
+      "rightBottom": [2153.60, 3851.20],
+      "leftTop": [2316.00, 3710.40],
+      "rightTop": [2305.60, 3700.00]
+    },
+    {
+      "partId": 21,
+      "leftBottom": [2316.00, 3710.40],
+      "rightBottom": [2305.60, 3700.00],
+      "leftTop": [2380.80, 3674.40],
+      "rightTop": [2372.00, 3663.20]
+    },
+    {
+      "partId": 22,
+      "leftBottom": [2380.80, 3674.40],
+      "rightBottom": [2372.00, 3663.20],
+      "leftTop": [2574.40, 3588.00],
+      "rightTop": [2568.00, 3575.20]
+    },
+    {
+      "partId": 23,
+      "leftBottom": [2574.40, 3588.00],
+      "rightBottom": [2568.00, 3575.20],
+      "leftTop": [2614.40, 3572.80],
+      "rightTop": [2600.80, 3563.20]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Aleja Adama Mickiewicza L1",
+  "id": 2,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [2654.40, 3554.40],
+      "rightBottom": [2641.60, 3544.00],
+      "leftTop": [2917.60, 3431.20],
+      "rightTop": [2907.20, 3420.00]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [2917.60, 3431.20],
+      "rightBottom": [2907.20, 3420.00],
+      "leftTop": [3081.60, 3368.00],
+      "rightTop": [3075.20, 3355.20]
+    },
+    {
+      "partId": 3,
+      "leftBottom": [3081.60, 3368.00],
+      "rightBottom": [3075.20, 3355.20],
+      "leftTop": [3244.80, 3295.20],
+      "rightTop": [3237.60, 3281.60]
+    },
+    {
+      "partId": 4,
+      "leftBottom": [3244.80, 3295.20],
+      "rightBottom": [3237.60, 3281.60],
+      "leftTop": [3581.60, 3203.20],
+      "rightTop": [3578.40, 3189.60]
+    }
+  ]
+}

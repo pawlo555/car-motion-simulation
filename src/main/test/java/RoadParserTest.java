@@ -16,7 +16,7 @@ public class RoadParserTest {
 
     @Test
     public void getIdTest(){
-        assertEquals(1, parser.getId());
+        assertEquals(2, parser.getId());
     }
 
     @Test

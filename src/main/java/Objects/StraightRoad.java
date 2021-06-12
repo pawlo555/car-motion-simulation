@@ -58,8 +58,15 @@ public class StraightRoad implements RoadObject {
         QuadrangleArea[][] cells = new QuadrangleArea[nLanes][];
 
         //split each line into cells
+        int minParts = 0;
+        for (int i=0; i< nLanes; i++){
+            double length = GeometryUtils.distanceFromLine(lanes[i].leftBottom, lanes[i].rightBottom,lanes[i].leftTop);
+            int nParts = (int)(length/cellLength);
+            if (i == 0 || nParts < minParts)
+                minParts = nParts;
+        }
         for (int i = 0; i < nLanes; i++) {
-            cells[i] = lanes[i].splitIntoCells(cellLength);
+            cells[i] = lanes[i].splitIntoCells(cellLength, minParts);
         }
 
         QuadrangleArea lastCell = cells[0][cells[0].length-1];
@@ -89,10 +96,6 @@ public class StraightRoad implements RoadObject {
         //initialize lanes
         for (int i = 0; i < nLanes; i++) {
             road[i] = new Line(lanes[i], cells[i]);
-        }
-
-        for (int i = 0; i < nLanes; i++) {
-            Line lane = road[i];
         }
 
     }

@@ -1,0 +1,42 @@
+{
+  "name": "Aleja Zygmunta Krasinskiego L",
+  "id": 4,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [5521.60, 3294.40],
+      "rightBottom": [5524.00, 3280.00],
+      "leftTop": [5846.40, 3440.80],
+      "rightTop": [5852.00, 3426.40]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [5846.40, 3440.80],
+      "rightBottom": [5852.00, 3426.40],
+      "leftTop": [6472.00, 3669.60],
+      "rightTop": [6476.80, 3656.00]
+    },
+    {
+      "partId": 3,
+      "leftBottom": [6472.00, 3669.60],
+      "rightBottom": [6476.80, 3656.00],
+      "leftTop": [6610.40, 3724.80],
+      "rightTop": [6616.80, 3712.00]
+    },
+    {
+      "partId": 4,
+      "leftBottom": [6610.40, 3724.80],
+      "rightBottom": [6616.80, 3712.00],
+      "leftTop": [6717.60, 3783.20],
+      "rightTop": [6727.20, 3772.00]
+    },
+    {
+      "partId": 5,
+      "leftBottom": [6717.60, 3783.20],
+      "rightBottom": [6727.20, 3772.00],
+      "leftTop": [6749.60, 3806.40],
+      "rightTop": [6752.80, 3800.00]
+    }
+  ]
+}

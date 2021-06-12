@@ -23,7 +23,8 @@ public class SimulationEngine implements VehicleObserver {
     public SimulationEngine(){
         CityBuilder builder = new CityBuilder();
         builder.buildFromDirectory("src/main/resources/Roads/ClockwiseRoads");
-        builder.connectRoads();
+        builder.buildFromDirectory("src/main/resources/Roads/CounterwiseRoads");
+//        builder.connectRoads();
         city = builder.getResult();
         builder.reset();
     }
@@ -141,5 +142,6 @@ public class SimulationEngine implements VehicleObserver {
     @Override
     public void carExit(AbstractVehicle vehicle) {
         vehicles.remove(vehicle);
+        vehicle.removeObserver(this);
     }
 }

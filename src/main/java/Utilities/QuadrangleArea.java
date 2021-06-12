@@ -105,9 +105,10 @@ public class QuadrangleArea {
         return areas;
     }
 
-    public QuadrangleArea[] splitIntoCells(double cellLength){
+    public QuadrangleArea[] splitIntoCells(double cellLength, int nParts){
         double length = GeometryUtils.distanceFromLine(leftBottom, rightBottom, leftTop);
-        int nParts = (int)(length/cellLength);
+        if (nParts < 0)
+            nParts = (int)(length/cellLength);
         double leftLen = leftTop.distance(leftBottom);
         double rightLen = leftTop.distance(leftBottom);
         double leftPartLen = leftLen*cellLength/length;

@@ -1,0 +1,49 @@
+{
+  "name": "Aleja Adama Mickiewicza L2",
+  "id": 3,
+  "nLanes": 2,
+  "parts": [
+    {
+      "partId": 1,
+      "leftBottom": [3628.00, 3193.60],
+      "rightBottom": [3621.60, 3180.00],
+      "leftTop": [4430.40, 3003.20],
+      "rightTop": [4428.80, 2988.80]
+    },
+    {
+      "partId": 2,
+      "leftBottom": [4430.40, 3003.20],
+      "rightBottom": [4428.80, 2988.80],
+      "leftTop": [4528.00, 2987.20],
+      "rightTop": [4527.20, 2972.80]
+    },
+    {
+      "partId": 3,
+      "leftBottom": [4528.00, 2987.20],
+      "rightBottom": [4527.20, 2972.80],
+      "leftTop": [4602.40, 2990.40],
+      "rightTop": [4607.20, 2976.00]
+    },
+    {
+      "partId": 4,
+      "leftBottom": [4602.40, 2990.40],
+      "rightBottom": [4607.20, 2976.00],
+      "leftTop": [4678.40, 3001.60],
+      "rightTop": [4680.80, 2988.00]
+    },
+    {
+      "partId": 5,
+      "leftBottom": [4678.40, 3001.60],
+      "rightBottom": [4680.80, 2988.00],
+      "leftTop": [5309.60, 3210.40],
+      "rightTop": [5315.20, 3196.80]
+    },
+    {
+      "partId": 6,
+      "leftBottom": [5309.60, 3210.40],
+      "rightBottom": [5315.20, 3196.80],
+      "leftTop": [5506.40, 3288.80],
+      "rightTop": [5510.40, 3274.40]
+    }
+  ]
+}

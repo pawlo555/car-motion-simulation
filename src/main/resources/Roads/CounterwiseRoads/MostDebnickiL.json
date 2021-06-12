@@ -1,11 +1,12 @@
 {
   "name": "Most Dębnicki L",
-  "id": 1,
+  "id": 5,
+  "nLanes": 2,
   "parts": [
     {
-      "part_id": 1,
+      "partId": 1,
       "leftBottom": [6749.60, 3806.40],
-      "rightBottom": [6752.80, 3800.80],
+      "rightBottom": [6752.80, 3800.00],
       "leftTop": [7352.80, 4104.00],
       "rightTop": [7355.20, 4097.60]
     }

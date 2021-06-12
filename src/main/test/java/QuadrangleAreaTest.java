@@ -32,7 +32,7 @@ public class QuadrangleAreaTest {
 
     @Test
     public void testSplitIntoCells(){
-        QuadrangleArea[] areas = testArea.splitIntoCells(5);
+        QuadrangleArea[] areas = testArea.splitIntoCells(5, -1);
         for (QuadrangleArea area : areas){
             System.out.println(area);
         }
@@ -43,7 +43,7 @@ public class QuadrangleAreaTest {
         QuadrangleArea[] areas = testArea.splitIntoLanes(2);
         QuadrangleArea[][] cells = new QuadrangleArea[2][];
         for (int i = 0; i < 2; i++){
-            cells[i] = areas[i].splitIntoCells(5);
+            cells[i] = areas[i].splitIntoCells(5, -1);
         }
         for (int i = 0; i < 2; i++) {
             System.out.format("lane %d after splitting into cells:\n", i);
