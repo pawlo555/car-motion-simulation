@@ -1,0 +1,39 @@
+{
+  "crossingParts":[
+    {
+      "crossingName": "Czarnowiejska AGH",
+      "connections": [
+        {
+          "id": 1,
+          "roadName": "Aleja Adama Mickiewicza LX",
+          "connectionType": "front"
+        },
+        {
+          "id": 2,
+          "roadName": "Czarnowiejska AGH Entrance",
+          "connectionType": "front"
+        },
+        {
+          "id": 3,
+          "roadName": "Czarnowiejska Rynek AGH",
+          "connectionType": "front"
+        },
+        {
+          "id": 4,
+          "roadName": "Czarnowiejska Exit",
+          "connectionType": "back"
+        },
+        {
+          "id": 5,
+          "roadName": "Czarnowiejska AGH Rynek",
+          "connectionType": "back"
+        },
+        {
+          "id": 6,
+          "roadName": "Aleja Adama Mickiewicza LX",
+          "connectionType": "back"
+        }
+      ]
+    }
+  ]
+}
