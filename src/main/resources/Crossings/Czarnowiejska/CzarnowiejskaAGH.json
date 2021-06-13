@@ -1,6 +1,12 @@
 {
   "name": "Czarnowiejska AGH",
   "id": 1,
+  "area": {
+    "leftBottom": [3571.20, 3185.60],
+    "rightBottom": [3579.20, 3208.80],
+    "leftTop": [3633.60, 3196.80],
+    "rightTop": [3624.80, 3175.20]
+  },
   "roads": [
     {
       "roadId": 1,
