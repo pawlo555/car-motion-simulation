@@ -20,6 +20,7 @@ public class Point {
     private String roadName;
     private int allowedSpeed = RoadConstants.maxSpeed;
     private Crossing myCrossing;
+    private int laneId = -1;
 
     public Point(Vector2D position){
         this.position = position;
@@ -121,9 +122,13 @@ public class Point {
         return myCrossing;
     }
 
+    public void setLaneId(int laneId){
+        this.laneId = laneId;
+    }
+
     public int getLane() {
         //TODO
-        return 0;
+        return laneId;
     }
 
 }

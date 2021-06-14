@@ -96,7 +96,7 @@ public class StraightRoad implements RoadObject {
         lanes = roadArea.splitIntoLanes(nLanes);
         //initialize lanes
         for (int i = 0; i < nLanes; i++) {
-            road[i] = new Line(lanes[i], cells[i]);
+            road[i] = new Line(lanes[i], cells[i], i);
         }
 
     }

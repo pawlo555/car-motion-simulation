@@ -14,7 +14,7 @@ public class MoveHelper {
             if (neighbor.getType() == PointType.CROSSING){
                 //TODO
                 //Crossing crossing = neighbor.getCrossing();
-                //int laneId =  point.getLane().getId();
+                int laneId =  point.getLane();
                 //funkcja do wyciągania randomowej drogi
                 //Point resultPoint = crossing.getWay(laneId, String roadName);
                 //return resultPoint;
