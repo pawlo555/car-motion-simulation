@@ -1,3 +1,4 @@
+import Objects.Point;
 import Objects.StraightRoad;
 import Utilities.Crossing.Crossing;
 import Utilities.IntersectionParser;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 public class IntersectionParserTest {
-    IntersectionParser parser = new IntersectionParser("src/main/resources/Crossing/Czarnowiejska/CzarnowiejskaAGH.json");
+    IntersectionParser parser = new IntersectionParser("src/main/resources/Crossing/Czarnowiejska/CzarnowiejskaRynek.json");
 
     @Test
     public void getNameTest(){
@@ -32,4 +33,13 @@ public class IntersectionParserTest {
         }
     }
 
+    @Test
+    public void drawTest(){
+        Crossing example = parser.getCrossing();
+        for(ArrayList<Point> i:example.ways){
+            for(Point j: i){
+                System.out.println(j.getPosition());
+            }
+        }
+    }
 }

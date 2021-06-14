@@ -1,0 +1,103 @@
+{
+  "name": "Czarnowiejska AGH",
+  "id": 1,
+  "area": {
+    "leftBottom": [3652.00, 3282.00],
+    "rightBottom": [3649.000, 3259.00],
+    "leftTop": [3614.00, 3291.00],
+    "rightTop": [3604.00, 3271.00]
+  },
+  "roads": [
+    {
+      "roadId": 1,
+      "lanes": [
+        {
+          "laneId": 0,
+          "xCoord": 0,
+          "yCoord": 3,
+          "exits": [4,6]
+        },
+        {
+          "laneId": 1,
+          "xCoord": 0,
+          "yCoord": 4,
+          "exits": [6]
+        }
+      ]
+    },
+    {
+      "roadId": 2,
+      "lanes": [
+        {
+          "laneId": 0,
+          "xCoord": 1,
+          "yCoord": 6,
+          "exits": [4,5]
+        },
+        {
+          "laneId": 1,
+          "xCoord": 2,
+          "yCoord": 6,
+          "exits": [4,6]
+        }
+      ]
+    },
+    {
+      "roadId": 3,
+      "lanes": [
+        {
+          "laneId": 0,
+          "xCoord": 3,
+          "yCoord": 2,
+          "exits": [4,5]
+        }
+
+      ]
+    },
+    {
+      "roadId": 4,
+      "lanes": [
+        {
+          "laneId": 0,
+          "xCoord": 1,
+          "yCoord": 0,
+          "exits": []
+        },
+        {
+          "laneId": 1,
+          "xCoord": 2,
+          "yCoord": 0,
+          "exits": []
+        }
+      ]
+    },
+    {
+      "roadId": 5,
+      "lanes": [
+        {
+          "laneId": 0,
+          "xCoord": 0,
+          "yCoord": 2,
+          "exits": []
+        },
+        {
+          "laneId": 1,
+          "xCoord": 0,
+          "yCoord": 1,
+          "exits": []
+        }
+      ]
+    },
+    {
+      "roadId": 6,
+      "lanes": [
+        {
+          "laneId": 0,
+          "xCoord": 3,
+          "yCoord": 3,
+          "exits": []
+        }
+      ]
+    }
+  ]
+}
