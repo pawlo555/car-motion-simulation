@@ -1,0 +1,114 @@
+{
+  "name": "Czarnowiejska AGH",
+  "id": 1,
+  "area": {
+    "leftBottom": [3625.00, 2176.20],
+    "rightBottom": [3633.00, 2195.00],
+    "leftTop": [3574.00, 2187.00],
+    "rightTop": [3581.00, 2208.00]
+  },
+  "roads": [
+    {
+      "roadId": 1,
+      "lanes": [
+        {
+          "laneId": 1,
+          "xCoord": 1,
+          "yCoord": 0,
+          "exits": [4,6]
+        },
+        {
+          "laneId": 2,
+          "xCoord": 2,
+          "yCoord": 0,
+          "exits": [6]
+        }
+      ]
+    },
+    {
+      "roadId": 2,
+      "lanes": [
+        {
+          "laneId": 1,
+          "xCoord": 0,
+          "yCoord": 5,
+          "exits": [5]
+        },
+        {
+          "laneId": 2,
+          "xCoord": 0,
+          "yCoord": 6,
+          "exits": [5,6]
+        }
+      ]
+    },
+    {
+      "roadId": 3,
+      "lanes": [
+        {
+          "laneId": 1,
+          "xCoord": 3,
+          "yCoord": 1,
+          "exits": [4]
+        },
+        {
+          "laneId": 2,
+          "xCoord": 3,
+          "yCoord": 2,
+          "exits": [4,6]
+        }
+      ]
+    },
+    {
+      "roadId": 4,
+      "lanes": [
+        {
+          "laneId": 1,
+          "xCoord": 0,
+          "yCoord": 1,
+          "exits": []
+        },
+        {
+          "laneId": 2,
+          "xCoord": 0,
+          "yCoord": 2,
+          "exits": []
+        }
+      ]
+    },
+    {
+      "roadId": 5,
+      "lanes": [
+        {
+          "laneId": 1,
+          "xCoord": 3,
+          "yCoord": 5,
+          "exits": []
+        },
+        {
+          "laneId": 2,
+          "xCoord": 3,
+          "yCoord": 6,
+          "exits": []
+        }
+      ]
+    },
+    {
+      "roadId": 6,
+      "lanes": [
+        {
+          "laneId": 1,
+          "xCoord": 1,
+          "yCoord": 7,
+          "exits": []
+        },
+        {
+          "laneId": 2,
+          "xCoord": 2,
+          "yCoord": 7,
+          "exits": []
+        }
+      ]
+    }
+  ]
+}
