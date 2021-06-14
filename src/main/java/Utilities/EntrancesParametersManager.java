@@ -44,7 +44,7 @@ public class EntrancesParametersManager {
     public Set<String> getEntrancesNames() {
         Set<String> existingEntrances = new TreeSet<>();
         existingEntrances.add("Czarnowiejska AGH");
-        existingEntrances.add("Czarnowiejska Rynek");
+//        existingEntrances.add("Czarnowiejska Rynek");
         return existingEntrances;
     }
 
