@@ -4,7 +4,8 @@ public enum Direction {
     RIGHT,
     LEFT,
     BACK,
-    FRONT;
+    FRONT,
+    CROSSING;
 
     public Direction opposite(){
         switch(this){
