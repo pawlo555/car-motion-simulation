@@ -23,6 +23,11 @@ public class City {
         return roads.get(myName).getEntries();
     }
 
+    public ArrayList<Point> getExit(String name){
+        String myName = name + " Exit";
+        return roads.get(myName).getExits();
+    }
+
     public ArrayList<Point> getEntries(){
         ArrayList<Point> entries = new ArrayList<>();
         for (SuperRoad road : roads.values()){
@@ -37,6 +42,14 @@ public class City {
             exits.addAll(road.getExits());
         }
         return exits;
+    }
+
+    public Map<String, SuperRoad> getRoads(){
+        return roads;
+    }
+
+    public Map<String, Crossing> getCrossings(){
+        return crossings;
     }
 
 }

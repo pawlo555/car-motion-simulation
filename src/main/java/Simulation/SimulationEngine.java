@@ -35,6 +35,9 @@ public class SimulationEngine implements VehicleObserver {
         CityBuilder builder = new CityBuilder();
         builder.buildFromDirectory("src/main/resources/Roads/ClockwiseRoads");
         builder.buildFromDirectory("src/main/resources/Roads/CounterwiseRoads");
+        builder.buildFromDirectory("src/main/resources/Roads/CrossingRoads/Czarnowiejska");
+        builder.buildIntersectionFromDirectory("src/main/resources/Crossing");
+        builder.connectRoadsAndCrossings("src/main/resources/Connections");
 //        builder.connectRoads();
         city = builder.getResult();
         builder.reset();
@@ -45,21 +48,21 @@ public class SimulationEngine implements VehicleObserver {
     public void nextEpoch() {
         System.out.println("Generating new epoch");
         //spawn new vehicles
-//        Set<String> roadsToSpawn = entranceManager.getEntrancesNames();
-//        for (String roadName : roadsToSpawn){
-//            ArrayList<Point> points = city.getEntry(roadName);
-//            boolean spawned = false;
-//            for (Point entry : points) {
-//                if (!entry.hasVehicle() && entranceManager.shouldSpawnCar(roadName)) {
-//                    AbstractVehicle vehicle = new Car(entry);
-//                    vehicles.add(vehicle);
-//                    System.out.println(vehicle + " has been added");
-//                    vehicle.addObserver(this);
-//                }
-//            }
-//        }
-        if (shouldSpawnVehicle())
-            spawnCar();
+        Set<String> roadsToSpawn = entranceManager.getEntrancesNames();
+        for (String roadName : roadsToSpawn){
+            ArrayList<Point> points = city.getEntry(roadName);
+            boolean spawned = false;
+            for (Point entry : points) {
+                if (!entry.hasVehicle() && entranceManager.shouldSpawnCar(roadName)) {
+                    AbstractVehicle vehicle = new Car(entry);
+                    vehicles.add(vehicle);
+                    System.out.println(vehicle + " has been added");
+                    vehicle.addObserver(this);
+                }
+            }
+        }
+//        if (shouldSpawnVehicle())
+//            spawnCar();
 
         iterate();
         notifyObservers();

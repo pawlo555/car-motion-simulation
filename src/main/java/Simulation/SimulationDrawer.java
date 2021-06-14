@@ -97,7 +97,7 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
         Vector2D upperLeft = getUpperLeftVector();
         Vector2D lowerRight = getLowerRightVector();
         List<AbstractVehicle> carList = engine.getCarsInSquare(upperLeft, lowerRight);
-        System.out.println("Cars list:" + carList.size());
+//        System.out.println("Cars list:" + carList.size());
         GraphicsContext gc = this.getGraphicsContext2D();
         for (AbstractVehicle car: carList) {
             paintCar(gc, car);
@@ -116,7 +116,7 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
         double radius = 10;
         Vector2D carPosition = car.getPosition();
         Vector2D paintPosition = transformToMap(carPosition);
-        System.out.println(paintPosition);
+//        System.out.println(paintPosition);
         gc.fillOval(paintPosition.y-radius/2, paintPosition.x-radius/2, radius, radius);
     }
 
@@ -157,7 +157,7 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
 
     @Override
     public void nextEpoch() {
-        System.out.println("In drawer: next epoch!");
+//        System.out.println("In drawer: next epoch!");
         repaint();
     }
 

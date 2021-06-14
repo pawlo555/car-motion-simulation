@@ -5,7 +5,7 @@
       "connections": [
         {
           "id": 1,
-          "roadName": "Aleja Adama Mickiewicza LX",
+          "roadName": "Aleja Adama Mickiewicza L1",
           "connectionType": "front"
         },
         {
@@ -20,7 +20,7 @@
         },
         {
           "id": 4,
-          "roadName": "Czarnowiejska Exit",
+          "roadName": "Czarnowiejska AGH Exit",
           "connectionType": "back"
         },
         {
@@ -30,7 +30,7 @@
         },
         {
           "id": 6,
-          "roadName": "Aleja Adama Mickiewicza LX",
+          "roadName": "Aleja Adama Mickiewicza L2",
           "connectionType": "back"
         }
       ]

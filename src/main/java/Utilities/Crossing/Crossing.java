@@ -1,6 +1,7 @@
 package Utilities.Crossing;
 import Objects.Point;
 import Utilities.Direction;
+import Utilities.PointType;
 import Utilities.Vector2D;
 
 import java.util.*;
@@ -13,7 +14,7 @@ public class Crossing {
     // preliminary sizes of intersection -> we should change it later with some kind of bounds inside crossing and outside crossing (How?)
 
     public Map<String,Integer> roadNames = new HashMap<>();
-    public Point crossingPoint = new Point(null);
+    public Point crossingPoint = new Point(new Vector2D(-1,-1));
 
     public Vector2D leftBottom;
     public Vector2D rightBottom;
@@ -39,6 +40,7 @@ public class Crossing {
 
     public Crossing(int number,String name,Vector2D leftBottom, Vector2D rightBottom, Vector2D leftTop, Vector2D rightTop,ArrayList<EntrancesAndExits> roads){
         this.crossingPoint.setCrossing(this);
+        crossingPoint.setType(PointType.CROSSING);
         this.number = number;
         this.name = name;
         this.roads = roads;
@@ -330,7 +332,6 @@ public class Crossing {
     }
 
     public void addExitNeighbour(int laneId,String roadName,Point point){
-
         int roadId = roadNames.get(roadName);
         ArrayList<Integer> indexes = new ArrayList<>();
         for(int i=0;i<exitList.size();i+=1) {

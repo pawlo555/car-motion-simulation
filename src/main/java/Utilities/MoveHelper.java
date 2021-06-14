@@ -13,11 +13,13 @@ public class MoveHelper {
                 throw new NullPointerException("Point doesn't have neighbor in front direction");
             if (neighbor.getType() == PointType.CROSSING){
                 //TODO
-                //Crossing crossing = neighbor.getCrossing();
+                Crossing crossing = neighbor.getCrossing();
                 int laneId =  point.getLane();
+                String roadName = point.getRoadName();
                 //funkcja do wyciągania randomowej drogi
-                //Point resultPoint = crossing.getWay(laneId, String roadName);
-                //return resultPoint;
+                Point movePoint = crossing.getWay(laneId, roadName);
+                System.out.println("Now car wants to drive on a crossing. Point that crossing gave him is "+movePoint);
+                return movePoint;
             }
             if (neighbor.getType() == PointType.SIMULATION_EXIT)
                 return neighbor;
@@ -42,8 +44,12 @@ public class MoveHelper {
         Point neighbor = point;
         for (int i = 1; i <= range; i++){
             neighbor = neighbor.getNeighbor(Direction.FRONT);
-            if (neighbor.getType() == PointType.SIMULATION_EXIT)
+            if (neighbor.getType() == PointType.CROSSING){
+                return -1;
+            }
+            if (neighbor.getType() == PointType.SIMULATION_EXIT) {
                 break;
+            }
             if (neighbor == null)
                 throw new NullPointerException("Point doesn't have neighbor in front direction");
             if (neighbor.hasVehicle())

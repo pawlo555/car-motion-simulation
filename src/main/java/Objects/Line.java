@@ -40,17 +40,21 @@ public class Line {
     }
 
     public Point getEntry(){
-        if (cells[0].getType() == PointType.SIMULATION_ENTRY)
-            return cells[0];
-        else
-            return null;
+        //TODO Jesli bedzie cala lista skrzyzowan to odkomentuj kod
+//        if (cells[0].getType() == PointType.SIMULATION_ENTRY)
+//            return cells[0];
+//        else
+//            return null;
+        return cells[0];
     }
 
     public Point getExit(){
-        if (cells[cells.length-1].getType() == PointType.SIMULATION_EXIT)
-            return cells[cells.length-1];
-        else
-            return null;
+        //TODO Jesli bedzie cala lista skrzyzowan to odkomentuj kod
+//        if (cells[cells.length-1].getType() == PointType.SIMULATION_EXIT)
+//            return cells[cells.length-1];
+//        else
+//            return null;
+        return cells[cells.length-1];
     }
 
     public void setRoadName(String roadName){

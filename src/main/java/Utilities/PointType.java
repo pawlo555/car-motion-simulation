@@ -5,5 +5,10 @@ public enum PointType {
     ROAD_EXIT,
     SIMULATION_EXIT,
     SIMULATION_ENTRY,
-    CROSSING
+    CROSSING;
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
