@@ -75,9 +75,4 @@ public class CityBuilder {
         }
     }
 
-    public void connectRoads(){
-        // build superRoads and connect them in a given order
-        // city.connectRoadsFront();
-    }
-
 }

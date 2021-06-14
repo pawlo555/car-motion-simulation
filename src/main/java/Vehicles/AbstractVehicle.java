@@ -59,7 +59,7 @@ public abstract class AbstractVehicle {
             clearPoints();
             if (movePosition.getType() == PointType.SIMULATION_EXIT){
                 //vehicle reaches end of the road and should disappear
-                notifyExit();
+                notifyExit(movePosition.getRoadName());
                 observers.clear();
                 this.moved = true;
             }
@@ -100,9 +100,9 @@ public abstract class AbstractVehicle {
         }
     }
 
-    public void notifyExit(){
+    public void notifyExit(String roadName){
         for (VehicleObserver observer : observers){
-            observer.carExit(this);
+            observer.carExit(this, roadName);
         }
     }
 

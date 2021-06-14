@@ -14,6 +14,7 @@ public class StraightRoad implements RoadObject {
     private double cellLength = RoadConstants.cellLength;
     private Line[] road;
     private int id;
+    private String roadName;
     private EnumMap<Direction, IRoadComponent> roadNeighbors = new EnumMap<>(Direction.class);
     private QuadrangleArea roadArea;
 
@@ -95,7 +96,7 @@ public class StraightRoad implements RoadObject {
         lanes = roadArea.splitIntoLanes(nLanes);
         //initialize lanes
         for (int i = 0; i < nLanes; i++) {
-            road[i] = new Line(lanes[i], cells[i]);
+            road[i] = new Line(lanes[i], cells[i], i);
         }
 
     }
@@ -145,6 +146,13 @@ public class StraightRoad implements RoadObject {
 
     public Line[] getLanes(){
         return road;
+    }
+
+    public void setRoadName(String roadName){
+        this.roadName = roadName;
+        for (Line lane : road){
+            lane.setRoadName(roadName);
+        }
     }
 
     public ArrayList<Point> getEntries(){

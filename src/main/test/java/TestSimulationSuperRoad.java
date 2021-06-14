@@ -85,7 +85,7 @@ public class TestSimulationSuperRoad implements VehicleObserver{
     }
 
     @Override
-    public void carExit(AbstractVehicle vehicle) {
+    public void carExit(AbstractVehicle vehicle, String roadName) {
         vehicles.remove(vehicle);
     }
 

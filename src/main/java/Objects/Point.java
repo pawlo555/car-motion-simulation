@@ -17,8 +17,10 @@ public class Point {
     private final Vector2D position;
     private PointType type = PointType.NORMAL;
     private boolean isPartOfVehicle = false;
+    private String roadName;
     private int allowedSpeed = RoadConstants.maxSpeed;
     private Crossing myCrossing;
+    private int laneId = -1;
 
     public Point(Vector2D position){
         this.position = position;
@@ -73,6 +75,14 @@ public class Point {
 
     public int getAllowedSpeed(){return allowedSpeed;}
 
+    public void setRoadName(String roadName){
+        this.roadName = roadName;
+    }
+
+    public String getRoadName(){
+        return roadName;
+    }
+
     @Override
     public String toString() {
         String msg = "Point at " +position+" neighbors: ";
@@ -108,13 +118,17 @@ public class Point {
         this.myCrossing = crossing;
     }
 
-
     public Crossing getCrossing() {
         return myCrossing;
     }
 
+    public void setLaneId(int laneId){
+        this.laneId = laneId;
+    }
+
     public int getLane() {
         //TODO
-        return 0;
+        return laneId;
     }
+
 }
