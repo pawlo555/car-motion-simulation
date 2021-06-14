@@ -19,6 +19,7 @@ public class Point {
     private boolean isPartOfVehicle = false;
     private String roadName;
     private int allowedSpeed = RoadConstants.maxSpeed;
+    private Crossing myCrossing;
 
     public Point(Vector2D position){
         this.position = position;
@@ -110,6 +111,19 @@ public class Point {
     public int hashCode() {
 //        return Objects.hash(neighbors, vehicle, position, type, isPartOfVehicle, allowedSpeed);
         return Objects.hash(neighbors, position, type, isPartOfVehicle, allowedSpeed);
+    }
+
+    public void setCrossing(Crossing crossing){
+        this.myCrossing = crossing;
+    }
+
+    public Crossing getCrossing() {
+        return myCrossing;
+    }
+
+    public int getLane() {
+        //TODO
+        return 0;
     }
 
 }
