@@ -4,5 +4,6 @@ public enum PointType {
     NORMAL,
     ROAD_EXIT,
     SIMULATION_EXIT,
-    SIMULATION_ENTRY
+    SIMULATION_ENTRY,
+    CROSSING
 }

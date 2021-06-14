@@ -1,6 +1,7 @@
 package Objects;
 
 import Constants.RoadConstants;
+import Utilities.Crossing.Crossing;
 import Utilities.Direction;
 import Utilities.Vector2D;
 import Utilities.PointType;
@@ -16,6 +17,7 @@ public class Point {
     private final Vector2D position;
     private PointType type = PointType.NORMAL;
     private boolean isPartOfVehicle = false;
+    private String roadName;
     private int allowedSpeed = RoadConstants.maxSpeed;
 
     public Point(Vector2D position){
@@ -71,6 +73,14 @@ public class Point {
 
     public int getAllowedSpeed(){return allowedSpeed;}
 
+    public void setRoadName(String roadName){
+        this.roadName = roadName;
+    }
+
+    public String getRoadName(){
+        return roadName;
+    }
+
     @Override
     public String toString() {
         String msg = "Point at " +position+" neighbors: ";
@@ -101,4 +111,5 @@ public class Point {
 //        return Objects.hash(neighbors, vehicle, position, type, isPartOfVehicle, allowedSpeed);
         return Objects.hash(neighbors, position, type, isPartOfVehicle, allowedSpeed);
     }
+
 }

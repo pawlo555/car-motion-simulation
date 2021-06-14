@@ -6,7 +6,9 @@ import Utilities.*;
 import Vehicles.AbstractVehicle;
 import Vehicles.Bus;
 import Vehicles.Car;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -18,6 +20,16 @@ public class SimulationEngine implements VehicleObserver {
     private City city;
     private ExitsManager exitsManager;
     private EntrancesParametersManager entranceManager;
+
+    {
+        try {
+            entranceManager = new EntrancesParametersManager();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
     public SimulationEngine(){
         CityBuilder builder = new CityBuilder();
@@ -33,19 +45,19 @@ public class SimulationEngine implements VehicleObserver {
     public void nextEpoch() {
         System.out.println("Generating new epoch");
         //spawn new vehicles
-        Set<String> roadsToSpawn = entranceManager.getEntrancesNames();
-        for (String roadName : roadsToSpawn){
-            ArrayList<Point> points = city.getEntry(roadName);
-            boolean spawned = false;
-            for (Point entry : points) {
-                if (!entry.hasVehicle() && entranceManager.shouldSpawnCar(roadName)) {
-                    AbstractVehicle vehicle = new Car(entry);
-                    vehicles.add(vehicle);
-                    System.out.println(vehicle + " has been added");
-                    vehicle.addObserver(this);
-                }
-            }
-        }
+//        Set<String> roadsToSpawn = entranceManager.getEntrancesNames();
+//        for (String roadName : roadsToSpawn){
+//            ArrayList<Point> points = city.getEntry(roadName);
+//            boolean spawned = false;
+//            for (Point entry : points) {
+//                if (!entry.hasVehicle() && entranceManager.shouldSpawnCar(roadName)) {
+//                    AbstractVehicle vehicle = new Car(entry);
+//                    vehicles.add(vehicle);
+//                    System.out.println(vehicle + " has been added");
+//                    vehicle.addObserver(this);
+//                }
+//            }
+//        }
         if (shouldSpawnVehicle())
             spawnCar();
 
@@ -143,7 +155,7 @@ public class SimulationEngine implements VehicleObserver {
 
     @Override
     public void carMoved(AbstractVehicle vehicle) {
-        System.out.println(vehicle.toString());
+
     }
 
     @Override
@@ -152,8 +164,8 @@ public class SimulationEngine implements VehicleObserver {
     }
 
     @Override
-    public void carExit(AbstractVehicle vehicle) {
+    public void carExit(AbstractVehicle vehicle, String roadName) {
+        System.out.println("Car exited from road "+roadName);
         vehicles.remove(vehicle);
-        vehicle.removeObserver(this);
     }
 }

@@ -1,5 +1,6 @@
 package Objects;
 
+import Utilities.Crossing.Crossing;
 import Utilities.Direction;
 import Utilities.RoadRoadConnector;
 

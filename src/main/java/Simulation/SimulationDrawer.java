@@ -112,7 +112,7 @@ public class SimulationDrawer extends Canvas implements SimulationObserver {
     }
 
     private void paintCar(GraphicsContext gc, AbstractVehicle car) {
-        System.out.println("Drawer I should print car on position "+car.getPosition().toString());
+//        System.out.println("Drawer I should print car on position "+car.getPosition().toString());
         double radius = 10;
         Vector2D carPosition = car.getPosition();
         Vector2D paintPosition = transformToMap(carPosition);

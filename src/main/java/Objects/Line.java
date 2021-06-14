@@ -13,6 +13,7 @@ public class Line {
     // bolean if this line have no ways that means it is exit from intersection
     public boolean isEntry;
     public int myRoad;
+    private String roadName;
 
     public Line(QuadrangleArea lane, QuadrangleArea[] points){
         this.lane = lane;
@@ -47,6 +48,13 @@ public class Line {
             return cells[cells.length-1];
         else
             return null;
+    }
+
+    public void setRoadName(String roadName){
+        this.roadName = roadName;
+        for (Point point : cells){
+            point.setRoadName(roadName);
+        }
     }
 
     public QuadrangleArea getArea(){

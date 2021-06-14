@@ -25,6 +25,7 @@ public class SuperRoad implements RoadObject {
         }
         else
             roadParts.addLast(road);
+        road.setRoadName(name);
     }
 
     public void setName(String name){
