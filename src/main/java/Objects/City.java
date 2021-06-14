@@ -7,39 +7,20 @@ import java.util.*;
 
 public class City {
     private Map<String, SuperRoad> roads = new LinkedHashMap<>();
+    private Map<String, Crossing> crossings = new LinkedHashMap<>();
 
     public void addRoad(String name, SuperRoad road){
         roads.put(name, road);
     }
 
-//    public void connectRoadsFront(){
-//        SortedSet<Integer> keys = new TreeSet<>(roads.keySet());
-//        LinkedList<SuperRoad> connected = new LinkedList<>();
-//        for (Integer roadId : keys){
-//            // do something
-//            System.out.println("Now I operate on key"+roadId);
-//            SuperRoad road = roads.get(roadId);
-//            if (connected.size() == 0)
-//                connected.add(road);
-//            else{
-//                SuperRoad last = connected.getLast();
-//                RoadRoadConnector.connectFront(last, road, Direction.LEFT);
-//                connected.addLast(road);
-//            }
-//        }
-//    }
+    public void addCrossing(String name, Crossing crossing){
+        crossings.put(name, crossing);
+    }
 
-//    public ArrayList<Point> getEntries(){
-//        SortedSet<Integer> keys = new TreeSet<>(roads.keySet());
-//        SuperRoad entryRoad = roads.get(keys.first());
-//        return entryRoad.getEntries();
-//    }
-//
-//    public ArrayList<Point> getExits(){
-//        SortedSet<Integer> keys = new TreeSet<>(roads.keySet());
-//        SuperRoad exitRoad = roads.get(keys.last());
-//        return exitRoad.getExits();
-//    }
+    public ArrayList<Point> getEntry(String name){
+        String myName = name + " Entrance";
+        return roads.get(myName).getEntries();
+    }
 
     public ArrayList<Point> getEntries(){
         ArrayList<Point> entries = new ArrayList<>();

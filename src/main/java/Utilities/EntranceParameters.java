@@ -81,4 +81,8 @@ public class EntranceParameters {
         return entrancesMap;
     }
 
+    public boolean shouldSpawnCar(){
+        return Math.random()*EpochInMinute < flow;
+    }
+
 }

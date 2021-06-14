@@ -7,10 +7,7 @@ import Vehicles.AbstractVehicle;
 import Vehicles.Bus;
 import Vehicles.Car;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class SimulationEngine implements VehicleObserver {
@@ -19,6 +16,8 @@ public class SimulationEngine implements VehicleObserver {
 //    private final HashMap<Vector2D, AbstractVehicle> vehicles = new HashMap<>();
     private ArrayList<AbstractVehicle> vehicles = new ArrayList<>();
     private City city;
+    private ExitsManager exitsManager;
+    private EntrancesParametersManager entranceManager;
 
     public SimulationEngine(){
         CityBuilder builder = new CityBuilder();
@@ -34,6 +33,19 @@ public class SimulationEngine implements VehicleObserver {
     public void nextEpoch() {
         System.out.println("Generating new epoch");
         //spawn new vehicles
+        Set<String> roadsToSpawn = entranceManager.getEntrancesNames();
+        for (String roadName : roadsToSpawn){
+            ArrayList<Point> points = city.getEntry(roadName);
+            boolean spawned = false;
+            for (Point entry : points) {
+                if (!entry.hasVehicle() && entranceManager.shouldSpawnCar(roadName)) {
+                    AbstractVehicle vehicle = new Car(entry);
+                    vehicles.add(vehicle);
+                    System.out.println(vehicle + " has been added");
+                    vehicle.addObserver(this);
+                }
+            }
+        }
         if (shouldSpawnVehicle())
             spawnCar();
 
