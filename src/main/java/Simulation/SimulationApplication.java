@@ -5,6 +5,7 @@ import Simulation.Controllers.MenuController;
 import Simulation.Controllers.ParametersController;
 import Simulation.Controllers.StatisticsController;
 import Utilities.ExitsManager;
+import Utilities.IntersectionParser;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
