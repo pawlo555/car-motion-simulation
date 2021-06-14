@@ -1,6 +1,7 @@
 package Utilities;
 
 import Objects.Point;
+import Utilities.Crossing.Crossing;
 
 public class MoveHelper {
     public static Point getMovePosition(Point point, int speed){
@@ -10,6 +11,14 @@ public class MoveHelper {
             neighbor = neighbor.getNeighbor(Direction.FRONT);
             if (neighbor == null)
                 throw new NullPointerException("Point doesn't have neighbor in front direction");
+            if (neighbor.getType() == PointType.CROSSING){
+                //TODO
+                //Crossing crossing = neighbor.getCrossing();
+                //int laneId =  point.getLane().getId();
+                //funkcja do wyciągania randomowej drogi
+                //Point resultPoint = crossing.getWay(laneId, String roadName);
+                //return resultPoint;
+            }
             if (neighbor.getType() == PointType.SIMULATION_EXIT)
                 return neighbor;
             if (neighbor.hasVehicle())

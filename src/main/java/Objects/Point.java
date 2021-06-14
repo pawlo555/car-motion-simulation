@@ -1,6 +1,7 @@
 package Objects;
 
 import Constants.RoadConstants;
+import Utilities.Crossing.Crossing;
 import Utilities.Direction;
 import Utilities.Vector2D;
 import Utilities.PointType;
@@ -17,6 +18,7 @@ public class Point {
     private PointType type = PointType.NORMAL;
     private boolean isPartOfVehicle = false;
     private int allowedSpeed = RoadConstants.maxSpeed;
+    private Crossing myCrossing;
 
     public Point(Vector2D position){
         this.position = position;
@@ -100,5 +102,19 @@ public class Point {
     public int hashCode() {
 //        return Objects.hash(neighbors, vehicle, position, type, isPartOfVehicle, allowedSpeed);
         return Objects.hash(neighbors, position, type, isPartOfVehicle, allowedSpeed);
+    }
+
+    public void setCrossing(Crossing crossing){
+        this.myCrossing = crossing;
+    }
+
+
+    public Crossing getCrossing() {
+        return myCrossing;
+    }
+
+    public int getLane() {
+        //TODO
+        return 0;
     }
 }

@@ -3,8 +3,7 @@ import Objects.Point;
 import Utilities.Direction;
 import Utilities.Vector2D;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 import static java.lang.StrictMath.abs;
 
@@ -12,6 +11,9 @@ public class Crossing {
     // list of roads that are connected with crossing
     public ArrayList<EntrancesAndExits> roads;
     // preliminary sizes of intersection -> we should change it later with some kind of bounds inside crossing and outside crossing (How?)
+
+    public Map<String,Integer> roadNames = new HashMap<>();
+    public Point crossingPoint = new Point(null);
 
     public Vector2D leftBottom;
     public Vector2D rightBottom;
@@ -26,14 +28,17 @@ public class Crossing {
     public int number;
     public String name;
     private CrossingCell[][] field;
+
     public ArrayList<CrossingCell> enterList = new ArrayList<>();
     public ArrayList<CrossingCell> exitList = new ArrayList<>();
+    public ArrayList<ArrayList<CrossingCell>> waysThroughIntersection = new ArrayList<>();
+
     public ArrayList<Integer> enterRoads = new ArrayList<>();
     public ArrayList<Integer> exitRoads = new ArrayList<>();
-    public ArrayList<ArrayList<CrossingCell>> waysThroughIntersection = new ArrayList<>();
     public ArrayList<ArrayList<Point>> ways = new ArrayList<>();
 
     public Crossing(int number,String name,Vector2D leftBottom, Vector2D rightBottom, Vector2D leftTop, Vector2D rightTop,ArrayList<EntrancesAndExits> roads){
+        this.crossingPoint.setCrossing(this);
         this.number = number;
         this.name = name;
         this.roads = roads;
@@ -293,24 +298,11 @@ public class Crossing {
         return 0;
     }
 
-    public Point getWay(int id){
-        ArrayList<Integer>  indexes = new ArrayList<>();
-        for(int i : enterRoads){
-            if(i == id){
-                indexes.add(i);
-            }
-        }
-        Collections.shuffle(indexes);
-        int myRoad = indexes.get(0);
-        return(ways.get(myRoad).get(0));
-
-    }
-
     public void createPointWays(){
         for(ArrayList<CrossingCell> i : waysThroughIntersection){
             ArrayList<Point> newList = new ArrayList<>();
             for(CrossingCell cell : i){
-                newList.add(new Point(new Vector2D(cell.mapX, cell.y)));
+                newList.add(new Point(new Vector2D(cell.mapX, cell.mapY)));
             }
             this.ways.add(newList);
         }
@@ -322,13 +314,35 @@ public class Crossing {
         }
     }
 
-    public void addExitNeighbour(int exitRoad,Point point){
-        ArrayList<Point> exitPoints = new ArrayList<>();
-        for(int i=0;i<exitRoads.size();i+=1){
-            if(exitRoads.get(i) == exitRoad){
-                ways.get(i).get(ways.get(i).size()-1).addNeighbor(Direction.FRONT,point);
+
+    public Point getWay(int laneId,String roadName){
+        int roadId = roadNames.get(roadName);
+        ArrayList<Integer> indexes = new ArrayList<>();
+        for(int i=0;i<enterList.size();i+=1) {
+            CrossingLane ourLine = enterList.get(i).crossingLane;
+            if (ourLine.id == laneId && ourLine.myRoad == roadId) {
+                indexes.add(i);
             }
         }
+        Collections.shuffle(indexes);
+        int index = indexes.get(0);
+        return(ways.get(index).get(0));
+    }
+
+    public void addExitNeighbour(int laneId,String roadName,Point point){
+
+        int roadId = roadNames.get(roadName);
+        ArrayList<Integer> indexes = new ArrayList<>();
+        for(int i=0;i<exitList.size();i+=1) {
+            CrossingLane ourLine = exitList.get(i).crossingLane;
+            if (ourLine.id == laneId && ourLine.myRoad == roadId) {
+                indexes.add(i);
+            }
+        }
+        for(int i:indexes){
+            ways.get(i).get(ways.get(i).size()-1).addNeighbor(Direction.FRONT,point);
+        }
+
     }
 }
 
