@@ -52,6 +52,19 @@ public class StraightRoadTest {
     }
 
     @Test
+    public void createCzarnowiejskaRoadTest(){
+        QuadrangleArea randomArea = new QuadrangleArea(new Vector2D(3628.00, 3270.40), new Vector2D(3611.20, 3273.60), new Vector2D(3598.40, 3199.20), new Vector2D(3621.60, 3180.00));
+        StraightRoad testRandomRoad = new StraightRoad(2, randomArea);
+//        for (Line lane : testRandomRoad.getLanes()){
+//            System.out.println(lane.getArea());
+//            for (Point cell : lane.getCells()){
+//                System.out.print(cell.getPosition());
+//            }
+//            System.out.println();
+//        }
+    }
+
+    @Test
     public void NeighborhoodTest(){
         QuadrangleArea randomArea = new QuadrangleArea(new Vector2D(120,0), new Vector2D(135, 30), new Vector2D(0,150), new Vector2D(15,190));
         StraightRoad testRandomRoad = new StraightRoad(2, randomArea);

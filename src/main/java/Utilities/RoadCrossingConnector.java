@@ -25,7 +25,7 @@ public class RoadCrossingConnector {
 
     public static void connectBack(RoadObject road, Crossing crossing){
         //connect of road to the crossing
-        ArrayList<Point> entries = road.getExits();
+        ArrayList<Point> entries = road.getEntries();
         Point crossingPoint = crossing.crossingPoint;
 
         for (Point entry : entries){

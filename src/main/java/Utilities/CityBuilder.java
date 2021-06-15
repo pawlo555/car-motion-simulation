@@ -127,6 +127,9 @@ public class CityBuilder {
                 connected.addLast(road);
             }
         }
+        SuperRoad first = connected.getFirst();
+        SuperRoad last = connected.getLast();
+        RoadRoadConnector.connectFront(last, first, Direction.LEFT);
     }
 
 }

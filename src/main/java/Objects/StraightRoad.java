@@ -18,14 +18,6 @@ public class StraightRoad implements RoadObject {
     private EnumMap<Direction, IRoadComponent> roadNeighbors = new EnumMap<>(Direction.class);
     private QuadrangleArea roadArea;
 
-//    //fix length in advance
-//    public StraightRoad(int length, int nLanes, QuadrangleArea roadArea){
-//        this.nLanes = nLanes;
-//        this.length = length;
-//        this.roadArea = roadArea;
-//        road = new Line[nLanes];
-//    }
-
     //let road count her length - preferred method
     public StraightRoad(int nLanes, QuadrangleArea roadArea){
         this.nLanes = nLanes;

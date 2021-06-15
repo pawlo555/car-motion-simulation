@@ -12,9 +12,10 @@ public class SuperRoadTest {
 
     @Before
     public void prepare(){
-        builder.buildFromJSON("src/main/resources/Roads/ClockwiseRoads/AlejaZygmuntaKrasinskiegoP.json");
+//        builder.buildFromJSON("src/main/resources/Roads/ClockwiseRoads/AlejaZygmuntaKrasinskiegoP.json");
+//        builder.buildFromJSON("src/main/resources/Roads/CrossingRoads/Czarnowiejska/CzarnowiejskaRynekAGH.json");
 //        builder.buildFromJSON("src/main/resources/Roads/ClockwiseRoads/MostDebnickiP.json");
-//        builder.buildFromJSON("src/main/resources/Roads/ClockwiseRoads/AlejaAdamaMickiewiczaP1.json");
+        builder.buildFromJSON("src/main/resources/Roads/ClockwiseRoads/AlejaAdamaMickiewiczaP1.json");
 //        builder.buildFromJSON("src/main/resources/Roads/ClockwiseRoads/AlejaAdamaMickiewiczaP2.json");
         superRoad = builder.getResult();
         builder.reset();

@@ -34,6 +34,41 @@
           "connectionType": "back"
         }
       ]
+    },
+    {
+      "crossingName": "Czarnowiejska Rynek",
+      "connections": [
+        {
+          "id": 1,
+          "roadName": "Czarnowiejska AGH Rynek",
+          "connectionType": "front"
+        },
+        {
+          "id": 2,
+          "roadName": "Aleja Adama Mickiewicza P1",
+          "connectionType": "front"
+        },
+        {
+          "id": 3,
+          "roadName": "Czarnowiejska Rynek Entrance",
+          "connectionType": "front"
+        },
+        {
+          "id": 4,
+          "roadName": "Aleja Adama Mickiewicza P2",
+          "connectionType": "back"
+        },
+        {
+          "id": 5,
+          "roadName": "Czarnowiejska Rynek AGH",
+          "connectionType": "back"
+        },
+        {
+          "id": 6,
+          "roadName": "Czarnowiejska Rynek Exit",
+          "connectionType": "back"
+        }
+      ]
     }
   ]
 }

@@ -53,6 +53,22 @@ public class QuadrangleAreaTest {
     }
 
     @Test
+    public void testSplitIntoLanesAndCellsCzarnowiejska(){
+        QuadrangleArea area = new QuadrangleArea(new Vector2D(3628.00, 3270.40),
+                new Vector2D(3611.20, 3273.60),new Vector2D(3598.40, 3199.20),new Vector2D(3621.60, 3180.00));
+        QuadrangleArea[] areas = area.splitIntoLanes(2);
+        QuadrangleArea[][] cells = new QuadrangleArea[2][];
+        for (int i = 0; i < 2; i++){
+            cells[i] = areas[i].splitIntoCells(13, -1);
+        }
+        for (int i = 0; i < 2; i++) {
+            System.out.format("lane %d after splitting into cells:\n", i);
+            for (int j = 0; j < cells[i].length; j++)
+                System.out.println(cells[i][j]);
+        }
+    }
+
+    @Test
     public void getMiddleTest(){
         assertEquals(new Vector2D(1.5, 2.5), testArea.getMiddle());
     }
