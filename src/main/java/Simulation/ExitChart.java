@@ -16,7 +16,7 @@ public class ExitChart extends LineChart<Number, Number> implements SimulationOb
     private int currentEpoch = 0;
 
     private static final int majorTick = 10;
-    private static final int maxFlow = 100;
+    private static final int maxFlow = 10;
     private static final int epochOnChart = 100;
 
     private static final NumberAxis xAxis = new NumberAxis("Epoch",0,epochOnChart, majorTick);
@@ -49,7 +49,6 @@ public class ExitChart extends LineChart<Number, Number> implements SimulationOb
                 series.getData().add(new XYChart.Data<>(i, flow));
                 i++;
             }
-            manager.nextEpoch(); // also for tests
             updateXAxisRange();
         }
     }

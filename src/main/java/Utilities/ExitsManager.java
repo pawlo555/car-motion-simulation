@@ -29,6 +29,7 @@ public class ExitsManager implements SimulationObserver {
      * When engine generate next epoch manager will inform all ExitsStat that epoch passed.
      */
     public void nextEpoch() {
+        System.out.println("Exits manager new epoch");
         exitsStats.forEach((key, value) -> value.nextEpoch());
     }
 

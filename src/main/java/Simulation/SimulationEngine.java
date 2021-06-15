@@ -24,9 +24,7 @@ public class SimulationEngine implements VehicleObserver {
     {
         try {
             entranceManager = new EntrancesParametersManager();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
@@ -169,6 +167,14 @@ public class SimulationEngine implements VehicleObserver {
     @Override
     public void carExit(AbstractVehicle vehicle, String roadName) {
         System.out.println("Car exited from road "+roadName);
+        String ExitRoadName = roadName.substring(0, roadName.length() - 5);
+        System.out.println(ExitRoadName);
+        exitsManager.carOnExit(ExitRoadName);
         vehicles.remove(vehicle);
+    }
+
+    public void setExitsManager(ExitsManager manager) {
+        exitsManager = manager;
+        this.addObserver(manager);
     }
 }

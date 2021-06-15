@@ -18,8 +18,6 @@ public class EntranceParameters {
     private int maxSpeed;
     private int waitingFlow = 0;
 
-
-
     EntranceParameters(CrossingParser parser, String entranceName) {
         flow = parser.getFlow(entranceName);
         busProbability = parser.getBusProbability(entranceName);
