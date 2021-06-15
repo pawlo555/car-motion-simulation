@@ -336,6 +336,9 @@ public class Crossing {
             return null;
         }
         int index = indexes.get(0);
+        if(ways.get(index).get(0).hasVehicle()){
+            return null;
+        }
         return(ways.get(index).get(0));
     }
 
