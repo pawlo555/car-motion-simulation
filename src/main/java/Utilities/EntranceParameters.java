@@ -23,7 +23,7 @@ public class EntranceParameters {
     EntranceParameters(CrossingParser parser, String entranceName) {
         flow = parser.getFlow(entranceName);
         busProbability = parser.getBusProbability(entranceName);
-        maxSpeed = parser.getMaxSpeed(entranceName);
+        maxSpeed = 1; //parser.getMaxSpeed(entranceName); // TODO
     }
 
     public void changeFlow(int newFlow) {

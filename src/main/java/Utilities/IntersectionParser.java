@@ -38,11 +38,11 @@ public class IntersectionParser {
 
     public Vector2D parsePosition(JSONArray arr){
         double x,y;
-//       x = (double) arr.get(0);
-//       y = (double) arr.get(1);
+        x = (double) arr.get(0);
+        y = (double) arr.get(1);
         // TODO zamienic x z y gdy Pawel poprawi mapke
-        x = (double) arr.get(1);
-        y = (double) arr.get(0);
+//        x = (double) arr.get(1);
+//        y = (double) arr.get(0);
         return new Vector2D(x, y);
     }
 
