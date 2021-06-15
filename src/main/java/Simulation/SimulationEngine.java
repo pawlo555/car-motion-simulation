@@ -3,6 +3,7 @@ package Simulation;
 import Objects.City;
 import Objects.Point;
 import Utilities.*;
+import Utilities.Crossing.Crossing;
 import Vehicles.AbstractVehicle;
 import Vehicles.Bus;
 import Vehicles.Car;
@@ -45,6 +46,11 @@ public class SimulationEngine implements VehicleObserver {
 
     public void nextEpoch() {
         System.out.println("Generating new epoch");
+        //
+        for(Crossing i : city.getCrossings().values()){
+            i.iterateCrossing();
+        }
+
         //spawn new vehicles
         Set<String> roadsToSpawn = entranceManager.getEntrancesNames();
         for (String roadName : roadsToSpawn){

@@ -38,6 +38,10 @@ public class Crossing {
     public ArrayList<Integer> exitRoads = new ArrayList<>();
     public ArrayList<ArrayList<Point>> ways = new ArrayList<>();
 
+    private int openTime = 0;
+    private int iterator = 0;
+
+
     public Crossing(int number,String name,Vector2D leftBottom, Vector2D rightBottom, Vector2D leftTop, Vector2D rightTop,ArrayList<EntrancesAndExits> roads){
         this.crossingPoint.setCrossing(this);
         crossingPoint.setType(PointType.CROSSING);
@@ -48,6 +52,7 @@ public class Crossing {
         this.leftTop = leftTop;
         this.rightBottom = rightBottom;
         this.rightTop = rightTop;
+
 
         int maxX = 0;
         int maxY = 0;
@@ -322,11 +327,14 @@ public class Crossing {
         ArrayList<Integer> indexes = new ArrayList<>();
         for(int i=0;i<enterList.size();i+=1) {
             CrossingLane ourLine = enterList.get(i).crossingLane;
-            if (ourLine.id == laneId && ourLine.myRoad == roadId) {
+            if (ourLine.id == laneId && ourLine.myRoad == roadId && ourLine.myRoad == enterRoads.get(iterator)) {
                 indexes.add(i);
             }
         }
         Collections.shuffle(indexes);
+        if(indexes.size() == 0){
+            return null;
+        }
         int index = indexes.get(0);
         return(ways.get(index).get(0));
     }
@@ -342,6 +350,18 @@ public class Crossing {
         }
         for(int i:indexes){
             ways.get(i).get(ways.get(i).size()-1).addNeighbor(Direction.FRONT,point);
+        }
+
+    }
+
+    public void iterateCrossing(){
+        this.openTime += 1;
+        if(this.openTime == 8){
+            this.openTime = 0;
+            this.iterator +=1;
+            if(this.iterator == enterRoads.size()){
+                this.iterator = 0;
+            }
         }
 
     }
